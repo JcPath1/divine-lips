@@ -1,0 +1,15 @@
+# Private/sensitive files
+/private/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Node modules (if used later)
+node_modules/
