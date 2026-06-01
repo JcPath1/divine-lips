@@ -56,21 +56,21 @@ Two best friends, Charlie and Martina, love doing hair and makeup at school. The
 
 ### Current Plan
 ```
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚      PINK BOX           â”‚  â† Outer box (pink!)
-â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”‚
-â”‚  â”‚  WHITE PAPER    â”‚    â”‚  â† First layer
-â”‚  â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”‚    â”‚
-â”‚  â”‚  â”‚   SILK    â”‚  â”‚    â”‚  â† Luxe silk fabric
-â”‚  â”‚  â”‚  â”Œâ”€â”€â”€â”€â”€â”  â”‚  â”‚    â”‚
-â”‚  â”‚  â”‚  â”‚GLOSSâ”‚  â”‚  â”‚    â”‚  â† The star!
-â”‚  â”‚  â”‚  â””â”€â”€â”€â”€â”€â”˜  â”‚  â”‚    â”‚
-â”‚  â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â”‚    â”‚
-â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜    â”‚
-â”‚                         â”‚
-â”‚  + Thank You Card       â”‚  â† Personal touch
-â”‚  + 2 Stickers           â”‚  â† Fun extras
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+┌─────────────────────────┐
+│      PINK BOX           │  ← Outer box (pink!)
+│  ┌─────────────────┐    │
+│  │  WHITE PAPER    │    │  ← First layer
+│  │  ┌───────────┐  │    │
+│  │  │   SILK    │  │    │  ← Luxe silk fabric
+│  │  │  ┌─────┐  │  │    │
+│  │  │  │GLOSS│  │  │    │  ← The star!
+│  │  │  └─────┘  │  │    │
+│  │  └───────────┘  │    │
+│  └─────────────────┘    │
+│                         │
+│  + Thank You Card       │  ← Personal touch
+│  + 2 Stickers           │  ← Fun extras
+└─────────────────────────┘
 ```
 
 ### Ideas to Level Up
@@ -227,7 +227,7 @@ Two best friends, Charlie and Martina, love doing hair and makeup at school. The
 7. [ ] Choose selling platform
 8. [ ] Set up shop
 9. [ ] Create social media accounts
-10. [ ] First sale! ðŸŽ‰
+10. [ ] First sale! 🎉
 
 ---
 

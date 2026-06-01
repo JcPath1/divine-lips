@@ -134,5 +134,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Console message for the girls!
-console.log('%cðŸ’– Welcome to Glimmer Bliss! ðŸ’–', 'font-size: 20px; color: #ff69b4;');
+console.log('%c💖 Welcome to Glimmer Bliss! 💖', 'font-size: 20px; color: #ff69b4;');
 console.log('%cMade with love by Charlie & Martina', 'font-size: 14px; color: #db7093;');
