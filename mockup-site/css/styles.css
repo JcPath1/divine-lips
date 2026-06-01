@@ -62,10 +62,18 @@ a {
   font-weight: 700;
   color: var(--primary-pink);
   font-family: var(--font-accent);
+  display: flex;
+  align-items: center;
 }
 
 .logo span {
   color: var(--black);
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
