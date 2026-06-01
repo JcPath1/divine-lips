@@ -1,7 +1,7 @@
-// Divine Lips - Mockup Site JavaScript
+// Glimmer Bliss - Mockup Site JavaScript
 
 // Cart state (stored in localStorage for persistence)
-let cartCount = parseInt(localStorage.getItem('divineLipsCart') || '0');
+let cartCount = parseInt(localStorage.getItem('glimmerBlissCart') || '0');
 
 // Update cart count display
 function updateCartDisplay() {
@@ -25,7 +25,7 @@ function showNotification() {
 // Add to cart functionality
 function addToCart() {
   cartCount++;
-  localStorage.setItem('divineLipsCart', cartCount);
+  localStorage.setItem('glimmerBlissCart', cartCount);
   updateCartDisplay();
   showNotification();
 
@@ -134,5 +134,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Console message for the girls!
-console.log('%c💖 Welcome to Divine Lips! 💖', 'font-size: 20px; color: #ff69b4;');
+console.log('%cðŸ’– Welcome to Glimmer Bliss! ðŸ’–', 'font-size: 20px; color: #ff69b4;');
 console.log('%cMade with love by Charlie & Martina', 'font-size: 14px; color: #db7093;');

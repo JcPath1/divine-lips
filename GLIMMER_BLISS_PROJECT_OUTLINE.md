@@ -1,7 +1,7 @@
-# Divine Lips - Project Outline
+# GlimmerBliss - Project Outline
 
 ## The Story
-Two best friends, Charlie and Martina, love doing hair and makeup at school. They're both into skincare and facial products, and decided to turn their passion into a real business. Divine Lips was born - handmade lip glosses with fun flavors and beautiful packaging.
+Two best friends, Charlie and Martina, love doing hair and makeup at school. They're both into skincare and facial products, and decided to turn their passion into a real business. GlimmerBliss was born - handmade lip glosses with fun flavors and beautiful packaging.
 
 ---
 
@@ -56,21 +56,21 @@ Two best friends, Charlie and Martina, love doing hair and makeup at school. The
 
 ### Current Plan
 ```
-┌─────────────────────────┐
-│      PINK BOX           │  ← Outer box (pink!)
-│  ┌─────────────────┐    │
-│  │  WHITE PAPER    │    │  ← First layer
-│  │  ┌───────────┐  │    │
-│  │  │   SILK    │  │    │  ← Luxe silk fabric
-│  │  │  ┌─────┐  │  │    │
-│  │  │  │GLOSS│  │  │    │  ← The star!
-│  │  │  └─────┘  │  │    │
-│  │  └───────────┘  │    │
-│  └─────────────────┘    │
-│                         │
-│  + Thank You Card       │  ← Personal touch
-│  + 2 Stickers           │  ← Fun extras
-└─────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚      PINK BOX           â”‚  â† Outer box (pink!)
+â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”‚
+â”‚  â”‚  WHITE PAPER    â”‚    â”‚  â† First layer
+â”‚  â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”‚    â”‚
+â”‚  â”‚  â”‚   SILK    â”‚  â”‚    â”‚  â† Luxe silk fabric
+â”‚  â”‚  â”‚  â”Œâ”€â”€â”€â”€â”€â”  â”‚  â”‚    â”‚
+â”‚  â”‚  â”‚  â”‚GLOSSâ”‚  â”‚  â”‚    â”‚  â† The star!
+â”‚  â”‚  â”‚  â””â”€â”€â”€â”€â”€â”˜  â”‚  â”‚    â”‚
+â”‚  â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â”‚    â”‚
+â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜    â”‚
+â”‚                         â”‚
+â”‚  + Thank You Card       â”‚  â† Personal touch
+â”‚  + 2 Stickers           â”‚  â† Fun extras
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ### Ideas to Level Up
@@ -82,7 +82,7 @@ Two best friends, Charlie and Martina, love doing hair and makeup at school. The
 - Space for a personal message: "Made with love for [customer name]!"
 
 **Sticker Ideas:**
-- Divine Lips logo sticker
+- GlimmerBliss logo sticker
 - Lip-shaped sticker
 - Fun quote stickers ("You're glossy!" / "Stay Divine")
 - Collectible stickers (different ones each order = people want them all!)
@@ -227,7 +227,7 @@ Two best friends, Charlie and Martina, love doing hair and makeup at school. The
 7. [ ] Choose selling platform
 8. [ ] Set up shop
 9. [ ] Create social media accounts
-10. [ ] First sale! 🎉
+10. [ ] First sale! ðŸŽ‰
 
 ---
 
@@ -239,9 +239,9 @@ Two best friends, Charlie and Martina, love doing hair and makeup at school. The
 4. What should the logo look like?
 5. What's the story behind "3am Thoughts"?
 6. Fun facts about yourselves for the About page?
-7. What's your dream for Divine Lips?
+7. What's your dream for GlimmerBliss?
 
 ---
 
 *Document created December 2025*
-*Let's make Divine Lips happen!*
+*Let's make GlimmerBliss happen!*
