@@ -70,11 +70,29 @@ function setupThumbnails() {
   });
 }
 
+// Welcome screen: reveal the whole site when "Shop Now" is pressed
+function setupEnterShop() {
+  const enterShop = document.getElementById('enterShop');
+  if (enterShop) {
+    enterShop.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.body.classList.remove('intro');
+      document.body.classList.add('shop-open');
+      const target = document.getElementById('products');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+}
+
 // Smooth scroll for anchor links
 function setupSmoothScroll() {
   const links = document.querySelectorAll('a[href^="#"]');
   links.forEach(link => {
     link.addEventListener('click', function(e) {
+      // The welcome "Shop Now" button has its own handler
+      if (this.id === 'enterShop') return;
       const href = this.getAttribute('href');
       if (href !== '#') {
         e.preventDefault();
@@ -116,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Setup other interactions
+  setupEnterShop();
   setupOptionButtons();
   setupThumbnails();
   setupSmoothScroll();

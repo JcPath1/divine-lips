@@ -6,7 +6,7 @@
   <title>Glimmer Bliss - Handmade Lip Gloss by Charlie & Martina</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="intro">
 
   <!-- Announcement Bar -->
   <div class="announcement-bar">
@@ -32,11 +32,19 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Welcome Screen) -->
   <section class="hero">
-    <h1>Stay Glossy, Stay Blissful</h1>
-    <p>Handmade lip glosses crafted with love by best friends Charlie & Martina</p>
-    <a href="#products" class="hero-btn">Shop Now</a>
+    <div class="tagline-stripe">Handmade lip glosses crafted with love by Charlie</div>
+    <a href="#products" class="hero-btn" id="enterShop">Shop Now</a>
+
+    <!-- Advertisement (real video) -->
+    <div class="video-ad">
+      <div class="video-ad-top">🎬 GlimmerBliss</div>
+      <video class="video-ad-player" controls autoplay muted loop playsinline poster="images/bottle.png">
+        <source src="videos/glimmerbliss-ad.mp4" type="video/mp4">
+        Your video will play here once it's added!
+      </video>
+    </div>
   </section>
 
   <!-- Promo Banners -->
@@ -44,20 +52,20 @@
     <div class="promo-grid">
 
       <!-- Limited Edition Banner -->
-      <a href="products/3am-thoughts.html" class="promo-banner limited-edition">
+      <a href="products/glimmer-life.html" class="promo-banner limited-edition">
         <div class="promo-content">
           <span class="promo-badge">Limited Edition</span>
-          <h3 class="promo-title">3am Thoughts</h3>
-          <p class="promo-subtitle">For those late night vibes. Get it before it's gone!</p>
+          <h3 class="promo-title">Glimmer Life</h3>
+          <p class="promo-subtitle">Color-changing clear to baby pink. Get it before it's gone!</p>
           <span class="promo-btn">Shop Now</span>
         </div>
-        <span class="promo-emoji">🌙</span>
+        <span class="promo-emoji">✨</span>
       </a>
 
       <!-- Core Collection Banner -->
       <a href="#products" class="promo-banner core-collection">
         <div class="promo-content">
-          <span class="promo-badge">8 Flavors</span>
+          <span class="promo-badge">5 Flavors</span>
           <h3 class="promo-title">The Collection</h3>
           <p class="promo-subtitle">From fruity to cozy - find your perfect gloss!</p>
           <span class="promo-btn">Explore All</span>
@@ -94,67 +102,40 @@
           <div class="product-info">
             <h3>Cherry Pop</h3>
             <p class="price">$12.00</p>
-            <p class="flavor">Bold cherry flavor</p>
+            <p class="flavor">Bold cherry color</p>
           </div>
         </a>
 
-        <!-- Lemon Lime -->
-        <a href="products/lemon-lime.html" class="product-card">
-          <div class="product-image lemon-lime"><img src="images/bottle.png" alt="GlimmerBliss lip gloss"></div>
+        <!-- Red Power -->
+        <a href="products/red-power.html" class="product-card">
+          <div class="product-image red-power"><img src="images/bottle.png" alt="GlimmerBliss lip gloss"></div>
           <div class="product-info">
-            <h3>Lemon Lime</h3>
+            <h3>Red Power</h3>
             <p class="price">$12.00</p>
-            <p class="flavor">Fresh citrus zing</p>
+            <p class="flavor">Bold and fearless red</p>
           </div>
         </a>
 
-        <!-- Vanilla Vibes -->
-        <a href="products/vanilla-vibes.html" class="product-card">
-          <div class="product-image vanilla-vibes"><img src="images/bottle.png" alt="GlimmerBliss lip gloss"></div>
+        <!-- Crystal Kiss -->
+        <a href="products/crystal-kiss.html" class="product-card">
+          <div class="product-image crystal-kiss"><img src="images/bottle.png" alt="GlimmerBliss lip gloss"></div>
           <div class="product-info">
-            <h3>Vanilla Vibes</h3>
+            <h3>Crystal Kiss</h3>
             <p class="price">$12.00</p>
-            <p class="flavor">Smooth vanilla cream</p>
+            <p class="flavor">Pink with a sparkly shine</p>
           </div>
         </a>
 
-        <!-- Berry Breeze -->
-        <a href="products/berry-breeze.html" class="product-card">
-          <div class="product-image berry-breeze"><img src="images/bottle.png" alt="GlimmerBliss lip gloss"></div>
-          <div class="product-info">
-            <h3>Berry Breeze</h3>
-            <p class="price">$12.00</p>
-            <p class="flavor">Mixed berry sweetness</p>
+        <!-- Glimmer Life (Limited Edition) -->
+        <a href="products/glimmer-life.html" class="product-card">
+          <div class="product-image glimmer-life">
+            <span class="limited-badge">Limited Edition</span>
+            <img src="images/bottle.png" alt="GlimmerBliss lip gloss">
           </div>
-        </a>
-
-        <!-- Rainy Days -->
-        <a href="products/rainy-days.html" class="product-card">
-          <div class="product-image rainy-days"><img src="images/bottle.png" alt="GlimmerBliss lip gloss"></div>
           <div class="product-info">
-            <h3>Rainy Days</h3>
-            <p class="price">$12.00</p>
-            <p class="flavor">Soft, cozy scent</p>
-          </div>
-        </a>
-
-        <!-- Sun Flower -->
-        <a href="products/sun-flower.html" class="product-card">
-          <div class="product-image sun-flower"><img src="images/bottle.png" alt="GlimmerBliss lip gloss"></div>
-          <div class="product-info">
-            <h3>Sun Flower</h3>
-            <p class="price">$12.00</p>
-            <p class="flavor">Warm, sunny sweetness</p>
-          </div>
-        </a>
-
-        <!-- Iced Matcha Latte -->
-        <a href="products/iced-matcha.html" class="product-card">
-          <div class="product-image iced-matcha"><img src="images/bottle.png" alt="GlimmerBliss lip gloss"></div>
-          <div class="product-info">
-            <h3>Iced Matcha Latte</h3>
-            <p class="price">$12.00</p>
-            <p class="flavor">Trendy matcha flavor</p>
+            <h3>Glimmer Life</h3>
+            <p class="price">$15.00</p>
+            <p class="flavor">Clear, then turns baby pink!</p>
           </div>
         </a>
 
@@ -204,7 +185,7 @@
       <div class="footer-section">
         <h4>Shop</h4>
         <a href="#products">All Products</a>
-        <a href="products/3am-thoughts.html">Limited Edition</a>
+        <a href="products/glimmer-life.html">Limited Edition</a>
         <a href="#">Best Sellers</a>
       </div>
       <div class="footer-section">
