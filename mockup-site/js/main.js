@@ -56,9 +56,11 @@ function setupOptionButtons() {
   });
 }
 
-// Thumbnail image selection
+// Thumbnail image selection - clicking a small photo shows it in the big frame
 function setupThumbnails() {
   const thumbnails = document.querySelectorAll('.thumbnail');
+  const mainImg = document.getElementById('mainImageImg');
+
   thumbnails.forEach(thumb => {
     thumb.addEventListener('click', function() {
       // Remove active from siblings
@@ -66,6 +68,12 @@ function setupThumbnails() {
       siblings.forEach(sib => sib.classList.remove('active'));
       // Add active to clicked
       this.classList.add('active');
+
+      // Swap the big picture
+      const full = this.getAttribute('data-full');
+      if (full && mainImg) {
+        mainImg.src = full;
+      }
     });
   });
 }
