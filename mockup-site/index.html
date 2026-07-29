@@ -3,10 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glimmer Bliss - Handmade Lip Gloss by Charlie & Martina</title>
+  <title>Glimmer Bliss - Handmade Lip Gloss by Charlie Mae</title>
   <link rel="stylesheet" href="css/styles.css">
+
+  <meta name="description" content="Handmade lip gloss in small batches by Charlie Mae. Five vanilla-flavored shades with lip-safe ingredients, from $12. Free shipping over $30 or free local pickup.">
+  <link rel="canonical" href="https://glimmerbliss.com/">
+
+  <!-- How this page looks when shared to social media -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Glimmer Bliss">
+  <meta property="og:title" content="Glimmer Bliss - Handmade Lip Gloss by Charlie Mae">
+  <meta property="og:description" content="Handmade lip gloss in small batches by Charlie Mae. Five vanilla-flavored shades with lip-safe ingredients, from $12. Free shipping over $30 or free local pickup.">
+  <meta property="og:url" content="https://glimmerbliss.com/">
+  <meta property="og:image" content="https://glimmerbliss.com/images/group-photo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Glimmer Bliss - Handmade Lip Gloss by Charlie Mae">
+  <meta name="twitter:description" content="Handmade lip gloss in small batches by Charlie Mae. Five vanilla-flavored shades with lip-safe ingredients, from $12. Free shipping over $30 or free local pickup.">
+  <meta name="twitter:image" content="https://glimmerbliss.com/images/group-photo.jpg">
+
+  <!-- Tells Google who runs this shop -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Glimmer Bliss",
+  "url": "https://glimmerbliss.com/",
+  "logo": "https://glimmerbliss.com/images/logo.png",
+  "description": "Handmade lip gloss made in small batches by Charlie Mae.",
+  "founder": {
+    "@type": "Person",
+    "name": "Charlie Mae"
+  }
+}
+  </script>
 </head>
-<body class="intro">
+<body>
 
   <!-- Announcement Bar -->
   <div class="announcement-bar">
@@ -21,7 +52,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="#products">Shop</a></li>
         <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
       <div class="nav-icons">
         <div class="cart-icon" id="cartIcon">
@@ -32,63 +63,66 @@
     </nav>
   </header>
 
-  <!-- Hero Section (Welcome Screen) -->
-  <section class="hero">
-    <div class="tagline-stripe">Handmade lip glosses crafted with love by Charlie</div>
-    <a href="#products" class="hero-btn" id="enterShop">Shop Now</a>
+  <!--
+    PARKED FOR LATER - the rotating photo gallery ad.
+    All its styles (.photo-ad*) and its script (setupPhotoAd) are still in
+    place, so pasting this block back onto any page makes it work again.
 
-    <!-- Advertisement (real video) -->
-    <div class="video-ad">
-      <div class="video-ad-top">🎬 GlimmerBliss</div>
-      <video class="video-ad-player" controls autoplay muted loop playsinline poster="images/group-photo.jpg">
-        <source src="videos/glimmerbliss-ad.mp4" type="video/mp4">
-        Your video will play here once it's added!
-      </video>
+    <div class="photo-ad" id="photoAd">
+      <div class="photo-ad-top">GlimmerBliss</div>
+      <div class="photo-ad-stage">
+        <img class="photo-ad-slide is-on" src="images/group-photo.jpg" alt="All five GlimmerBliss glosses" data-caption="The whole collection">
+        <img class="photo-ad-slide" src="images/pink-paradise.jpg" alt="Pink Paradise" data-caption="Pink Paradise">
+        <img class="photo-ad-slide" src="images/pink-paradise-side.jpg" alt="Pink Paradise side view" data-caption="Pink Paradise">
+        <img class="photo-ad-slide" src="images/true-love.jpg" alt="True Love" data-caption="True Love">
+        <img class="photo-ad-slide" src="images/true-love-side.jpg" alt="True Love side view" data-caption="True Love">
+        <img class="photo-ad-slide" src="images/gloss-angeles.jpg" alt="Gloss Angeles" data-caption="Gloss Angeles">
+        <img class="photo-ad-slide" src="images/gloss-angeles-side.jpg" alt="Gloss Angeles side view" data-caption="Gloss Angeles">
+        <img class="photo-ad-slide" src="images/sugar-cookie.jpg" alt="Sugar Cookie" data-caption="Sugar Cookie">
+        <img class="photo-ad-slide" src="images/sugar-cookie-side.jpg" alt="Sugar Cookie side view" data-caption="Sugar Cookie">
+        <img class="photo-ad-slide" src="images/glimmer-kiss.jpg" alt="Glimmer Kiss" data-caption="Glimmer Kiss">
+        <img class="photo-ad-slide" src="images/glimmer-kiss-side.jpg" alt="Glimmer Kiss side view" data-caption="Glimmer Kiss">
+        <img class="photo-ad-slide" src="images/group-photo-2.jpg" alt="All five GlimmerBliss glosses" data-caption="Made by hand">
+        <span class="photo-ad-caption" id="photoAdCaption">The whole collection</span>
+      </div>
+      <div class="photo-ad-dots" id="photoAdDots"></div>
     </div>
-  </section>
+  -->
 
-  <!-- Promo Banners -->
+  <!-- Limited Edition Advertisement -->
   <section class="promo-section">
-    <div class="promo-grid">
-
-      <!-- Limited Edition Banner -->
-      <a href="products/glimmer-kiss.html" class="promo-banner limited-edition">
-        <div class="promo-content">
-          <span class="promo-badge">Limited Edition</span>
-          <h3 class="promo-title">Glimmer Kiss</h3>
-          <p class="promo-subtitle">Color-changing clear to baby pink. Get it before it's gone!</p>
-          <span class="promo-btn">Shop Now</span>
-        </div>
-        <span class="promo-emoji">✨</span>
-      </a>
-
-      <!-- Core Collection Banner -->
-      <a href="#products" class="promo-banner core-collection">
-        <div class="promo-content">
-          <span class="promo-badge">5 Flavors</span>
-          <h3 class="promo-title">The Collection</h3>
-          <p class="promo-subtitle">From fruity to cozy - find your perfect gloss!</p>
-          <span class="promo-btn">Explore All</span>
-        </div>
-        <span class="promo-emoji">💖</span>
-      </a>
-
-    </div>
+    <a href="products/glimmer-kiss.html" class="promo-banner limited-edition">
+      <div class="promo-photo">
+        <video autoplay muted loop playsinline poster="images/glimmer-kiss.jpg"
+               aria-label="Glimmer Kiss lip gloss sparkling under rainbow lights">
+          <source src="videos/glimmer-kiss-rainbow.mp4" type="video/mp4">
+          <img src="images/glimmer-kiss.jpg" alt="Glimmer Kiss limited edition lip gloss">
+        </video>
+      </div>
+      <div class="promo-content">
+        <span class="promo-badge">Limited Edition</span>
+        <h3 class="promo-title">Glimmer Kiss</h3>
+        <p class="promo-subtitle">
+          Goes on completely clear, then turns a custom pink made just for you -
+          the shade comes from your own natural pH, so no two people get the same one.
+          Glossy, lightweight, and full of tiny sparkles. Only a few made!
+        </p>
+        <p class="promo-price">$15.00</p>
+        <span class="promo-btn">Click Here to Buy</span>
+      </div>
+    </a>
   </section>
+
+  <h1 class="tagline-stripe">Handmade Lip Gloss, Crafted with Love by Charlie Mae</h1>
 
   <!-- Products Section -->
   <section id="products">
-    <div class="section-title">
-      <h2>Shop All Glosses</h2>
-      <p>Each gloss is handmade with love in small batches</p>
-    </div>
-
     <div class="products-section">
       <div class="product-grid">
 
         <!-- Pink Paradise -->
         <a href="products/pink-paradise.html" class="product-card">
-          <div class="product-image pink-paradise"><img src="images/pink-paradise.jpg" alt="GlimmerBliss lip gloss"></div>
+          <div class="product-image pink-paradise"><img src="images/pink-paradise.jpg" alt="Pink Paradise pink lip gloss in a clear square bottle with a white cap" loading="lazy" width="1272" height="1272"></div>
           <div class="product-info">
             <h3>Pink Paradise</h3>
             <p class="price">$12.00</p>
@@ -98,7 +132,7 @@
 
         <!-- True Love -->
         <a href="products/true-love.html" class="product-card">
-          <div class="product-image true-love"><img src="images/true-love.jpg" alt="GlimmerBliss lip gloss"></div>
+          <div class="product-image true-love"><img src="images/true-love.jpg" alt="True Love red lip gloss in a clear square bottle with a white cap" loading="lazy" width="1272" height="1272"></div>
           <div class="product-info">
             <h3>True Love</h3>
             <p class="price">$12.00</p>
@@ -106,19 +140,19 @@
           </div>
         </a>
 
-        <!-- Gloss Angels -->
-        <a href="products/gloss-angels.html" class="product-card">
-          <div class="product-image gloss-angels"><img src="images/gloss-angels.jpg" alt="GlimmerBliss lip gloss"></div>
+        <!-- Gloss Angeles -->
+        <a href="products/gloss-angeles.html" class="product-card">
+          <div class="product-image gloss-angeles"><img src="images/gloss-angeles.jpg" alt="Gloss Angeles clear lip gloss in a square bottle with a white cap" loading="lazy" width="1272" height="1272"></div>
           <div class="product-info">
-            <h3>Gloss Angels</h3>
+            <h3>Gloss Angeles</h3>
             <p class="price">$12.00</p>
-            <p class="flavor">Soft, shiny and angel sweet</p>
+            <p class="flavor">City shine, sunny and clear</p>
           </div>
         </a>
 
         <!-- Sugar Cookie -->
         <a href="products/sugar-cookie.html" class="product-card">
-          <div class="product-image sugar-cookie"><img src="images/sugar-cookie.jpg" alt="GlimmerBliss lip gloss"></div>
+          <div class="product-image sugar-cookie"><img src="images/sugar-cookie.jpg" alt="Sugar Cookie brown lip gloss in a clear square bottle with a white cap" loading="lazy" width="1272" height="1272"></div>
           <div class="product-info">
             <h3>Sugar Cookie</h3>
             <p class="price">$12.00</p>
@@ -126,50 +160,70 @@
           </div>
         </a>
 
-        <!-- Glimmer Kiss (Limited Edition) -->
-        <a href="products/glimmer-kiss.html" class="product-card">
-          <div class="product-image glimmer-kiss">
-            <span class="limited-badge">Limited Edition</span>
-            <img src="images/glimmer-kiss.jpg" alt="GlimmerBliss lip gloss">
-          </div>
-          <div class="product-info">
-            <h3>Glimmer Kiss</h3>
-            <p class="price">$15.00</p>
-            <p class="flavor">Clear, then turns baby pink!</p>
-          </div>
-        </a>
-
       </div>
     </div>
   </section>
 
+  <!--
+    PARKED FOR LATER - the "Getting Your Gloss" shipping and pickup section.
+    Its styles (.shipping-*) are still in the stylesheet, so pasting this block
+    back in makes it work again. If you do, change the footer "Shipping Info"
+    links back to #shipping (or ../index.html#shipping on the gloss pages).
+
+    <section id="shipping" class="shipping-section">
+      <div class="shipping-inner">
+        <h2>Getting Your Gloss</h2>
+        <div class="shipping-grid">
+
+          <div class="shipping-card">
+            <span class="shipping-icon">Box</span>
+            <h4>Ship it to me</h4>
+            <p class="shipping-cost">$5 flat</p>
+            <p>Any size order ships for the same $5 - and it's <strong>free once you spend $30</strong>. That's just three glosses!</p>
+          </div>
+
+          <div class="shipping-card">
+            <span class="shipping-icon">Handshake</span>
+            <h4>Local pickup</h4>
+            <p class="shipping-cost">FREE</p>
+            <p>Nearby? Skip the postage. We'll arrange a safe local meet-up spot and hand it to you in person.</p>
+          </div>
+
+        </div>
+        <p class="shipping-note">Every order is packed by hand and sent out with care.</p>
+      </div>
+    </section>
+  -->
+
   <!-- About Section -->
   <section id="about" class="about-section">
     <div class="about-content">
-      <h2>Meet the Founders</h2>
+      <h2>Meet the Founder</h2>
       <p>
-        Glimmer Bliss was born from a friendship and a shared love of all things beauty.
-        We're Charlie and Martina, two best friends who love doing makeup, hair, and skincare.
+        Hi! I'm Charlie Mae, and Glimmer Bliss is mine. I have always loved doing makeup
+        and hair, and I'm the girl who reads the back of every skincare bottle to see
+        what's really inside it.
       </p>
       <p>
-        We started making lip glosses as a fun project, and everyone kept asking where they could buy them.
-        So we decided to share our creations with the world!
+        One day I wondered if I could make a lip gloss myself instead of just buying one.
+        My first tries were messy. Some were too sticky, some were too runny, and a few
+        went straight in the bin. But I kept going until I had one I loved - and then my
+        friends kept asking me to make them one too.
       </p>
       <p>
-        Every gloss is handmade by us with love and care. We pick the flavors, mix the colors,
-        and pack each order ourselves. When you buy from Glimmer Bliss, you're supporting two young entrepreneurs!
+        So I turned it into a real little business. I pick every color and flavor, mix each
+        batch by hand, and pack every order myself. When you buy a Glimmer Bliss gloss,
+        you're not buying it from a big factory - you're buying it from me. Thank you for
+        believing in a kid with a big idea!
       </p>
 
       <div class="founders">
         <div class="founder">
-          <div class="founder-avatar">👧</div>
-          <h4>Charlie</h4>
-          <p>Co-Founder</p>
-        </div>
-        <div class="founder">
-          <div class="founder-avatar">👧</div>
-          <h4>Martina</h4>
-          <p>Co-Founder</p>
+          <div class="founder-avatar has-photo">
+            <img src="images/charlie-mae-avatar.svg" alt="Cartoon avatar of Charlie Mae, founder of Glimmer Bliss" width="150" height="150">
+          </div>
+          <h4>Charlie Mae</h4>
+          <p>Founder</p>
         </div>
       </div>
     </div>
@@ -180,7 +234,7 @@
     <div class="footer-content">
       <div class="footer-section">
         <h4>Glimmer Bliss</h4>
-        <p style="color: #aaa;">Handmade lip glosses crafted with love by Charlie & Martina.</p>
+        <p style="color: #aaa;">Handmade lip glosses crafted with love by Charlie Mae.</p>
       </div>
       <div class="footer-section">
         <h4>Shop</h4>
@@ -190,19 +244,24 @@
       </div>
       <div class="footer-section">
         <h4>Help</h4>
-        <a href="#">Shipping Info</a>
-        <a href="#">Returns</a>
-        <a href="#">FAQ</a>
+        <a href="shipping.html">Shipping Info</a>
+        <a href="returns.html">Returns</a>
+        <a href="faq.html">FAQ</a>
       </div>
-      <div class="footer-section">
+      <!--
+        PARKED FOR LATER - the "Follow Us" footer links.
+        Delete these comment marks to bring them back.
+
+        <div class="footer-section">
         <h4>Follow Us</h4>
         <a href="#">Instagram</a>
         <a href="#">TikTok</a>
         <a href="#">Pinterest</a>
       </div>
+      -->
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Glimmer Bliss. Made with 💖 by Charlie & Martina</p>
+      <p>&copy; 2025 Glimmer Bliss. Made with 💖 by Charlie Mae</p>
     </div>
   </footer>
 

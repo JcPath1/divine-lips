@@ -175,38 +175,98 @@ body.intro .hero {
   background: var(--primary-pink);
   color: white;
   font-family: var(--font-accent);
-  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
   font-weight: 600;
-  padding: 25px 30px;
+  padding: 22px 30px;
   border-radius: 16px;
-  max-width: 800px;
-  margin: 0 auto 30px;
+  max-width: 960px;
+  margin: 20px auto 0;
   line-height: 1.3;
+  text-align: center;
 }
 
-/* Fun "video" ad on the welcome screen */
-.video-ad {
-  max-width: 900px;
-  margin: 50px auto 0;
-  border-radius: 20px;
+/* Little photo-gallery ad on the welcome screen - rotates by itself */
+.photo-ad {
+  width: 300px;
+  max-width: 80vw;
+  margin: 0 auto 35px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
-.video-ad-top {
+.photo-ad-top {
   background: #1a1a1a;
   color: white;
-  padding: 12px;
+  padding: 9px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   letter-spacing: 0.5px;
 }
 
-.video-ad-player {
-  display: block;
+.photo-ad-stage {
+  position: relative;
   width: 100%;
-  height: auto;
-  background: #000;
+  aspect-ratio: 1;
+  background: #b4bcd0;
+}
+
+.photo-ad-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.photo-ad-slide.is-on {
+  opacity: 1;
+}
+
+.photo-ad-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 22px 12px 10px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.photo-ad-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  background: var(--white);
+}
+
+.photo-ad-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: #d8d8de;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.photo-ad-dot.is-on {
+  background: var(--primary-pink);
+  transform: scale(1.35);
+}
+
+/* Someone has asked for less motion - hold on one photo instead */
+@media (prefers-reduced-motion: reduce) {
+  .photo-ad-slide {
+    transition: none;
+  }
 }
 
 /* Everything pops up when "Shop Now" is pressed */
@@ -257,23 +317,17 @@ body.shop-open .footer {
 
 /* ===== PROMO BANNERS ===== */
 .promo-section {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.promo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  padding: 40px 20px 20px;
 }
 
 .promo-banner {
   border-radius: 16px;
-  padding: 40px 30px;
+  padding: 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 35px;
   text-decoration: none;
   transition: transform 0.3s, box-shadow 0.3s;
   overflow: hidden;
@@ -290,13 +344,36 @@ body.shop-open .footer {
   color: white;
 }
 
-.promo-banner.core-collection {
-  background: linear-gradient(135deg, #ff69b4 0%, #ff85c1 50%, #ffb6c1 100%);
-  color: white;
+/* The bottle video inside the advertisement.
+   Kept portrait (9:16) to match the filmed clip - a square frame would chop
+   the cap off the top and the base off the bottom. */
+.promo-photo {
+  flex: 0 0 205px;
+  width: 205px;
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  z-index: 2;
+}
+
+.promo-photo img,
+.promo-photo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .promo-content {
   z-index: 2;
+  flex: 1;
+}
+
+.promo-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 18px;
 }
 
 .promo-badge {
@@ -316,35 +393,31 @@ body.shop-open .footer {
 }
 
 .promo-title {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-family: var(--font-accent);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .promo-subtitle {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   opacity: 0.9;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  line-height: 1.5;
 }
 
 .promo-btn {
   display: inline-block;
-  background: white;
-  color: var(--black);
-  padding: 10px 24px;
-  border-radius: 25px;
-  font-size: 0.9rem;
+  background: var(--primary-pink);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 1.05rem;
   font-weight: 600;
   transition: transform 0.2s;
 }
 
 .promo-banner:hover .promo-btn {
   transform: scale(1.05);
-}
-
-.promo-emoji {
-  font-size: 4rem;
-  z-index: 2;
 }
 
 .promo-banner::before {
@@ -362,13 +435,14 @@ body.shop-open .footer {
 .products-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px 60px;
+  padding: 45px 20px 60px;
 }
 
+/* Four glosses in the collection - one tidy row on a big screen */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 35px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
 }
 
 .product-card {
@@ -398,7 +472,7 @@ body.shop-open .footer {
 
 .product-image.pink-paradise { background: #ffffff; }
 .product-image.true-love { background: #ffffff; }
-.product-image.gloss-angels { background: #ffffff; }
+.product-image.gloss-angeles { background: #ffffff; }
 .product-image.sugar-cookie { background: #ffffff; }
 .product-image.glimmer-kiss { background: #ffffff; }
 
@@ -531,6 +605,17 @@ body.shop-open .footer {
   display: block;
 }
 
+/* Every gloss is vanilla now, so this is a fact rather than a choice */
+.option-note {
+  display: inline-block;
+  background: var(--soft-pink);
+  border: 2px solid var(--light-pink);
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: var(--black);
+  font-size: 0.95rem;
+}
+
 .option-buttons {
   display: flex;
   gap: 10px;
@@ -640,13 +725,397 @@ body.shop-open .footer {
   margin: 0 auto 10px;
 }
 
+/* A real photo gets a bigger circle and a soft pink ring */
+.founder-avatar.has-photo {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border: 4px solid var(--white);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  margin-bottom: 14px;
+}
+
+.founder-avatar.has-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .founder h4 {
-  font-size: 0.9rem;
+  font-size: 1.15rem;
 }
 
 .founder p {
   color: var(--gray);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* ===== SHIPPING & PICKUP ===== */
+.shipping-section {
+  background: var(--light-gray);
+  padding: 55px 20px;
+}
+
+.shipping-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.shipping-inner h2 {
+  font-size: 2rem;
+  font-family: var(--font-accent);
+  margin-bottom: 30px;
+}
+
+.shipping-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.shipping-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 30px 25px;
+}
+
+.shipping-icon {
+  font-size: 2.4rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.shipping-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.shipping-cost {
+  color: var(--primary-pink);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.shipping-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.shipping-note {
+  margin-top: 22px;
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* Small print under the delivery buttons on a product page */
+.option-hint {
+  margin-top: 10px;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+/* ===== POLICY & FAQ PAGES ===== */
+.policy-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 45px 20px 70px;
+}
+
+.policy-page h1 {
+  font-size: 2.4rem;
+  font-family: var(--font-accent);
+  margin-bottom: 6px;
+}
+
+.policy-page h2 {
+  font-size: 1.35rem;
+  margin: 34px 0 10px;
+}
+
+.policy-page p {
+  color: #333;
+  margin-bottom: 14px;
+}
+
+.policy-updated {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.policy-list {
+  margin: 0 0 16px 22px;
+  color: #333;
+}
+
+.policy-list li {
+  margin-bottom: 8px;
+}
+
+.policy-page a {
+  color: var(--dark-pink);
+  text-decoration: underline;
+}
+
+/* Loud reminder that these pages still need a grown-up's eyes */
+.draft-banner {
+  background: #fff8e1;
+  border: 2px solid #f0c000;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Anything still needing a real answer */
+.fill-in {
+  background: #ffe9a8;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.faq-search {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 2px solid #e3e3e8;
+  border-radius: 30px;
+  margin-bottom: 8px;
+}
+
+.faq-search:focus {
+  outline: none;
+  border-color: var(--primary-pink);
+}
+
+.faq-empty {
+  color: var(--gray);
+  font-size: 0.9rem;
+  padding: 10px 4px;
+}
+
+.faq-group {
+  font-size: 1.1rem;
+  color: var(--dark-pink);
+  margin: 32px 0 12px;
+}
+
+.faq-item {
+  border: 1px solid #e8e8ee;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 15px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  position: relative;
+  padding-right: 45px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-pink);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.faq-item[open] summary::after {
+  content: '\2013';
+}
+
+.faq-item summary:hover {
+  background: var(--soft-pink);
+}
+
+.faq-item p {
+  padding: 0 18px 16px;
+  margin: 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ===== HELP ASSISTANT ===== */
+.helper {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.helper-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--primary-pink);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 11px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+  transition: transform 0.2s;
+}
+
+.helper-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.helper-toggle-icon {
+  font-size: 1.1rem;
+}
+
+.helper-panel {
+  width: 285px;
+  max-width: calc(100vw - 40px);
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  order: -1;
+}
+
+/* Must be stated explicitly: this stylesheet's display:flex would otherwise
+   beat the browser's built-in [hidden] rule and the panel could never close */
+.helper-panel[hidden] {
+  display: none;
+}
+
+.helper-head {
+  background: var(--primary-pink);
+  color: white;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.helper-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.helper-log {
+  padding: 12px;
+  height: 200px;
+  overflow-y: auto;
+  background: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.helper-msg {
+  max-width: 88%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.83rem;
+  line-height: 1.45;
+}
+
+.helper-bot {
+  background: var(--white);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.helper-you {
+  background: var(--primary-pink);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.helper-msg a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.helper-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 12px 0;
+}
+
+.helper-chip {
+  background: var(--soft-pink);
+  border: 1px solid var(--light-pink);
+  color: var(--dark-pink);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.helper-chip:hover {
+  background: var(--light-pink);
+  color: var(--white);
+}
+
+.helper-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+}
+
+.helper-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border: 2px solid #e3e3e8;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.helper-form input:focus {
+  outline: none;
+  border-color: var(--primary-pink);
+}
+
+.helper-form button {
+  background: var(--primary-pink);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 /* ===== FOOTER ===== */
@@ -733,25 +1202,31 @@ body.shop-open .footer {
     font-size: 2rem;
   }
 
-  .promo-grid {
-    grid-template-columns: 1fr;
+  /* Advertisement stacks: photo on top, words underneath */
+  .promo-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+    gap: 20px;
   }
 
-  .promo-banner {
-    padding: 30px 20px;
+  .promo-photo {
+    flex: none;
+    width: 100%;
+    max-width: 200px;
   }
 
   .promo-title {
-    font-size: 1.4rem;
-  }
-
-  .promo-emoji {
-    font-size: 3rem;
+    font-size: 1.8rem;
   }
 
   .product-grid {
     grid-template-columns: 1fr;
     gap: 25px;
+  }
+
+  .shipping-grid {
+    grid-template-columns: 1fr;
   }
 
   .section-title h2 {
@@ -770,5 +1245,12 @@ body.shop-open .footer {
   .founders {
     flex-direction: row;
     gap: 25px;
+  }
+}
+
+/* Medium screens - two glosses per row instead of four */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

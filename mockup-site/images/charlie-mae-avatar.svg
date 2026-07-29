@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img"
+     aria-label="Cartoon avatar of Charlie Mae, founder of Glimmer Bliss">
+  <title>Charlie Mae, founder of Glimmer Bliss</title>
+
+  <defs>
+    <!-- Soft pink backdrop, same family as the brand pink -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#ffe3f0"/>
+      <stop offset="100%" stop-color="#ffc2dd"/>
+    </linearGradient>
+
+    <linearGradient id="hairLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#b98a5c"/>
+      <stop offset="100%" stop-color="#8a6140"/>
+    </linearGradient>
+
+    <linearGradient id="top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#c21f38"/>
+      <stop offset="100%" stop-color="#96162a"/>
+    </linearGradient>
+
+    <clipPath id="frame">
+      <circle cx="120" cy="120" r="120"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+
+    <rect width="240" height="240" fill="url(#bg)"/>
+
+    <!-- Hair behind the shoulders -->
+    <path d="M52 128c-4-52 24-84 68-84s72 32 68 84c-2 30-8 52-12 74H64c-4-22-10-44-12-74z"
+          fill="#6b4830"/>
+
+    <!-- Shoulders in her red top -->
+    <path d="M120 176c34 0 62 20 68 44v20H52v-20c6-24 34-44 68-44z" fill="url(#top)"/>
+    <!-- Sparkly strap details -->
+    <path d="M96 182l14 26M144 182l-14 26" stroke="#f4dce2" stroke-width="5"
+          stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Neck -->
+    <path d="M104 150h32v30c0 9-32 9-32 0z" fill="#e8b189"/>
+
+    <!-- Face -->
+    <ellipse cx="120" cy="112" rx="42" ry="49" fill="#f3c9a6"/>
+
+    <!-- Ears -->
+    <ellipse cx="79"  cy="115" rx="7" ry="10" fill="#eab98f"/>
+    <ellipse cx="161" cy="115" rx="7" ry="10" fill="#eab98f"/>
+
+    <!-- Front hair: side part, wavy, framing the face -->
+    <path d="M120 58c-30 0-46 20-47 44 6-14 12-22 22-27 6 12 30 18 52 12 8-2 14-6 18-11
+             2 9 4 17 6 26 3-25-14-44-51-44z" fill="url(#hairLight)"/>
+    <path d="M74 100c-6 26-2 46 4 62 2-20 2-38 6-52 2-6-6-12-10-10z" fill="#6b4830"/>
+    <path d="M166 100c6 26 2 46-4 62-2-20-2-38-6-52-2-6 6-12 10-10z" fill="#6b4830"/>
+
+    <!-- Eyebrows -->
+    <path d="M98 100c6-5 16-5 22-1" stroke="#5a3c28" stroke-width="4.5"
+          stroke-linecap="round" fill="none"/>
+    <path d="M142 99c-6-5-16-5-22-1" stroke="#5a3c28" stroke-width="4.5"
+          stroke-linecap="round" fill="none"/>
+
+    <!-- Eyes -->
+    <ellipse cx="105" cy="115" rx="6"   ry="7"   fill="#4a3728"/>
+    <ellipse cx="135" cy="115" rx="6"   ry="7"   fill="#4a3728"/>
+    <circle  cx="107" cy="113" r="2.2"           fill="#ffffff"/>
+    <circle  cx="137" cy="113" r="2.2"           fill="#ffffff"/>
+
+    <!-- Blush -->
+    <ellipse cx="94"  cy="130" rx="9" ry="6" fill="#f3968f" opacity="0.45"/>
+    <ellipse cx="146" cy="130" rx="9" ry="6" fill="#f3968f" opacity="0.45"/>
+
+    <!-- Nose -->
+    <path d="M120 122v7" stroke="#dda87f" stroke-width="3.5"
+          stroke-linecap="round" fill="none"/>
+
+    <!-- Smile, in Glimmer Bliss pink -->
+    <path d="M108 139c5 7 19 7 24 0" stroke="#e0567f" stroke-width="4.5"
+          stroke-linecap="round" fill="none"/>
+
+    <!-- A little glimmer, because of course -->
+    <path d="M182 62l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" fill="#ffffff" opacity="0.9"/>
+    <path d="M56 78l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#ffffff" opacity="0.75"/>
+  </g>
+</svg>
