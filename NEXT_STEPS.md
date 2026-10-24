@@ -1,6 +1,6 @@
 # Glimmer Bliss — Where We Left Off
 
-**Last worked on: 29 July 2026**
+**Last worked on: 24 October 2026**
 This file is in the repo root, NOT in `docs/`, so it is not published on the website.
 
 ---
@@ -116,6 +116,30 @@ You already own the domain, which affects the answer.
 
 ---
 
+## What changed on 24 October 2026 (Charlie + Dad session)
+
+- **Glimmer Kiss** page has a new **Glitter** choice: "With glitter ✨" / "No glitter". Same $15 price.
+- **Sugar Cookie** uses new lighter-brown photos that Dad supplied. The previous
+  photos were kept as `docs/images/sugar-cookie_old.jpg` and `sugar-cookie-side_old.jpg`.
+- **"True Love" was renamed to "Love"** (same red, same photos — files now
+  `products/love.html`, `images/love.jpg`, `images/love-side.jpg`).
+- **A new gloss "True Love" (dark red)** was added: `products/true-love.html`, $12.
+  ⚠️ Its photos (`images/true-love.jpg`, `true-love-side.jpg`) are **NOT real
+  photos** — they are the Love photos with the red darkened by computer. Replace
+  them with real photos once a dark red gloss exists.
+- Site text now says **six** glosses / **five** main colors (home page, FAQ, help assistant).
+- A sharper logo was saved to `LOGO/Glimmer Bliss Logo_sharpened.jpg`. **Not used on the site yet.**
+
+### Open items from this session
+- **Home page grid:** it fits 4 glosses per row on big screens and there are now 5,
+  so Sugar Cookie sits alone on a second row. Left as-is on purpose; ask Claude
+  to change `.product-grid` in `docs/css/styles.css` if you want one row.
+- **The cart does not remember choices** (glitter or delivery). It only counts
+  items. Needs fixing when real checkout (STEP 3) is built.
+- Swap in the sharper logo when ready.
+
+---
+
 ## Other things worth knowing
 
 **The repo is PUBLIC.** github.com/JcPath1/divine-lips can be read by anyone.
@@ -153,5 +177,5 @@ test — there are 22 test questions and they all pass right now.
 | Website files | `docs/` |
 | Open locally | double-click `docs/index.html` |
 | After any change | hard-refresh with **Ctrl + Shift + R** |
-| Glosses | Pink Paradise, True Love, Gloss Angeles, Sugar Cookie — $12. Glimmer Kiss — $15, limited edition |
+| Glosses | Pink Paradise, Love (red), True Love (dark red), Gloss Angeles, Sugar Cookie — $12. Glimmer Kiss — $15, limited edition (glitter / no glitter) |
 | Founder | Charlie Mae (sole founder) |
