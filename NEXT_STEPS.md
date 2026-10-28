@@ -292,3 +292,8 @@ test — there are 22 test questions and they all pass right now.
 | After any change | hard-refresh with **Ctrl + Shift + R** |
 | Glosses | Pink Paradise, Love (red), True Love (dark red), Gloss Angeles, Sugar Cookie — $12. Glimmer Kiss — $15, limited edition (glitter / no glitter) |
 | Founder | Charlie Mae (sole founder) |
+
+## Google Search Console
+- glimmerbliss.com is verified in Google Search Console (2026-10-28, account fractalsolution369@gmail.com).
+- KEEP `docs/google38530a0b0093f57e.html` and the `google-site-verification` meta tag in `docs/index.html`. Deleting them un-verifies the site.
+- Sitemap: https://glimmerbliss.com/sitemap.xml (update the <lastmod> dates when pages change).

@@ -4,11 +4,11 @@
   Add a line here whenever a new gloss page is created.
   Update the <lastmod> dates when a page's content really changes.
 -->
-<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://glimmerbliss.com/</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -57,21 +57,21 @@
 
   <url>
     <loc>https://glimmerbliss.com/faq.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://glimmerbliss.com/shipping.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
     <loc>https://glimmerbliss.com/returns.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
