@@ -6,19 +6,19 @@
   <title>Glimmer Bliss - Handmade Lip Gloss by Charlie Mae</title>
   <link rel="stylesheet" href="css/styles.css">
 
-  <meta name="description" content="Handmade lip gloss in small batches by Charlie Mae. Six vanilla-flavored shades with lip-safe ingredients, from $12. Free shipping over $30 or free local pickup.">
+  <meta name="description" content="Handmade lip gloss in small batches by Charlie Mae. Six vanilla-flavored shades with lip-safe ingredients, from $12. Free shipping on $35+ or free local pickup.">
   <link rel="canonical" href="https://glimmerbliss.com/">
 
   <!-- How this page looks when shared to social media -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Glimmer Bliss">
   <meta property="og:title" content="Glimmer Bliss - Handmade Lip Gloss by Charlie Mae">
-  <meta property="og:description" content="Handmade lip gloss in small batches by Charlie Mae. Six vanilla-flavored shades with lip-safe ingredients, from $12. Free shipping over $30 or free local pickup.">
+  <meta property="og:description" content="Handmade lip gloss in small batches by Charlie Mae. Six vanilla-flavored shades with lip-safe ingredients, from $12. Free shipping on $35+ or free local pickup.">
   <meta property="og:url" content="https://glimmerbliss.com/">
   <meta property="og:image" content="https://glimmerbliss.com/images/group-photo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Glimmer Bliss - Handmade Lip Gloss by Charlie Mae">
-  <meta name="twitter:description" content="Handmade lip gloss in small batches by Charlie Mae. Six vanilla-flavored shades with lip-safe ingredients, from $12. Free shipping over $30 or free local pickup.">
+  <meta name="twitter:description" content="Handmade lip gloss in small batches by Charlie Mae. Six vanilla-flavored shades with lip-safe ingredients, from $12. Free shipping on $35+ or free local pickup.">
   <meta name="twitter:image" content="https://glimmerbliss.com/images/group-photo.jpg">
 
   <!-- Tells Google who runs this shop -->
@@ -41,7 +41,7 @@
 
   <!-- Announcement Bar -->
   <div class="announcement-bar">
-    Free shipping on orders over $30! Use code: GLOSSY
+    Free shipping on orders of $35 or more!
   </div>
 
   <!-- Header -->
@@ -53,12 +53,13 @@
         <li><a href="#products">Shop</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="faq.html">FAQ</a></li>
+        <li><a href="account.html">My Orders</a></li>
       </ul>
       <div class="nav-icons">
-        <div class="cart-icon" id="cartIcon">
+        <a href="cart.html" class="cart-icon" id="cartIcon" aria-label="Your cart">
           🛒
           <span class="cart-count" id="cartCount">0</span>
-        </div>
+        </a>
       </div>
     </nav>
   </header>
@@ -190,8 +191,8 @@
           <div class="shipping-card">
             <span class="shipping-icon">Box</span>
             <h4>Ship it to me</h4>
-            <p class="shipping-cost">$5 flat</p>
-            <p>Any size order ships for the same $5 - and it's <strong>free once you spend $30</strong>. That's just three glosses!</p>
+            <p class="shipping-cost">$7 flat</p>
+            <p>Any size order ships for the same $7 - and it's <strong>free once you spend $35</strong>. That's just three glosses!</p>
           </div>
 
           <div class="shipping-card">
@@ -259,6 +260,7 @@
         <a href="shipping.html">Shipping Info</a>
         <a href="returns.html">Returns</a>
         <a href="faq.html">FAQ</a>
+        <a href="account.html">My Orders</a>
       </div>
       <!--
         PARKED FOR LATER - the "Follow Us" footer links.
@@ -281,9 +283,10 @@
   <div class="cart-notification" id="cartNotification">
     <span class="checkmark">✓</span>
     <span>Added to cart!</span>
-    <a href="#" class="view-cart-btn">View Cart</a>
+    <a href="cart.html" class="view-cart-btn">View Cart</a>
   </div>
 
+  <script src="js/shop.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

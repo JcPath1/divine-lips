@@ -1,6 +1,6 @@
 # Glimmer Bliss — Where We Left Off
 
-**Last worked on: 24 October 2026**
+**Last worked on: 27 October 2026**
 This file is in the repo root, NOT in `docs/`, so it is not published on the website.
 
 ---
@@ -23,47 +23,158 @@ publicly downloadable.
 
 ---
 
-## STEP 1 — Point glimmerbliss.com at the site  ← do this first
+## 🛒 THE REAL SHOP IS BUILT (27 October 2026) — read this first
 
-**You have to do this part.** It needs your Spaceship.com login, and Claude
-should not have that.
+The shop is moving from GitHub Pages to **Spaceship hosting** (PHP + database +
+email, confirmed on Spaceship's hosting page). Built and tested on this computer.
+**Not uploaded yet**, because the secrets file is still empty.
 
-1. Log in to **Spaceship.com**
-2. Find **glimmerbliss.com** and open its **DNS** settings
-3. Add **four A records**. Host is `@` (some sites call this "root" or leave it
-   blank). Each one points to a different address:
+**How an order works**
+1. Customer: Cart → Checkout → gets an order code like **GB-7K3PQ**.
+2. They pay with **Venmo** or **Zelle** and type the code in the payment note.
+   (Or **PayPal / card**, which marks the order paid by itself once PayPal keys are in.)
+3. They tap "I sent the money". You get an email.
+4. You check Venmo/Zelle, then open **glimmerbliss.com/admin/** → **Mark Paid**.
+   The customer gets a "payment received" email. Then **Mark Shipped** (with tracking)
+   or **Mark Picked Up**, and they get another email.
 
-   ```
-   185.199.108.153
-   185.199.109.153
-   185.199.110.153
-   185.199.111.153
-   ```
+**Accounts:** no passwords. The customer types their email on **My Orders** and gets
+a one-time login link (20 minutes, max 3 per 15 min). The account is made
+automatically with their first order. Checkout fills in their last address.
 
-4. Add **one CNAME record**:
+**Promotions:** Admin → Promotions. Free shipping or % off, a minimum order,
+an optional code, and optional start/end dates. Each order gets the ONE deal that
+saves the most. The deal name and savings are saved on the order and printed on
+the invoice email. Starts with "Free shipping on orders over $30" switched on.
+The pink bar at the top of the site shows whichever automatic deals are on.
 
-   - Host: `www`
-   - Points to: `jcpath1.github.io`
-   - (no repo name on the end, no `https://`, no trailing slash)
+**Where things are**
+| | |
+|---|---|
+| Secrets (passwords, keys) | `private/glimmerbliss-secrets.env` — git-ignored. Claude never prints it. |
+| Prices (single source) | `server/app/catalog.php` |
+| Server code | `server/app/` → uploads to `glimmerbliss_app/` (outside public_html) |
+| API + Admin | `server/public/api/`, `server/public/admin/` |
+| Shop pages | `docs/cart.html`, `checkout.html`, `order.html`, `account.html`, `pay-sign.html`, `docs/js/shop.js` |
+| Tools | `python tools/glimmer.py check / ftp-test / local / deploy` |
 
-5. Save.
+**Tested 27 Oct 2026:** 69 end-to-end checks pass on a local copy (pricing, fake prices
+ignored, promos, order emails, I-paid, admin login + lockout, form protection,
+mark paid/shipped, login links single-use + rate limited, strangers can't see
+orders). 19 Help-assistant questions pass. Phone layout checked at 390px.
 
-These four addresses are GitHub's, taken from their official documentation on
-29 July 2026. If a lot of time has passed, have Claude re-check them before you
-type them in — GitHub has changed them before.
+**NOT tested yet (need real accounts):**
+- Real email sending through the Spaceship mailbox (tested with a fake mailbox only).
+- MySQL on the server (tested with SQLite here; the tables are made on first visit).
+- **The Venmo "Open Venmo" link with the amount filled in.** Its format
+  (`venmo.com/?txn=pay&recipients=…&amount=…&note=…`) is not from Venmo's docs.
+  Test it on a phone with the real account. If it doesn't fill in, customers can still
+  type it, and the steps on the page tell them what to type.
+- PayPal: needs Sandbox keys to test. Card payments without a PayPal account need
+  "PayPal Account Optional" turned ON in PayPal settings (PayPal help article).
 
-**Then tell Claude "the DNS is saved."** Claude will:
-- add a `CNAME` file to `docs/`
-- set the custom domain on GitHub
-- turn on the free padlock (HTTPS)
-- check the site really loads on glimmerbliss.com
+## Server check (27 Oct 2026, done by Claude)
 
-DNS usually takes 15 minutes to a few hours to spread. Sometimes up to a day.
-This is normal and there is nothing to fix while you wait.
+- Hosting is bought. The shop's web folder is **`glimmerbliss.com`** in the home folder
+  (NOT `public_html`). The secrets file now says so (`FTP_WEB_ROOT`).
+- PHP 8.2 with everything the shop needs is switched on.
+- ✅ The database is made (`(database name: see secrets file)`). Its details are in the secrets file.
+- ✅ FTP login `(FTP login: see secrets file)` on `(FTP server: see secrets file)` works (secure),
+  and it starts in the home folder, so it can reach `glimmerbliss.com` and `glimmerbliss_app`.
+- ✅ Email: sends from `orders@glimmerbliss.com` via Spacemail (`mail.spacemail.com`, port 465 SSL).
+  Mailbox login tested OK 27 Oct (nothing sent). Order alerts go to the owner's Gmail.
+- ✅ Admin password set. Payment: **Venmo `glimmerbliss`** (a GlimmerBliss Venmo account).
+  Zelle skipped: it would show the owner's personal name and phone. PayPal comes later
+  (its button already offers Venmo and cards, and marks orders paid automatically).
+- ✅ **DEPLOYED 27 Oct 2026.** All 69 files uploaded. glimmerbliss.com ALREADY pointed at the
+  hosting (A 66.29.148.164, Spaceship nameservers, Spacemail MX). It's **LIVE at
+  https://glimmerbliss.com** with a valid SSL padlock (until 25 Jan 2027, auto-renews).
+  Checked: catalog API 200 (MySQL tables made), admin 200, `_boot.php` and `.htaccess`
+  blocked (403), http and www both redirect to https://glimmerbliss.com/.
+- To upload changes later: `python tools/glimmer.py deploy`. Only changed files are sent.
+  Claude's safety check blocks Claude from running it, so type `! python tools/glimmer.py deploy`.
+- NOT committed to git yet: pushing master would redeploy the OLD GitHub Pages copy, where
+  the cart can't work. Turn off GitHub Pages first, then commit.
+- The `orders@glimmerbliss.com` mailbox is Spacemail, not cPanel email, so its
+  send settings (SMTP) still need to be looked up.
+
+## Shipping is now $7 flat (27 Oct 2026)
+
+Set in `tools/glimmer.py` (`shipping_cents: 700`, goes into config.php on deploy) and in all page text.
+Still free on $35 or more.
+
+## Phone menu (27 Oct 2026)
+
+On phones the menu used to be hidden with no replacement (no way to Home/FAQ/My Orders
+except the logo). Now it shows as a small row under the logo on every page (`styles.css`,
+`@media (max-width: 768px)`). Checked at 390px.
+
+## 🛍️ Charlie's back end (27 Oct 2026, late) — in Admin (glimmerbliss.com/admin/)
+
+Made for an 11-year-old on a phone: big buttons, few words.
+- **🛍️ Sell** — booth screen. Tap a gloss picture once per bottle, tap 💵 Cash or 📱 Venmo.
+  Prices INCLUDE tax ($12 is $12); the tax part is worked out and saved. "Oops" takes a sale back.
+  💳 Card is OFF until there's a Square / Tap to Pay account (add `'card' => '💳 Card'` back in
+  `SHOW_PAY_METHODS`, `server/app/stock.php`).
+- **📦 My Gloss** — count of each gloss (Glimmer Kiss with/without glitter counted apart).
+  "How many? → Add" after making a batch; − / + to fix. Booth sales and PAID website orders come
+  off by themselves (cancelled paid orders go back). ⚠️ at 3 or less. − never goes below 0.
+  The website keeps selling at 0 (made to order).
+- **🧾 Spent** — what was bought, how much, when.
+- **💰 Money** — this month and all time: money in, tax to save for Texas, spent, kept.
+- New tables `stock_moves`, `show_sales`, `expenses` are made by themselves on the first visit.
+- Tests: `tools/stocktest.py`, `tools/taxtest.py` (run against the local test shop at
+  localhost:8080) and `node tools/helptest.js docs/js/main.js`. All pass 27 Oct.
+- ⚠️ Not checked: whether Texas allows tax-included prices at a booth, and which local rate
+  applies at a show in another city (e.g. Canton). Ask the Comptroller.
+
+## Changes on 27 Oct 2026 (evening) — tax, $35 shipping, all sales final
+
+- **Texas sales tax 8.25%** on Texas orders only (local pickup, or shipping to TX).
+  Charged on glosses + shipping after discounts (Texas Comptroller: delivery charges on
+  taxable items are taxable). No Texas tax on orders shipped out of state. The rate is
+  `TAX_RATE_PERCENT` in the secrets file (default 8.25). **Check your exact rate** with the
+  Comptroller's Sales Tax Rate Locator for your address, and get a free **Texas sales tax
+  permit** before collecting tax. Tax shows at checkout, on the order page, in emails and in Admin.
+- **Free shipping on $35 or more** (before tax). The live database deal updates itself from
+  $30 to $35 on the next deploy (only if it's still the untouched original).
+- **All sales final:** Returns page rewritten (no returns, refunds or exchanges). Broken or
+  wrong items get a replacement (photo within 7 days, no mail-back). FAQ, help bot and
+  checkout updated. Help bot also no longer offers Zelle.
+- Tested locally: 23 price/tax/promo/order checks + 16 help-bot questions pass, and the old
+  database upgraded itself (tax columns added, $30 deal became $35).
+
+## STEP 1 — Fill in the secrets file  ✅ DONE 27 Oct
+
+Open `private/glimmerbliss-secrets.env` in Notepad. Every section says where to
+find the value in cPanel. Save it, then tell Claude "secrets file is saved".
+**Never paste it into the chat.** Claude runs `python tools/glimmer.py check`
+(shows only OK/MISSING), then `ftp-test`, then `deploy`.
+
+## STEP 2 — Point glimmerbliss.com at Spaceship hosting  ✅ already pointed; still turn OFF GitHub Pages
+
+⚠️ The old plan said to add GitHub's four A records. **Don't do that now.** The shop
+needs the Spaceship hosting, because GitHub Pages can't run the order system.
+Connect the domain to the hosting plan inside Spaceship. Claude has not confirmed
+Spaceship's exact clicks, so have Claude walk through it with you. After that,
+turn off GitHub Pages so there aren't two copies of the shop.
+
+## STEP 3 — Save your payment QR pictures
+
+- Venmo app → Scan → **My Code** → save the picture as `docs/images/pay/venmo-qr.png`
+- Bank app → Zelle → **My QR code** → save as `docs/images/pay/zelle-qr.png`
+
+They then show on the pay page and on the printable sign (`pay-sign.html`, Ctrl+P).
+
+## STEP 4 — Test one real order before telling anyone
+
+Place a $12 pickup order with Venmo, pay it, Mark Paid in Admin, and check that
+both emails arrive (and not in spam). In cPanel, open **Email Deliverability**
+and fix anything it flags. That's what keeps shop emails out of spam folders.
 
 ---
 
-## STEP 2 — Fill in the made-up details  ← before telling anyone the address
+## STEP 5 — Fill in the made-up details  ✅ DONE 27 Oct: JC confirmed the guesses are right; DRAFT boxes and yellow highlights removed
 
 Three pages still have a **yellow DRAFT box** at the top and **highlighted
 yellow placeholders** in the text. They are live right now and a customer can
@@ -76,7 +187,7 @@ guess correctly):
 
 | Thing | Currently says | Your real answer |
 |---|---|---|
-| Contact email | `hello@glimmerbliss.com` (**made up — appears 7 times**) | ? |
+| Contact email | ✅ DONE 27 Oct: now `orders@glimmerbliss.com` everywhere (real Spacemail mailbox) | ✅ |
 | Days to make an order | 3 to 5 business days | ? |
 | Days in the post | 2 to 5 business days | ? |
 | Return window | 14 days | ? |
@@ -92,7 +203,7 @@ not legal advice.
 
 ---
 
-## STEP 3 — Taking real money  ← the big one, not started
+## (OLD) Taking real money — superseded by the shop above
 
 **There is no checkout.** "Add to Cart" just counts up a number and pops up a
 message saying it's a demo. Nobody can actually buy anything.
@@ -151,8 +262,10 @@ it**. Ask Claude to make the repo private if you would rather it weren't.
 (`docs/images/charlie-mae-avatar.svg`) instead. Keep it that way — the site is
 public and she is a child.
 
-**The Glimmer Kiss video is 12 MB.** Fine on your computer, slow on a phone with
-weak signal. Ask Claude to shrink it before you promote the site anywhere.
+**The Glimmer Kiss video was shrunk 27 Oct 2026: 12.4 MB → 3.1 MB.** It's shown only 205px wide,
+so it's now 432×768 (was 720×1280), with no sound track, and its index ("moov") moved to the start
+(`-movflags +faststart`) so phones can start playing before the whole file arrives. The 12 MB original
+is kept in `private/videos-original/` (git-ignored). For a new video, ask Claude to do the same.
 
 **Three things are parked**, not deleted — they sit inside `<!-- -->` marks in
 `docs/index.html` with notes on how to bring them back:

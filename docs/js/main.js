@@ -1,46 +1,6 @@
 // Glimmer Bliss - Mockup Site JavaScript
 
-// Cart state (stored in localStorage for persistence)
-let cartCount = parseInt(localStorage.getItem('glimmerBlissCart') || '0');
-
-// Update cart count display
-function updateCartDisplay() {
-  const cartCountElements = document.querySelectorAll('#cartCount');
-  cartCountElements.forEach(el => {
-    el.textContent = cartCount;
-  });
-}
-
-// Show cart notification
-function showNotification() {
-  const notification = document.getElementById('cartNotification');
-  if (notification) {
-    notification.classList.add('show');
-    setTimeout(() => {
-      notification.classList.remove('show');
-    }, 3000);
-  }
-}
-
-// Add to cart functionality
-function addToCart() {
-  cartCount++;
-  localStorage.setItem('glimmerBlissCart', cartCount);
-  updateCartDisplay();
-  showNotification();
-
-  // Change button text temporarily
-  const btn = document.getElementById('addToCart');
-  if (btn) {
-    const originalText = btn.textContent;
-    btn.textContent = 'Added!';
-    btn.classList.add('added');
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.classList.remove('added');
-    }, 2000);
-  }
-}
+// The cart, checkout and payments live in shop.js
 
 // Option button selection
 function setupOptionButtons() {
@@ -171,20 +131,6 @@ function setupSmoothScroll() {
   });
 }
 
-// Cart icon click (show message)
-function setupCartIcon() {
-  const cartIcon = document.getElementById('cartIcon');
-  if (cartIcon) {
-    cartIcon.addEventListener('click', function() {
-      if (cartCount > 0) {
-        alert(`You have ${cartCount} item${cartCount > 1 ? 's' : ''} in your cart!\n\n(This is a demo - in the real store, this would take you to checkout)`);
-      } else {
-        alert('Your cart is empty!\n\nBrowse our glosses and add some to your cart.');
-      }
-    });
-  }
-}
-
 // FAQ page: type in the search box to hide questions that don't match
 function setupFaqSearch() {
   const box = document.getElementById('faqSearch');
@@ -244,7 +190,9 @@ const HELP_ANSWERS = [
 
   // --- Specific problems ---
   { k: ['broken', 'damaged', 'damage', 'leak', 'cracked', 'spilled', 'smashed'],
-    a: 'Sorry! Email us a photo and we will replace it or refund you. That one is on us.' },
+    a: 'Sorry! Email <strong>orders@glimmerbliss.com</strong> your order code and a photo within 7 days and we will send a replacement. No need to mail it back.' },
+  { k: ['wrong color', 'wrong colour', 'wrong gloss', 'wrong one', 'wrong item'],
+    a: 'Sorry! Email <strong>orders@glimmerbliss.com</strong> your order code and a photo within 7 days and we will send the right one free.' },
   { k: ['canada', 'international', 'outside the us', 'overseas', 'abroad', 'another country'],
     a: 'Right now we ship within the US only. If you are further away, message us and we will see what we can do.' },
   { k: ['pickup', 'pick up', 'pick it up', 'pick', 'collect', 'local', 'meet', 'in person'],
@@ -259,12 +207,18 @@ const HELP_ANSWERS = [
     a: 'They are made with <strong>lip-safe, cosmetic-grade ingredients</strong>, including cosmetic glitter (never craft glitter). If you have allergies, email us for the full ingredient list before ordering.' },
   { k: ['size', 'how big', 'bigger', 'small', 'ml', 'tall', 'inch', 'measure', 'dimension'],
     a: 'Each bottle holds <strong>5ml</strong>. It is <strong>3.31 inches</strong> tall and <strong>0.87 inches</strong> wide - about thumb sized. There is a size photo on every gloss page.' },
+  { k: ['my order', 'order status', 'where is my order', 'account', 'log in', 'login', 'sign in', 'order history', 'past order', 'old order', 'password'],
+    a: 'Go to <a href="account.html">My Orders</a> and type the email you ordered with. We email you a link that logs you in - no password needed. Your account is made by itself the first time you order.' },
+  { k: ['pay', 'venmo', 'zelle', 'paypal', 'card', 'credit', 'debit', 'payment', 'promo code', 'discount code', 'coupon'],
+    a: 'You can pay with <strong>Venmo</strong> (and PayPal or a card when that is switched on). After you check out you get an order code like <strong>GB-ABC23</strong> - put it in the payment note so we know it is you. Promo codes go in the box at checkout.' },
 
   // Shipping sits ABOVE price so "how much is shipping" lands here, not on price
   { k: ['shipping', 'ship', 'postage', 'deliver', 'mail', 'usps'],
-    a: 'Shipping is a flat <strong>$5.00</strong>, and <strong>free over $30</strong> (three glosses). See the <a href="shipping.html">Shipping page</a> for full details.' },
+    a: 'Shipping is a flat <strong>$7.00</strong>, and <strong>free on $35 or more</strong> (three glosses). See the <a href="shipping.html">Shipping page</a> for full details.' },
   { k: ['return', 'refund', 'money back', 'send back', 'exchange', 'swap'],
-    a: 'Unopened glosses can be returned. Anything opened or used cannot, for hygiene reasons. If it arrived damaged or wrong, that is on us - see the <a href="returns.html">Returns page</a>.' },
+    a: '<strong>All sales are final.</strong> Lip gloss goes on your lips, so for everyone\'s safety we do not take returns, give refunds, or do exchanges. If it arrives broken or wrong, we send a replacement - see the <a href="returns.html">All Sales Final page</a>.' },
+  { k: ['tax', 'sales tax', 'texas tax', 'much tax', 'is tax', 'charge tax', 'pay tax', 'tax rate'],
+    a: 'Texas orders pay <strong>8.25% Texas sales tax</strong>. That means local pickup, or shipping to a Texas address. Orders shipped to other states pay no Texas tax. You see the exact amount at checkout.' },
   { k: ['how long', 'when will', 'arrive', 'how fast', 'track', 'tracking'],
     a: 'Glosses are made to order - allow a few days to make and pack, then a few more in the post. You get a tracking number by email when the label is printed.' },
   { k: ['price', 'cost', 'how much', 'expensive', 'cheap', 'dollar', '$'],
@@ -384,15 +338,6 @@ function setupHelpAssistant() {
 
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  // Update cart display
-  updateCartDisplay();
-
-  // Setup add to cart button
-  const addToCartBtn = document.getElementById('addToCart');
-  if (addToCartBtn) {
-    addToCartBtn.addEventListener('click', addToCart);
-  }
-
   // Setup other interactions
   setupPhotoAd();
   setupFaqSearch();
@@ -401,7 +346,6 @@ document.addEventListener('DOMContentLoaded', function() {
   setupOptionButtons();
   setupThumbnails();
   setupSmoothScroll();
-  setupCartIcon();
 
   // Add hover effect to product cards
   const productCards = document.querySelectorAll('.product-card');

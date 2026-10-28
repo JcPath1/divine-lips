@@ -56,7 +56,7 @@
 
   <!-- Announcement Bar -->
   <div class="announcement-bar">
-    Free shipping on orders over $30! Use code: GLOSSY
+    Free shipping on orders of $35 or more!
   </div>
 
   <!-- Header -->
@@ -68,12 +68,13 @@
         <li><a href="../index.html#products">Shop</a></li>
         <li><a href="../index.html#about">About Us</a></li>
         <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../account.html">My Orders</a></li>
       </ul>
       <div class="nav-icons">
-        <div class="cart-icon" id="cartIcon">
+        <a href="../cart.html" class="cart-icon" id="cartIcon" aria-label="Your cart">
           🛒
           <span class="cart-count" id="cartCount">0</span>
-        </div>
+        </a>
       </div>
     </nav>
   </header>
@@ -129,27 +130,19 @@
         </div>
 
         <!-- Glitter -->
-        <div class="product-options">
+        <div class="product-options" data-option="glitter">
           <span class="option-label">Glitter</span>
           <div class="option-buttons">
-            <button class="option-btn selected">With glitter ✨</button>
-            <button class="option-btn">No glitter</button>
+            <button class="option-btn selected" data-value="With glitter">With glitter ✨</button>
+            <button class="option-btn" data-value="No glitter">No glitter</button>
           </div>
           <p class="option-hint">Same price either way.</p>
         </div>
 
-        <!-- Delivery -->
-        <div class="product-options">
-          <span class="option-label">Delivery</span>
-          <div class="option-buttons">
-            <button class="option-btn selected">Ship it to me - $5</button>
-            <button class="option-btn">Local pickup - FREE</button>
-          </div>
-          <p class="option-hint">Shipping is $5 flat, and free on orders over $30. Local pickup is always free.</p>
-        </div>
+        <p class="option-hint">Pick shipping ($7, free on orders of $35 or more) or free local pickup at checkout.</p>
 
         <!-- Add to Cart -->
-        <button class="add-to-cart-btn" id="addToCart">Add to Cart - $15.00</button>
+        <button class="add-to-cart-btn" id="addToCart" data-product="glimmer-kiss">Add to Cart - $15.00</button>
 
         <!-- Features -->
         <div class="product-features">
@@ -185,6 +178,7 @@
         <a href="../shipping.html">Shipping Info</a>
         <a href="../returns.html">Returns</a>
         <a href="../faq.html">FAQ</a>
+        <a href="../account.html">My Orders</a>
       </div>
       <!--
         PARKED FOR LATER - the "Follow Us" footer links.
@@ -206,9 +200,10 @@
   <div class="cart-notification" id="cartNotification">
     <span class="checkmark">✓</span>
     <span>Added to cart!</span>
-    <a href="#" class="view-cart-btn">View Cart</a>
+    <a href="../cart.html" class="view-cart-btn">View Cart</a>
   </div>
 
+  <script src="../js/shop.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

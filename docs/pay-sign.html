@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay Sign - Glimmer Bliss</title>
+  <meta name="robots" content="noindex">
+  <!--
+    PRINTABLE SIGN for the booth / table / flyers.
+    Open glimmerbliss.com/pay-sign.html and press Ctrl+P.
+
+    The Venmo and Zelle squares show the QR codes saved at:
+      images/pay/venmo-qr.png   (Venmo app -> Scan -> My Code -> save/share image)
+      images/pay/zelle-qr.png   (your bank app -> Zelle -> My QR code -> save image)
+    If a picture isn't there yet, that box hides itself.
+  -->
+  <style>
+    :root { --pink: #ff69b4; --dark: #db7093; --ink: #1a1a1a; --paper: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--ink); background: #eee; }
+    .sheet { width: 8.5in; min-height: 11in; margin: 20px auto; background: var(--paper); padding: 0.55in; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+    .logo { height: 90px; }
+    h1 { font-family: Georgia, serif; color: var(--dark); font-size: 40px; margin: 8px 0 4px; }
+    .sub { font-size: 18px; color: #555; margin-bottom: 26px; }
+    .codes { display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; }
+    .code { border: 3px solid var(--pink); border-radius: 22px; padding: 18px 18px 14px; width: 2.9in; }
+    .code img, .code #shopQr img, .code #shopQr canvas { width: 2.3in; height: 2.3in; display: block; margin: 0 auto; }
+    .code h2 { font-size: 24px; margin-top: 10px; }
+    .code p { font-size: 15px; color: #555; }
+    .venmo h2 { color: #008cff; }
+    .zelle h2 { color: #6d1ed4; }
+    .steps { margin: 30px auto 0; max-width: 6in; text-align: left; font-size: 18px; background: #fff0f5; border-radius: 16px; padding: 18px 26px; }
+    .steps li { margin: 6px 0 6px 20px; }
+    .tools { text-align: center; margin: 20px; }
+    .tools button { background: var(--pink); color: #fff; border: 0; border-radius: 24px; padding: 12px 26px; font-size: 16px; cursor: pointer; }
+    @media print {
+      body { background: #fff; }
+      .sheet { margin: 0; box-shadow: none; }
+      .tools { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="tools"><button onclick="window.print()">🖨️ Print this sign</button></div>
+
+  <div class="sheet">
+    <img class="logo" src="images/logo.png" alt="Glimmer Bliss">
+    <h1>Handmade Lip Gloss ✨</h1>
+    <p class="sub">by Charlie Mae · glimmerbliss.com</p>
+
+    <div class="codes">
+      <div class="code">
+        <div id="shopQr"></div>
+        <h2>Shop online</h2>
+        <p>Scan to see every gloss</p>
+      </div>
+      <div class="code venmo">
+        <img src="images/pay/venmo-qr.png" alt="Venmo QR code" onerror="this.parentNode.remove()">
+        <h2>Venmo</h2>
+        <p>Scan to pay with Venmo</p>
+      </div>
+      <div class="code zelle">
+        <img src="images/pay/zelle-qr.png" alt="Zelle QR code" onerror="this.parentNode.remove()">
+        <h2>Zelle</h2>
+        <p>Scan in your bank's app</p>
+      </div>
+    </div>
+
+    <ol class="steps">
+      <li><strong>Ordered online?</strong> Put your order code (like <strong>GB-ABC23</strong>) in the payment note.</li>
+      <li><strong>Buying here at the table?</strong> Put the gloss names in the note.</li>
+      <li>Show us the "paid" screen and your gloss is yours! 💖</li>
+    </ol>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    new QRCode(document.getElementById('shopQr'), { text: 'https://glimmerbliss.com/', width: 400, height: 400, correctLevel: QRCode.CorrectLevel.M });
+  </script>
+</body>
+</html>

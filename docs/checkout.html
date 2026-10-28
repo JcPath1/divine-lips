@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Glimmer Bliss</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Free shipping on orders of $35 or more!
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Glimmer Bliss"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#products">Shop</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="account.html">My Orders</a></li>
+      </ul>
+      <div class="nav-icons">
+        <a href="cart.html" class="cart-icon" id="cartIcon" aria-label="Your cart">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="shop-page">
+    <h1>Checkout</h1>
+    <form id="checkoutForm" class="checkout-grid" novalidate>
+      <div class="checkout-main">
+
+        <h2>1. About you</h2>
+        <label for="name">Your name</label>
+        <input id="name" name="name" autocomplete="name" required maxlength="120">
+        <label for="email">Email <small>(your receipt goes here)</small></label>
+        <input id="email" name="email" type="email" autocomplete="email" required maxlength="190">
+        <label for="phone">Phone <small>(optional - for pickup)</small></label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+
+        <h2>2. How do you want it?</h2>
+        <label class="choice"><input type="radio" name="delivery" value="ship" checked>
+          <span><strong>Ship it to me</strong><small>$7, free when a free-shipping deal is on</small></span></label>
+        <label class="choice"><input type="radio" name="delivery" value="pickup">
+          <span><strong>Local pickup - FREE</strong><small>We'll email you to set up a time</small></span></label>
+
+        <div id="shipFields">
+          <label for="address1">Street address</label>
+          <input id="address1" name="address1" autocomplete="address-line1" data-required maxlength="160">
+          <label for="address2">Apartment, suite <small>(optional)</small></label>
+          <input id="address2" name="address2" autocomplete="address-line2" maxlength="160">
+          <div class="field-row">
+            <div><label for="city">City</label><input id="city" name="city" autocomplete="address-level2" data-required maxlength="80"></div>
+            <div><label for="state">State</label><input id="state" name="state" autocomplete="address-level1" data-required maxlength="40" value="TX"></div>
+            <div><label for="zip">ZIP</label><input id="zip" name="zip" autocomplete="postal-code" inputmode="numeric" data-required maxlength="10"></div>
+          </div>
+        </div>
+
+        <h2>3. How will you pay?</h2>
+        <div id="payMethods"><p class="shop-hint">Loading...</p></div>
+
+        <label for="note">Anything we should know? <small>(optional)</small></label>
+        <textarea id="note" name="note" rows="2" maxlength="500"></textarea>
+
+        <!-- Robots fill this in; people never see it -->
+        <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+      </div>
+
+      <aside class="checkout-side">
+        <h2>Your order</h2>
+        <div id="checkoutSummary" class="sum-box"><p class="shop-hint">Loading...</p></div>
+        <label for="promo_code">Promo code</label>
+        <div class="promo-row"><input id="promo_code" name="promo_code" maxlength="40" autocomplete="off"><button type="button" class="shop-btn small" id="applyPromo">Apply</button></div>
+        <p id="promoMessage" class="shop-hint"></p>
+        <p id="checkoutError" class="shop-error" role="alert"></p>
+        <button type="submit" class="shop-btn wide">Place my order</button>
+        <p class="shop-hint">Next you'll see exactly how to pay. Your gloss is made as soon as payment arrives.</p>
+        <p class="shop-hint"><strong>All sales are final</strong> - for safety, we can't take returns or give refunds. <a href="returns.html">Why?</a></p>
+        <p class="shop-hint"><a href="cart.html">← Back to cart</a></p>
+      </aside>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Glimmer Bliss</h4>
+        <p style="color: #aaa;">Handmade lip glosses crafted with love by Charlie Mae.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Shop</h4>
+        <a href="index.html#products">All Products</a>
+        <a href="products/glimmer-kiss.html">Limited Edition</a>
+      </div>
+      <div class="footer-section">
+        <h4>Help</h4>
+        <a href="shipping.html">Shipping Info</a>
+        <a href="returns.html">Returns</a>
+        <a href="faq.html">FAQ</a>
+        <a href="account.html">My Orders</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Glimmer Bliss. Made with 💖 by Charlie Mae</p>
+    </div>
+  </footer>
+
+  <script src="js/shop.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

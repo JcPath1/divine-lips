@@ -13,3 +13,8 @@ Thumbs.db
 
 # Node modules (if used later)
 node_modules/
+
+# Shop server settings (made from private/glimmerbliss-secrets.env - never commit)
+server/app/config.php
+server/app/config.local.php
+server/app/.schema-v*
