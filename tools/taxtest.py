@@ -9,6 +9,11 @@ def check(name,got,want):
     global fails
     ok=got==want; fails+=not ok
     print('PASS' if ok else 'FAIL',name,'got',got,'want',want)
+# The 20%-off code the promo checks use (made here so a fresh test shop works too)
+post('quote.php',{'items':[{'id':'love','qty':1}],'delivery':'pickup'})  # makes sure the tables exist
+db=sqlite3.connect('private/local-test/data/shop.sqlite')
+if not db.execute("SELECT 1 FROM promotions WHERE code='GLOSS20'").fetchone():
+    db.execute("INSERT INTO promotions (label,kind,min_subtotal_cents,percent,code,active,created_at) VALUES ('20% off','percent_off',0,20,'GLOSS20',1,'2026-10-27 00:00:00')"); db.commit()
 one=[{'id':'pink-paradise','qty':1}]
 three=[{'id':'pink-paradise','qty':3}]
 kiss2_love1=[{'id':'glimmer-kiss','qty':2,'options':{'glitter':'With glitter'}},{'id':'love','qty':1}]

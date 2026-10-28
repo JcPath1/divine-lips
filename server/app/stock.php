@@ -7,10 +7,11 @@
 
 declare(strict_types=1);
 
-// Card is off until there's a Square / Tap to Pay account: add 'card' => '💳 Card' back then.
+// Card = taken with Venmo Tap to Pay on the phone (or Square later).
 const SHOW_PAY_METHODS = [
     'cash'  => '💵 Cash',
     'venmo' => '📱 Venmo',
+    'card'  => '💳 Card',
 ];
 
 const LOW_STOCK = 3;

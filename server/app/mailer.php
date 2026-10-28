@@ -10,10 +10,11 @@ require_once __DIR__ . '/vendor/PHPMailer/Exception.php';
 require_once __DIR__ . '/vendor/PHPMailer/PHPMailer.php';
 require_once __DIR__ . '/vendor/PHPMailer/SMTP.php';
 
-function send_mail(string $to, string $subject, string $html, string $text, string $replyTo = ''): bool
+function send_mail(string $to, string $subject, string $html, string $text, string $replyTo = '', array $attachments = []): bool
 {
     if (cfg('mail.mode') === 'log') {
-        $entry = "==== " . now() . "\nTo: $to\nSubject: $subject\n\n$text\n\n";
+        $files = $attachments ? "\nAttached: " . implode(', ', array_map('basename', $attachments)) : '';
+        $entry = "==== " . now() . "\nTo: $to\nSubject: $subject$files\n\n$text\n\n";
         file_put_contents((string)cfg('mail.log_file'), $entry, FILE_APPEND);
         return true;
     }
@@ -37,6 +38,9 @@ function send_mail(string $to, string $subject, string $html, string $text, stri
         $mail->isHTML(true);
         $mail->Body = $html;
         $mail->AltBody = $text;
+        foreach ($attachments as $file) {
+            $mail->addAttachment($file);
+        }
         $mail->send();
         return true;
     } catch (Throwable $e) {

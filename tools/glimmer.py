@@ -115,6 +115,7 @@ def tax_rate_bp(env):
 def server_config(env):
     return {
         'site_url': SITE_URL,
+        'web_dir': env.get('FTP_WEB_ROOT') or 'public_html',
         'shipping_cents': 700,
         'tax_rate_bp': tax_rate_bp(env),
         'db': {'dsn': f"mysql:host={env.get('DB_HOST') or 'localhost'};dbname={env['DB_NAME']};charset=utf8mb4",

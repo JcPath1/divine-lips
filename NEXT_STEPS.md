@@ -297,3 +297,18 @@ test — there are 22 test questions and they all pass right now.
 - glimmerbliss.com is verified in Google Search Console (2026-10-28, account fractalsolution369@gmail.com).
 - KEEP `docs/google38530a0b0093f57e.html` and the `google-site-verification` meta tag in `docs/index.html`. Deleting them un-verifies the site.
 - Sitemap: https://glimmerbliss.com/sitemap.xml (update the <lastmod> dates when pages change).
+
+## Card payments
+- Booth: JC takes cards with Venmo Tap to Pay on his phone; the Sell screen has a Card button (added 2026-10-28).
+- Website cards: LATER. Two choices: PayPal Business (code already built, just needs PAYPAL_CLIENT_ID / PAYPAL_SECRET / PAYPAL_MODE=live) or Square (needs building + Application ID, Access Token, Location ID). Confirm with JC before building Square.
+
+## Post Maker (social media) - added 2026-10-28
+- server/app/posts.php makes 3 posts a week (Mon/Wed/Fri): pictures in 3 sizes (square = Instagram/Facebook, tall = TikTok/Reels/Stories, pin = Pinterest) + captions + a short version for X.
+- Pictures are drawn on the server with PHP GD and the Poppins font (server/app/fonts, OFL licence) and saved in the website folder posts/<monday-date>/ with posts.json.
+- Admin tab "📣 Posts": see them, copy words, save pictures, "Make different ones", "Email them to me".
+- server/app/weekly-posts.php runs from cron every Monday morning: makes the week and emails it (square pictures attached) to OWNER_ALERT_EMAIL. `--test` = make only, no email.
+- Post ideas live in post_ideas() / post_spotlight(). Captions must only say TRUE things about the shop.
+- Part 2 (later, needs accounts): auto-post via Meta (Instagram/Facebook), Pinterest; X costs per post; TikTok API posts stay private until TikTok audits the app. Accounts must be in JC's name (Instagram/TikTok are 13+).
+- Local test: PHP needs `-d extension=gd` (php.ini has GD off).
+- RULE (JC, 2026-10-28): JC must APPROVE every post before it goes anywhere. Part 1 only emails JC; Part 2 auto-posting must have an Approve button per post and never post anything unapproved.
+- Cron (server, made via the Spaceship MCP): job "glimmerbliss-weekly-posts", Mondays 8:00 am America/Chicago, runs /opt/alt/php82/usr/bin/php ~/glimmerbliss_app/weekly-posts.php.

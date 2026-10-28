@@ -194,6 +194,20 @@ if ($isAdmin && $action === 'expense_delete') {
     go('view=spent', 'Deleted.');
 }
 
+// ---------- social media posts ----------
+
+if ($isAdmin && in_array($action, ['posts_make', 'posts_email'], true)) {
+    $week = post_week_of();
+    $data = load_week_posts($week);
+    if ($action === 'posts_make' || $data === null) {
+        $data = make_week_posts($week, $data === null ? 0 : (int)$data['variant'] + 1);
+        if ($action === 'posts_make') {
+            go('view=posts', '✨ New posts made!');
+        }
+    }
+    go('view=posts', email_week_posts($data) ? '📧 Emailed to ' . cfg('mail.owner_alert') : 'The email did not send. Try again later.');
+}
+
 // ---------- page ----------
 
 $view = $_GET['view'] ?? 'orders';
@@ -256,6 +270,9 @@ $view = $_GET['view'] ?? 'orders';
   .money-row.kept { font-size: 24px; font-weight: bold; color: #2e7d32; border: 0; }
   .money-row small { display: block; color: #888; font-size: 13px; }
   .big-form input, .big-form button { font-size: 20px; padding: 12px; }
+  .post-pics { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
+  .post-pics a { text-align: center; color: var(--ink); text-decoration: none; font-size: 13px; }
+  .post-pics img { display: block; height: 180px; border-radius: 8px; border: 1px solid var(--line); margin-bottom: 4px; }
 </style>
 </head>
 <body>
@@ -280,6 +297,7 @@ $view = $_GET['view'] ?? 'orders';
   <a href="?view=stock" class="<?= $view === 'stock' ? 'on' : '' ?>">📦 My Gloss</a>
   <a href="?view=spent" class="<?= $view === 'spent' ? 'on' : '' ?>">🧾 Spent</a>
   <a href="?view=money" class="<?= $view === 'money' ? 'on' : '' ?>">💰 Money</a>
+  <a href="?view=posts" class="<?= $view === 'posts' ? 'on' : '' ?>">📣 Posts</a>
   <a href="?view=orders" class="<?= $view === 'orders' ? 'on' : '' ?>">Orders</a>
   <a href="?view=promos" class="<?= $view === 'promos' ? 'on' : '' ?>">Promotions</a>
   <a href="?view=customers" class="<?= $view === 'customers' ? 'on' : '' ?>">Customers</a>
@@ -507,6 +525,43 @@ $view = $_GET['view'] ?? 'orders';
     </div>
     <?php endforeach; ?>
   </div>
+
+<?php elseif ($view === 'posts'):
+    $week = post_week_of();
+    $data = load_week_posts($week); ?>
+  <div class="card">
+    <h2 style="margin-top:0">📣 This week's posts</h2>
+    <p class="muted">3 posts a week: Monday, Wednesday and Friday. They're emailed to you every Monday morning.
+      Hold a picture to save it, tap 📋 to copy the words, then post it in the app.</p>
+    <p class="muted"><b>Square</b> = <?= e(POST_SIZES['square']['for']) ?> · <b>Tall</b> = <?= e(POST_SIZES['tall']['for']) ?> · <b>Pin</b> = <?= e(POST_SIZES['pin']['for']) ?></p>
+    <div class="actions">
+      <form method="post"><?= csrf_field() ?><input type="hidden" name="action" value="posts_make"><button><?= $data ? '🔄 Make different ones' : '✨ Make this week\'s posts' ?></button></form>
+      <?php if ($data): ?><form method="post"><?= csrf_field() ?><input type="hidden" name="action" value="posts_email"><button class="plain">📧 Email them to me</button></form><?php endif; ?>
+    </div>
+  </div>
+  <?php foreach ($data['posts'] ?? [] as $i => $post): ?>
+  <div class="card">
+    <h3 style="margin-top:0"><?= e($post['day']) ?>: <?= e($post['headline']) ?></h3>
+    <div class="post-pics">
+      <?php foreach ($post['images'] as $size => $name): $src = '../posts/' . rawurlencode($week) . '/' . rawurlencode($name); ?>
+        <a href="<?= e($src) ?>" download><img src="<?= e($src) ?>" alt="<?= e($post['headline']) ?> (<?= e($size) ?>)"><span><?= e(ucfirst($size)) ?> ⬇️</span></a>
+      <?php endforeach; ?>
+    </div>
+    <label for="cap<?= $i ?>">Words (Instagram, TikTok, Facebook, Pinterest)</label>
+    <textarea id="cap<?= $i ?>" rows="8" readonly><?= e($post['caption']) ?></textarea>
+    <p><button type="button" class="copy" data-for="cap<?= $i ?>">📋 Copy words</button></p>
+    <label for="short<?= $i ?>">Short version (for X)</label>
+    <textarea id="short<?= $i ?>" rows="2" readonly><?= e($post['short']) ?></textarea>
+    <p><button type="button" class="copy plain" data-for="short<?= $i ?>">📋 Copy short</button></p>
+  </div>
+  <?php endforeach; ?>
+  <script>
+  document.querySelectorAll('button.copy').forEach(b => b.addEventListener('click', async () => {
+    const box = document.getElementById(b.dataset.for);
+    try { await navigator.clipboard.writeText(box.value); } catch (e) { box.select(); document.execCommand('copy'); }
+    const was = b.textContent; b.textContent = '✅ Copied!'; setTimeout(() => { b.textContent = was; }, 1500);
+  }));
+  </script>
 
 <?php elseif ($view === 'promos'):
     $promos =db()->query('SELECT * FROM promotions ORDER BY active DESC, id DESC')->fetchAll(); ?>
