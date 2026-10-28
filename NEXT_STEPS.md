@@ -1,25 +1,26 @@
 # Glimmer Bliss — Where We Left Off
 
-**Last worked on: 27 October 2026**
+**Last worked on: 28 October 2026**
 This file is in the repo root, NOT in `docs/`, so it is not published on the website.
 
 ---
 
 ## Where things are right now
 
-The shop is **live on the internet** at:
+The shop is **live** at **https://glimmerbliss.com** (Spaceship hosting, real orders,
+Venmo payments, admin back end at /admin/). The old GitHub Pages site is turned OFF.
+Everything is committed and pushed to `master` (last: Post Maker, 28 Oct).
 
-**https://jcpath1.github.io/divine-lips/**
+Deploy: JC types `!python C:/Projects/divine-lips/tools/glimmer.py deploy`
+(no space before the `!`; Claude is blocked from deploying itself).
 
-It has been live for a while — GitHub Pages was already switched on before this
-session, and nobody had noticed. It works today; the only thing missing is your
-own domain name in front of it.
-
-The website files live in the **`docs/`** folder. That folder, and only that
-folder, is what gets published. Everything else in the repo (the business
-spreadsheet, project notes, raw photos) is deliberately **not** served on the
-website — this was fixed on 29 July, because the business spreadsheet had been
-publicly downloadable.
+**To do next (pick up here):**
+1. JC: check the Post Maker test email arrived (spam folder too) and look at admin → 📣 Posts.
+2. Charlie: enter stock in My Gloss and costs in Spent before the show (Canton, 31 Oct – 1 Nov).
+3. Make social accounts in JC's name (Instagram, Facebook Page, Pinterest, TikTok), then build
+   Part 2 auto-posting WITH an Approve button per post (see Post Maker section).
+4. Website card payments: PayPal (just keys) or Square (needs building, ask JC first).
+5. Texas sales tax permit. Revoke SPACESHIP_AI_TOKEN when setup is finished.
 
 ---
 
