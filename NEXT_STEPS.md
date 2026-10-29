@@ -313,3 +313,7 @@ test — there are 22 test questions and they all pass right now.
 - Local test: PHP needs `-d extension=gd` (php.ini has GD off).
 - RULE (JC, 2026-10-28): JC must APPROVE every post before it goes anywhere. Part 1 only emails JC; Part 2 auto-posting must have an Approve button per post and never post anything unapproved.
 - Cron (server, made via the Spaceship MCP): job "glimmerbliss-weekly-posts", Mondays 8:00 am America/Chicago, runs /opt/alt/php82/usr/bin/php ~/glimmerbliss_app/weekly-posts.php.
+
+## Changes on 29 Oct 2026
+- Love (red) is no longer sold: removed from catalog.php (so also from My Gloss / Sell), home page, help bot, FAQ, posts, sitemap; docs/products/love.html deleted. Old links to /products/love.html 301 to /#products (rule in glimmer.py HTACCESS). The group photos still show the red bottle.
+- Phones keep styles.css / main.js / shop.js for 7 days (server sends max-age=604800). Pages link them with `?v=YYYYMMDD`. **When you change CSS or JS, bump that number on every page** or phones keep the old look.

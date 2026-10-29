@@ -99,7 +99,7 @@ function gbSetupHeader() {
   }).catch(() => { /* keep the bar's built-in text */ });
 }
 
-// Product pages: <button id="addToCart" data-product="love">
+// Product pages: <button id="addToCart" data-product="pink-paradise">
 function gbSetupAddToCart() {
   const btn = document.getElementById('addToCart');
   if (!btn || !btn.dataset.product) return;

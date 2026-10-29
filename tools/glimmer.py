@@ -143,6 +143,9 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\\. [NC]
 RewriteRule ^ https://glimmerbliss.com%{REQUEST_URI} [L,R=301]
 
+# Glosses we stopped selling: send old links to the shop
+RewriteRule ^products/love\\.html$ https://glimmerbliss.com/#products [L,R=301,NE]
+
 # Hide files starting with a dot or underscore (like api/_boot.php)
 RewriteRule (^|/)[._] - [F,L]
 

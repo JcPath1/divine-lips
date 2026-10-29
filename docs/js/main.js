@@ -179,8 +179,6 @@ const HELP_ANSWERS = [
     a: '<strong>Pink Paradise</strong> is <strong>$12.00</strong>. A dreamy tropical pink - sweet and glossy, and it goes with everything. <a href="products/pink-paradise.html">See it here</a>.' },
   { k: ['true love', 'true-love', 'dark red'],
     a: '<strong>True Love</strong> is <strong>$12.00</strong>. A deep, bold dark red with a rich shine. <a href="products/true-love.html">See it here</a>.' },
-  { k: ['love', 'is love', 'about love', 'love gloss', 'love lip'],
-    a: '<strong>Love</strong> is <strong>$12.00</strong>. A pretty red with a sweet, warm feel. <a href="products/love.html">See it here</a>.' },
   { k: ['gloss angeles', 'gloss angel', 'gloss-angeles'],
     a: '<strong>Gloss Angeles</strong> is <strong>$12.00</strong>. A clear, sunny shine - a play on Los Angeles. <a href="products/gloss-angeles.html">See it here</a>.' },
   { k: ['sugar cookie', 'sugar-cookie'],
@@ -200,9 +198,9 @@ const HELP_ANSWERS = [
 
   // --- The whole range ---
   { k: ['what colors', 'what colours', 'which colors', 'which colours', 'colors', 'colours', 'shades', 'how many gloss', 'what do you sell', 'red', 'brown', 'sparkl'],
-    a: 'There are six! <strong>Pink Paradise</strong> (pink), <strong>Love</strong> (red), <strong>True Love</strong> (dark red), <strong>Gloss Angeles</strong> (clear shine) and <strong>Sugar Cookie</strong> (cookie brown) are <strong>$12</strong> each. <strong>Glimmer Kiss</strong> is <strong>$15</strong> and Limited Edition.' },
+    a: 'There are five! <strong>Pink Paradise</strong> (pink), <strong>True Love</strong> (dark red), <strong>Gloss Angeles</strong> (clear shine) and <strong>Sugar Cookie</strong> (cookie brown) are <strong>$12</strong> each. <strong>Glimmer Kiss</strong> is <strong>$15</strong> and Limited Edition.' },
   { k: ['flavor', 'flavour', 'taste', 'vanilla', 'smell'],
-    a: 'Every batch is made with <strong>vanilla flavoring</strong>. All six glosses are vanilla - there is no unflavored option.' },
+    a: 'Every batch is made with <strong>vanilla flavoring</strong>. All five glosses are vanilla - there is no unflavored option.' },
   { k: ['safe', 'ingredient', 'allergy', 'allergic', 'glitter', 'toxic', 'what is in'],
     a: 'They are made with <strong>lip-safe, cosmetic-grade ingredients</strong>, including cosmetic glitter (never craft glitter). If you have allergies, email us for the full ingredient list before ordering.' },
   { k: ['size', 'how big', 'bigger', 'small', 'ml', 'tall', 'inch', 'measure', 'dimension'],
@@ -222,7 +220,7 @@ const HELP_ANSWERS = [
   { k: ['how long', 'when will', 'arrive', 'how fast', 'track', 'tracking'],
     a: 'Glosses are made to order - allow a few days to make and pack, then a few more in the post. You get a tracking number by email when the label is printed.' },
   { k: ['price', 'cost', 'how much', 'expensive', 'cheap', 'dollar', '$'],
-    a: 'The five main colors are <strong>$12.00</strong> each. Limited Edition Glimmer Kiss is <strong>$15.00</strong>.' },
+    a: 'The four main colors are <strong>$12.00</strong> each. Limited Edition Glimmer Kiss is <strong>$15.00</strong>.' },
 
   // --- General ---
   { k: ['custom', 'own flavor', 'own colour', 'own color', 'special order', 'make me'],

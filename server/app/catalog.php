@@ -12,7 +12,6 @@ function catalog(): array
 {
     return [
         'pink-paradise' => ['name' => 'Pink Paradise', 'price' => 1200, 'image' => 'images/pink-paradise.jpg', 'available' => true],
-        'love'          => ['name' => 'Love',          'price' => 1200, 'image' => 'images/love.jpg',          'available' => true],
         'true-love'     => ['name' => 'True Love',     'price' => 1200, 'image' => 'images/true-love.jpg',     'available' => true],
         'gloss-angeles' => ['name' => 'Gloss Angeles', 'price' => 1200, 'image' => 'images/gloss-angeles.jpg', 'available' => true],
         'sugar-cookie'  => ['name' => 'Sugar Cookie',  'price' => 1200, 'image' => 'images/sugar-cookie.jpg',  'available' => true],

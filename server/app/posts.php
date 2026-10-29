@@ -23,7 +23,6 @@ const POST_HASHTAGS = '#lipgloss #handmadelipgloss #glimmerbliss #smallbusiness 
 // What each gloss looks like, in the words used on its own page.
 const POST_GLOSS_LOOKS = [
     'pink-paradise' => 'a dreamy tropical pink',
-    'love'          => 'a pretty red',
     'true-love'     => 'a deep, dark red',
     'gloss-angeles' => 'a clear gloss with a sunny city shine',
     'sugar-cookie'  => 'a warm cookie-brown',
