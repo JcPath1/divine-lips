@@ -317,3 +317,4 @@ test — there are 22 test questions and they all pass right now.
 ## Changes on 29 Oct 2026
 - Love (red) is no longer sold: removed from catalog.php (so also from My Gloss / Sell), home page, help bot, FAQ, posts, sitemap; docs/products/love.html deleted. Old links to /products/love.html 301 to /#products (rule in glimmer.py HTACCESS). The group photos still show the red bottle.
 - Phones keep styles.css / main.js / shop.js for 7 days (server sends max-age=604800). Pages link them with `?v=YYYYMMDD`. **When you change CSS or JS, bump that number on every page** or phones keep the old look.
+- QR codes for the shop are in `QR Codes/` (white, pink, hot pink; all scan to https://glimmerbliss.com, checked with OpenCV). JC will add more there. Not in docs/, so not on the website.
