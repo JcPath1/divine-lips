@@ -56,6 +56,13 @@
   </url>
 
   <url>
+    <loc>https://glimmerbliss.com/review/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://glimmerbliss.com/shipping.html</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>

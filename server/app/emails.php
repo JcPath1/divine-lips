@@ -100,9 +100,12 @@ function email_payment_received(array $o): void
 {
     $link = order_link($o);
     $next = $o['delivery'] === 'pickup' ? "We'll email you when it's ready to pick up." : "We'll email you when it ships.";
-    $text = "Hi {$o['name']}!\n\nWe got your payment for order {$o['code']} - thank you!\n\n" . invoice_rows_text($o) . "\n$next\n\n$link\n\nGlimmer Bliss";
+    $review = review_link($o);
+    $text = "Hi {$o['name']}!\n\nWe got your payment for order {$o['code']} - thank you!\n\n" . invoice_rows_text($o) . "\n$next\n\n$link\n\n"
+        . "Once you try your gloss, we'd love a review:\n$review\n\nGlimmer Bliss";
     $html = email_wrap('<p>Hi ' . e($o['name']) . '!</p><p>We got your payment for order <strong>' . e($o['code']) . '</strong> - thank you! 💖</p>'
-        . invoice_rows_html($o) . '<p>' . e($next) . '</p><p><a href="' . e($link) . '">View your order</a></p>');
+        . invoice_rows_html($o) . '<p>' . e($next) . '</p><p><a href="' . e($link) . '">View your order</a></p>'
+        . '<p>Once you try your gloss, we\'d love a review! <a href="' . e($review) . '">Leave a review ⭐</a></p>');
     send_mail($o['email'], "Payment received - order {$o['code']}", $html, $text, (string)cfg('mail.from'));
 }
 
@@ -114,8 +117,10 @@ function email_shipped(array $o): void
     } else {
         $line = 'Your order is on its way!' . ($o['tracking'] !== '' ? ' Tracking number: ' . $o['tracking'] : '');
     }
-    $text = "Hi {$o['name']}!\n\n$line\n\nOrder {$o['code']}\n$link\n\nThank you for shopping with Glimmer Bliss!";
-    $html = email_wrap('<p>Hi ' . e($o['name']) . '!</p><p>' . e($line) . '</p><p>Order <strong>' . e($o['code']) . '</strong> · <a href="' . e($link) . '">view it here</a></p><p>Thank you for shopping with Glimmer Bliss!</p>');
+    $review = review_link($o);
+    $text = "Hi {$o['name']}!\n\n$line\n\nOrder {$o['code']}\n$link\n\nLove your gloss? Leave a review:\n$review\n\nThank you for shopping with Glimmer Bliss!";
+    $html = email_wrap('<p>Hi ' . e($o['name']) . '!</p><p>' . e($line) . '</p><p>Order <strong>' . e($o['code']) . '</strong> · <a href="' . e($link) . '">view it here</a></p>'
+        . '<p>Love your gloss? <a href="' . e($review) . '">Leave a review ⭐</a></p><p>Thank you for shopping with Glimmer Bliss!</p>');
     $subject = $o['status'] === 'picked_up' ? "Thanks for picking up order {$o['code']}" : "Your order {$o['code']} has shipped!";
     send_mail($o['email'], $subject, $html, $text, (string)cfg('mail.from'));
 }

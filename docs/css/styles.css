@@ -1533,3 +1533,19 @@ body.shop-open .footer {
   .order-card { grid-template-columns: 1fr auto; }
   .order-card .order-status { grid-column: 1 / -1; justify-self: start; }
 }
+
+
+/* ===== REVIEWS ===== */
+.product-reviews { max-width: 1200px; margin: 40px auto 0; padding: 0 20px; }
+.product-reviews h2 { font-family: var(--font-accent); color: var(--dark-pink); margin-bottom: 10px; }
+.review-stars { color: #f5a623; letter-spacing: 2px; }
+.review-summary { font-weight: 600; margin-bottom: 14px; }
+.review-card { background: var(--soft-pink); border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; }
+.review-card p { margin: 6px 0; }
+.review-card small { color: var(--gray); }
+.product-reviews .shop-btn { margin-top: 8px; display: inline-block; }
+.review-form { max-width: 520px; }
+.review-form select { width: 100%; font: inherit; padding: 10px 12px; border: 1px solid #ddd; border-radius: 10px; background: var(--white); }
+.star-pick { display: flex; gap: 6px; }
+.star-pick button { font-size: 2.4rem; line-height: 1; background: none; border: 0; color: #ddd; cursor: pointer; padding: 2px; }
+.star-pick button.on { color: #f5a623; }

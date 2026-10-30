@@ -208,6 +208,18 @@ if ($isAdmin && in_array($action, ['posts_make', 'posts_email'], true)) {
     go('view=posts', email_week_posts($data) ? '📧 Emailed to ' . cfg('mail.owner_alert') : 'The email did not send. Try again later.');
 }
 
+// ---------- reviews ----------
+
+if ($isAdmin && in_array($action, ['review_approve', 'review_hide', 'review_delete'], true)) {
+    $id = (int)($_POST['id'] ?? 0);
+    if ($action === 'review_delete') {
+        db()->prepare('DELETE FROM reviews WHERE id = ?')->execute([$id]);
+        go('view=reviews', '🗑️ Review deleted.');
+    }
+    set_review_status($id, $action === 'review_approve' ? 'approved' : 'hidden');
+    go('view=reviews', $action === 'review_approve' ? '✅ Approved! It shows on the website now.' : 'Hidden. It is off the website.');
+}
+
 // ---------- page ----------
 
 $view = $_GET['view'] ?? 'orders';
@@ -272,6 +284,10 @@ $view = $_GET['view'] ?? 'orders';
   .big-form input, .big-form button { font-size: 20px; padding: 12px; }
   .post-pics { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
   .post-pics a { text-align: center; color: var(--ink); text-decoration: none; font-size: 13px; }
+  .review-row { border-bottom: 1px solid var(--line); padding: 12px 0; }
+  .review-row:last-child { border-bottom: 0; }
+  .review-stars { color: #f5a623; font-size: 22px; letter-spacing: 2px; }
+  .review-body { font-size: 16px; margin: 8px 0; }
   .post-pics img { display: block; height: 180px; border-radius: 8px; border: 1px solid var(--line); margin-bottom: 4px; }
 </style>
 </head>
@@ -298,6 +314,8 @@ $view = $_GET['view'] ?? 'orders';
   <a href="?view=spent" class="<?= $view === 'spent' ? 'on' : '' ?>">🧾 Spent</a>
   <a href="?view=money" class="<?= $view === 'money' ? 'on' : '' ?>">💰 Money</a>
   <a href="?view=posts" class="<?= $view === 'posts' ? 'on' : '' ?>">📣 Posts</a>
+  <?php $waiting = pending_review_count(); ?>
+  <a href="?view=reviews" class="<?= $view === 'reviews' ? 'on' : '' ?>">⭐ Reviews<?= $waiting ? " ($waiting)" : '' ?></a>
   <a href="?view=orders" class="<?= $view === 'orders' ? 'on' : '' ?>">Orders</a>
   <a href="?view=promos" class="<?= $view === 'promos' ? 'on' : '' ?>">Promotions</a>
   <a href="?view=customers" class="<?= $view === 'customers' ? 'on' : '' ?>">Customers</a>
@@ -562,6 +580,41 @@ $view = $_GET['view'] ?? 'orders';
     const was = b.textContent; b.textContent = '✅ Copied!'; setTimeout(() => { b.textContent = was; }, 1500);
   }));
   </script>
+
+<?php elseif ($view === 'reviews'):
+    $byStatus = ['pending' => [], 'approved' => [], 'hidden' => []];
+    foreach (db()->query('SELECT * FROM reviews ORDER BY id DESC LIMIT 500') as $r) {
+        $byStatus[$r['status']][] = $r;
+    }
+    $titles = ['pending' => '⏳ Waiting for you', 'approved' => '✅ Showing on the website', 'hidden' => '🙈 Hidden'];
+    $site = rtrim((string)cfg('site_url'), '/'); ?>
+  <div class="card">
+    <h2 style="margin-top:0">⭐ Reviews</h2>
+    <p class="muted">New reviews wait here until you tap <b>Approve</b>. Only approved ones show on the website,
+      with just a first name and one letter (like "Emma S."). Emails never show.</p>
+    <p class="muted">Review page for your QR code: <b><?= e($site) ?>/review</b></p>
+  </div>
+  <?php foreach ($titles as $status => $title): if ($status !== 'pending' && !$byStatus[$status]) continue; ?>
+  <div class="card">
+    <h3 style="margin-top:0"><?= $title ?> (<?= count($byStatus[$status]) ?>)</h3>
+    <?php if (!$byStatus[$status]): ?><p class="muted">No new reviews. 🎉</p><?php endif; ?>
+    <?php foreach ($byStatus[$status] as $r): ?>
+    <div class="review-row">
+      <div class="review-stars"><?= str_repeat('★', (int)$r['stars']) . str_repeat('☆', 5 - (int)$r['stars']) ?></div>
+      <b><?= e(review_product_name($r['product_id'])) ?></b>
+      · <?= e($r['name']) ?> <span class="muted">(shows as "<?= e(review_display_name($r['name'])) ?>")</span>
+      <?php if ($r['order_code'] !== ''): ?><span class="badge s-paid">✓ Verified buyer · <?= e($r['order_code']) ?></span><?php endif; ?>
+      <p class="review-body"><?= nl2br(e($r['body'])) ?></p>
+      <p class="muted"><?= e(local_time($r['created_at'])) ?><?= $r['email'] !== '' ? ' · ' . e($r['email']) : '' ?></p>
+      <div class="actions">
+        <?php if ($status !== 'approved'): ?><form method="post"><?= csrf_field() ?><input type="hidden" name="action" value="review_approve"><input type="hidden" name="id" value="<?= (int)$r['id'] ?>"><button>✅ Approve</button></form><?php endif; ?>
+        <?php if ($status === 'approved'): ?><form method="post"><?= csrf_field() ?><input type="hidden" name="action" value="review_hide"><input type="hidden" name="id" value="<?= (int)$r['id'] ?>"><button class="plain">🙈 Hide</button></form><?php endif; ?>
+        <form method="post" onsubmit="return confirm('Delete this review for good?')"><?= csrf_field() ?><input type="hidden" name="action" value="review_delete"><input type="hidden" name="id" value="<?= (int)$r['id'] ?>"><button class="plain">🗑️ Delete</button></form>
+      </div>
+    </div>
+    <?php endforeach; ?>
+  </div>
+  <?php endforeach; ?>
 
 <?php elseif ($view === 'promos'):
     $promos =db()->query('SELECT * FROM promotions ORDER BY active DESC, id DESC')->fetchAll(); ?>

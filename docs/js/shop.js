@@ -482,6 +482,103 @@ async function gbSetupAccount() {
   });
 }
 
+// ---------- Reviews ----------
+
+function gbStars(n) {
+  return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n);
+}
+
+// The "Leave a review" page (review/). Links from order emails add ?o=CODE&t=TOKEN.
+async function gbSetupReviewForm() {
+  const form = document.getElementById('reviewForm');
+  if (!form) return;
+  const params = new URLSearchParams(location.search);
+  const select = form.product;
+  try {
+    const cat = await gbCatalog();
+    Object.entries(cat.products).forEach(([id, p]) => {
+      const opt = document.createElement('option');
+      opt.value = id;
+      opt.textContent = p.name;
+      select.appendChild(opt);
+    });
+    if (cat.products[params.get('gloss')]) select.value = params.get('gloss');
+  } catch (e) { /* the list stays "whole shop" */ }
+
+  let stars = 0;
+  const starBtns = form.querySelectorAll('.star-pick button');
+  starBtns.forEach(b => b.addEventListener('click', () => {
+    stars = Number(b.dataset.stars);
+    starBtns.forEach(x => {
+      x.classList.toggle('on', Number(x.dataset.stars) <= stars);
+      x.setAttribute('aria-checked', x.dataset.stars == stars ? 'true' : 'false');
+    });
+  }));
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const err = document.getElementById('reviewError');
+    err.textContent = '';
+    if (!stars) { err.textContent = 'Please tap the stars to pick 1 to 5.'; return; }
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    try {
+      const r = await gbApi('review.php', {
+        product: select.value, stars: stars, body: form.body.value, name: document.getElementById('reviewName').value,
+        email: form.email.value, website: form.website.value,
+        order: params.get('o') || '', token: params.get('t') || ''
+      });
+      document.getElementById('reviewPage').innerHTML = '<div class="shop-thanks"><h1>Thank you! 💖</h1>'
+        + '<p>' + gbEsc(r.message) + '</p><p><a class="shop-btn" href="../index.html#products">Back to the shop</a></p></div>';
+      window.scrollTo(0, 0);
+    } catch (ex) {
+      err.textContent = ex.message;
+      btn.disabled = false;
+    }
+  });
+}
+
+// Gloss pages: show approved reviews, and tell Google about the stars.
+async function gbSetupProductReviews() {
+  const box = document.getElementById('productReviews');
+  if (!box) return;
+  const id = box.dataset.product;
+  const leave = '<a class="shop-btn small" href="../review/?gloss=' + encodeURIComponent(id) + '">⭐ Leave a review</a>';
+  let data;
+  try {
+    data = await gbApi('reviews.php?product=' + encodeURIComponent(id));
+  } catch (e) {
+    box.innerHTML = '<h2>Reviews</h2>' + leave;
+    return;
+  }
+  if (!data.count) {
+    box.innerHTML = '<h2>Reviews</h2><p class="shop-hint">No reviews yet. Be the first!</p>' + leave;
+    return;
+  }
+  box.innerHTML = '<h2>Reviews</h2>'
+    + '<p class="review-summary"><span class="review-stars">' + gbStars(Math.round(data.average)) + '</span> '
+    + data.average.toFixed(1) + ' out of 5 · ' + data.count + ' review' + (data.count === 1 ? '' : 's') + '</p>'
+    + data.reviews.map(r => '<div class="review-card"><span class="review-stars">' + gbStars(r.stars) + '</span>'
+      + '<p>' + gbEsc(r.body).replace(/\n/g, '<br>') + '</p>'
+      + '<small>' + gbEsc(r.name) + (r.verified ? ' · ✓ Verified buyer' : '') + '</small></div>').join('')
+    + leave;
+
+  const ld = document.querySelector('script[type="application/ld+json"]');
+  if (!ld) return;
+  try {
+    const product = JSON.parse(ld.textContent);
+    product.aggregateRating = { '@type': 'AggregateRating', ratingValue: data.average, reviewCount: data.count, bestRating: 5, worstRating: 1 };
+    product.review = data.reviews.slice(0, 10).map(r => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.name },
+      datePublished: r.date,
+      reviewBody: r.body,
+      reviewRating: { '@type': 'Rating', ratingValue: r.stars, bestRating: 5, worstRating: 1 }
+    }));
+    ld.textContent = JSON.stringify(product);
+  } catch (e) { /* leave Google's data as it was */ }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   gbSetupHeader();
   gbSetupAddToCart();
@@ -489,4 +586,6 @@ document.addEventListener('DOMContentLoaded', function() {
   gbSetupCheckout();
   gbSetupOrderPage();
   gbSetupAccount();
+  gbSetupReviewForm();
+  gbSetupProductReviews();
 });

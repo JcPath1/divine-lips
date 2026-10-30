@@ -318,3 +318,11 @@ test — there are 22 test questions and they all pass right now.
 - Love (red) is no longer sold: removed from catalog.php (so also from My Gloss / Sell), home page, help bot, FAQ, posts, sitemap; docs/products/love.html deleted. Old links to /products/love.html 301 to /#products (rule in glimmer.py HTACCESS). The group photos still show the red bottle.
 - Phones keep styles.css / main.js / shop.js for 7 days (server sends max-age=604800). Pages link them with `?v=YYYYMMDD`. **When you change CSS or JS, bump that number on every page** or phones keep the old look.
 - QR codes for the shop are in `QR Codes/` (white, pink, hot pink; all scan to https://glimmerbliss.com, checked with OpenCV). JC will add more there. Not in docs/, so not on the website.
+
+## ⭐ Reviews (30 Oct 2026)
+- Review page: **https://glimmerbliss.com/review** (docs/review/index.html). JC is making the booth QR card for it. `?gloss=<id>` picks the gloss.
+- Anyone can send one (online buyers AND booth buyers). Saved as "pending"; owner gets a "⭐ New review waiting" email. **Nothing shows until JC/Charlie taps Approve** in admin → ⭐ Reviews (Approve / Hide / Delete).
+- Shown as first name + initial ("Emma S."); emails never leave the admin. Links in the receipt ("Payment received") and shipped/picked-up emails carry ?o=CODE&t=TOKEN → "✓ Verified buyer" (only for paid orders).
+- Approved reviews show on each gloss page and are added to Google's product data (aggregateRating + review) by shop.js — that clears the Search Console "review / aggregateRating" warnings once real reviews exist.
+- Code: server/app/reviews.php, api/review.php (send, honeypot, 5/hour per IP), api/reviews.php (approved only). Table `reviews` (schema marker now .schema-v4). Test: tools/reviewtest.py.
+- Also fixed: help-bot links were broken on gloss pages (went to /products/products/...). They now use the site root.

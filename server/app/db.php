@@ -20,7 +20,7 @@ function db(): PDO
             $pdo->exec("SET NAMES utf8mb4");
         }
         // Make the tables the very first time the shop runs
-        $marker = __DIR__ . '/.schema-v3';
+        $marker = __DIR__ . '/.schema-v4';
         if (!is_file($marker)) {
             db_migrate();
             @touch($marker);
@@ -143,6 +143,20 @@ function db_migrate(): void
             what VARCHAR(160) NOT NULL,
             amount_cents INT NOT NULL,
             created_at DATETIME NOT NULL
+        )$tail",
+
+        // Customer reviews - only 'approved' ones show on the site
+        "CREATE TABLE IF NOT EXISTS reviews (
+            id $id,
+            product_id VARCHAR(40) NOT NULL DEFAULT '',
+            stars INT NOT NULL,
+            name VARCHAR(60) NOT NULL,
+            body TEXT NOT NULL,
+            email VARCHAR(190) NOT NULL DEFAULT '',
+            order_code VARCHAR(16) NOT NULL DEFAULT '',
+            status VARCHAR(10) NOT NULL DEFAULT 'pending',
+            created_at DATETIME NOT NULL,
+            approved_at DATETIME NULL
         )$tail",
     ];
     foreach ($tables as $sql) {

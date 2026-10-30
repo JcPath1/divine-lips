@@ -26,6 +26,7 @@ require_once __DIR__ . '/mailer.php';
 require_once __DIR__ . '/emails.php';
 require_once __DIR__ . '/paypal.php';
 require_once __DIR__ . '/posts.php';
+require_once __DIR__ . '/reviews.php';
 
 function cfg(string $path, $default = null)
 {

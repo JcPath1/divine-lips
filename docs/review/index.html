@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave a Review - Glimmer Bliss</title>
+  <meta name="description" content="Tell us how you like your Glimmer Bliss lip gloss! Bought it online or at our booth? Leave a review in one minute.">
+  <link rel="canonical" href="https://glimmerbliss.com/review/">
+  <link rel="stylesheet" href="../css/styles.css?v=20261030">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Free shipping on orders of $35 or more!
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Glimmer Bliss"></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#products">Shop</a></li>
+        <li><a href="../index.html#about">About Us</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../account.html">My Orders</a></li>
+      </ul>
+      <div class="nav-icons">
+        <a href="../cart.html" class="cart-icon" id="cartIcon" aria-label="Your cart">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="shop-page">
+    <div class="review-page" id="reviewPage">
+      <h1>Leave a Review ⭐</h1>
+      <p>Thank you for trying Glimmer Bliss! Bought online or at our booth? Tell us what you think.</p>
+
+      <form id="reviewForm" class="review-form" novalidate>
+        <label for="reviewGloss">Which gloss?</label>
+        <select id="reviewGloss" name="product">
+          <option value="">I'm not sure / the whole shop</option>
+        </select>
+
+        <label>How many stars?</label>
+        <div class="star-pick" role="radiogroup" aria-label="Stars">
+          <button type="button" data-stars="1" role="radio" aria-label="1 star">★</button>
+          <button type="button" data-stars="2" role="radio" aria-label="2 stars">★</button>
+          <button type="button" data-stars="3" role="radio" aria-label="3 stars">★</button>
+          <button type="button" data-stars="4" role="radio" aria-label="4 stars">★</button>
+          <button type="button" data-stars="5" role="radio" aria-label="5 stars">★</button>
+        </div>
+
+        <label for="reviewBody">Your review</label>
+        <textarea id="reviewBody" name="body" rows="5" maxlength="1000" placeholder="What do you love about it?" required></textarea>
+
+        <label for="reviewName">Your first name <small>(we show it like "Emma S.")</small></label>
+        <input id="reviewName" name="name" maxlength="40" autocomplete="name" required>
+
+        <label for="reviewEmail">Email <small>(optional, never shown)</small></label>
+        <input id="reviewEmail" name="email" type="email" autocomplete="email">
+
+        <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+
+        <p id="reviewError" class="shop-error"></p>
+        <button class="shop-btn wide" type="submit">Send my review 💖</button>
+        <p class="shop-hint">We read every review before it goes on the site.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Glimmer Bliss</h4>
+        <p style="color: #aaa;">Handmade lip glosses crafted with love by Charlie Mae.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Shop</h4>
+        <a href="../index.html#products">All Products</a>
+        <a href="../products/glimmer-kiss.html">Limited Edition</a>
+      </div>
+      <div class="footer-section">
+        <h4>Help</h4>
+        <a href="../shipping.html">Shipping Info</a>
+        <a href="../returns.html">Returns</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../account.html">My Orders</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Glimmer Bliss. Made with 💖 by Charlie Mae</p>
+    </div>
+  </footer>
+
+  <script src="../js/shop.js?v=20261030"></script>
+  <script src="../js/main.js?v=20261030"></script>
+</body>
+</html>

@@ -187,6 +187,8 @@ const HELP_ANSWERS = [
     a: '<strong>Glimmer Kiss</strong> is <strong>$15.00</strong> and Limited Edition. It goes on clear, then turns a soft pink - the exact shade comes from your own natural pH, so it is different on everybody. You can get it with glitter or without. <a href="products/glimmer-kiss.html">See it here</a>.' },
 
   // --- Specific problems ---
+  { k: ['review', 'leave a review', 'rating', 'feedback', 'testimonial'],
+    a: 'We would love to hear from you! <a href="review/">Leave a review here</a> - it works if you bought online or at our booth. We read every review before it goes on the site.' },
   { k: ['broken', 'damaged', 'damage', 'leak', 'cracked', 'spilled', 'smashed'],
     a: 'Sorry! Email <strong>orders@glimmerbliss.com</strong> your order code and a photo within 7 days and we will send a replacement. No need to mail it back.' },
   { k: ['wrong color', 'wrong colour', 'wrong gloss', 'wrong one', 'wrong item'],
@@ -235,6 +237,12 @@ const HELP_ANSWERS = [
     a: 'Hi! Ask me about flavors, sizes, prices, shipping, pickup, or returns.' }
 ];
 
+// Where the site starts (pages in products/ and review/ load this from ../js/),
+// so help links like "faq.html" work from every page.
+const HELP_ROOT = (document.currentScript && document.currentScript.src)
+  ? document.currentScript.src.replace(/js\/main\.js.*$/, '')
+  : '/';
+
 function setupHelpAssistant() {
   // Every page gets the button, built here so no page has to include the markup
   const wrap = document.createElement('div');
@@ -265,6 +273,10 @@ function setupHelpAssistant() {
     const line = document.createElement('div');
     line.className = 'helper-msg helper-' + who;
     line.innerHTML = text;
+    line.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!/^([a-z]+:|\/|#)/i.test(href)) link.setAttribute('href', HELP_ROOT + href);
+    });
     log.appendChild(line);
     log.scrollTop = log.scrollHeight;
   }
