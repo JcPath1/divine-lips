@@ -579,6 +579,30 @@ async function gbSetupProductReviews() {
   } catch (e) { /* leave Google's data as it was */ }
 }
 
+// The Reviews page (reviews.html): every approved review, newest first.
+async function gbSetupAllReviews() {
+  const box = document.getElementById('allReviews');
+  if (!box) return;
+  let data;
+  try {
+    data = await gbApi('reviews.php');
+  } catch (e) {
+    box.innerHTML = '<p class="shop-hint">Reviews could not load right now. Please try again in a minute.</p>';
+    return;
+  }
+  if (!data.count) {
+    box.innerHTML = '<p class="shop-hint">No reviews yet. Be the first!</p>';
+    return;
+  }
+  box.innerHTML = '<p class="review-summary"><span class="review-stars">' + gbStars(Math.round(data.average)) + '</span> '
+    + data.average.toFixed(1) + ' out of 5 · ' + data.count + ' review' + (data.count === 1 ? '' : 's') + '</p>'
+    + data.reviews.map(r => '<div class="review-card"><span class="review-stars">' + gbStars(r.stars) + '</span>'
+      + (r.product ? ' <a class="review-gloss" href="products/' + encodeURIComponent(r.product) + '.html">'
+        + gbEsc(r.product_name) + '</a>' : '')
+      + '<p>' + gbEsc(r.body).replace(/\n/g, '<br>') + '</p>'
+      + '<small>' + gbEsc(r.name) + (r.verified ? ' · ✓ Verified buyer' : '') + '</small></div>').join('');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   gbSetupHeader();
   gbSetupAddToCart();
@@ -588,4 +612,5 @@ document.addEventListener('DOMContentLoaded', function() {
   gbSetupAccount();
   gbSetupReviewForm();
   gbSetupProductReviews();
+  gbSetupAllReviews();
 });

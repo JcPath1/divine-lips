@@ -1544,6 +1544,8 @@ body.shop-open .footer {
 .review-card p { margin: 6px 0; }
 .review-card small { color: var(--gray); }
 .product-reviews .shop-btn { margin-top: 8px; display: inline-block; }
+.all-reviews { margin: 18px 0 20px; }
+.review-gloss { font-weight: 600; color: var(--dark-pink); margin-left: 6px; }
 .review-form { max-width: 520px; }
 .review-form select { width: 100%; font: inherit; padding: 10px 12px; border: 1px solid #ddd; border-radius: 10px; background: var(--white); }
 .star-pick { display: flex; gap: 6px; }

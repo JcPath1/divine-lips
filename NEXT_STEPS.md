@@ -1,6 +1,6 @@
 # Glimmer Bliss — Where We Left Off
 
-**Last worked on: 28 October 2026**
+**Last worked on: 31 October 2026** (public Reviews page + menu link; admin password has no space now)
 This file is in the repo root, NOT in `docs/`, so it is not published on the website.
 
 ---
@@ -326,3 +326,8 @@ test — there are 22 test questions and they all pass right now.
 - Approved reviews show on each gloss page and are added to Google's product data (aggregateRating + review) by shop.js — that clears the Search Console "review / aggregateRating" warnings once real reviews exist.
 - Code: server/app/reviews.php, api/review.php (send, honeypot, 5/hour per IP), api/reviews.php (approved only). Table `reviews` (schema marker now .schema-v4). Test: tools/reviewtest.py.
 - Also fixed: help-bot links were broken on gloss pages (went to /products/products/...). They now use the site root.
+- **31 Oct: public Reviews page** https://glimmerbliss.com/reviews.html (docs/reviews.html, `gbSetupAllReviews` in shop.js) lists ALL approved reviews with the gloss name linked. "Reviews" added to the top menu (between Shop and About Us) and the footer Shop column on every page; added to sitemap.xml; CSS/JS links bumped to `?v=20261031`. Deployed and checked live (Brenda's Glimmer Kiss review showing; phone menu wraps to 2 rows).
+
+## 🔑 Admin password (31 Oct 2026)
+- The admin password **no longer has a space** — JC's phone would not type the space, so login kept failing. Same password with the space removed; ADMIN_PASSWORD in private/glimmerbliss-secrets.env updated and deployed. Checked: new one accepted, old one rejected.
+- Admin login locks for 15 minutes after 5 wrong tries ("Too many tries. Wait 15 minutes.").
