@@ -1,6 +1,6 @@
 # Glimmer Bliss — Where We Left Off
 
-**Last worked on: 31 October 2026** (public Reviews page + menu link; admin password has no space now)
+**Last worked on: 7 November 2026** (new site words: Charlie Mae age 11, sheer note, fuller gloss pages; Google indexing)
 This file is in the repo root, NOT in `docs/`, so it is not published on the website.
 
 ---
@@ -15,16 +15,34 @@ Deploy: JC types `!python C:/Projects/divine-lips/tools/glimmer.py deploy`
 (no space before the `!`; Claude is blocked from deploying itself).
 
 **To do next (pick up here):**
-1. JC: check the Post Maker test email arrived (spam folder too) and look at admin → 📣 Posts.
-2. Charlie: enter stock in My Gloss and costs in Spent before the show (Canton, 31 Oct – 1 Nov).
-3. Make social accounts in JC's name (Instagram, Facebook Page, Pinterest, TikTok), then build
+1. **Ingredients:** JC to send the base-bottle labels + what Charlie adds to each shade. Then write a
+   real ingredient list (friendly version + official list per gloss, no supplier names).
+   NEVER guess ingredients. Vitamin E is NOT used (JC said so, 7 Nov).
+2. **Glimmer Kiss tint:** ask JC if it leaves a pink tint after the gloss wears off. Only add
+   "May leave a soft pink tint" if he says yes.
+3. **Google:** site live since 27 Oct; JC requested indexing on 7 Nov for home, 5 gloss pages,
+   reviews (and faq). Check `site:glimmerbliss.com` ~14 Nov. Next: Google Business Profile
+   (business.google.com, online store / service area, no home address). Its review link goes on a
+   "Also review us on Google" button on the review thank-you screen.
+4. Make social accounts in JC's name (Instagram, Facebook Page, Pinterest, TikTok), then build
    Part 2 auto-posting WITH an Approve button per post (see Post Maker section).
-4. Website card payments: PayPal (just keys) or Square (needs building, ask JC first).
-5. Texas sales tax permit. Revoke SPACESHIP_AI_TOKEN when setup is finished.
+5. Website card payments: PayPal (just keys) or Square (needs building, ask JC first).
+6. Texas sales tax permit. Revoke SPACESHIP_AI_TOKEN when setup is finished.
 
 ---
 
-## 🛒 THE REAL SHOP IS BUILT (27 October 2026) — read this first
+## Changes on 7 Nov 2026 (site words)
+- Homepage headline is now a `<div class="tagline-stripe">` with the h1 "Handmade Lip Gloss by Charlie Mae, Age 11"
+  and a sub-line. "Meet Charlie Mae: Founder, Gloss Maker, Age 11" story with a 4-point list (`.about-list`).
+  "Her mom and dad help with the grown-up parts" (home + FAQ).
+- `.wear-note` "How our glosses wear" (sheer) under the shop grid and on all 5 gloss pages.
+- The 4 regular gloss pages each have a `.product-tagline`, a new description and `.product-specs` boxes
+  (color / finish / flavor / 5 ml). JSON-LD descriptions updated. Glimmer Kiss has a "How does it work?" pH
+  section, `.product-points` list and a tip.
+- FAQ + help bot: "Are the glosses sheer?" and "How old is Charlie Mae?" (11).
+- CSS/JS version is now `?v=20261107` on every page. Bump it on every CSS/JS change.
+- Charlie's privacy: first name, age and booth only. No school, team or hometown, and the cartoon avatar, never a photo.
+ IS BUILT (27 October 2026) — read this first
 
 The shop is moving from GitHub Pages to **Spaceship hosting** (PHP + database +
 email, confirmed on Spaceship's hosting page). Built and tested on this computer.
