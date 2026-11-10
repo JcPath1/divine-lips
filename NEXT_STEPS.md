@@ -1,6 +1,6 @@
 # Glimmer Bliss — Where We Left Off
 
-**Last worked on: 7 November 2026** (new site words: Charlie Mae age 11, sheer note, fuller gloss pages; Google indexing)
+**Last worked on: 10 November 2026** (security headers live; new hosting token connected) (new site words: Charlie Mae age 11, sheer note, fuller gloss pages; Google indexing)
 This file is in the repo root, NOT in `docs/`, so it is not published on the website.
 
 ---
@@ -33,7 +33,9 @@ Deploy: JC types `!python C:/Projects/divine-lips/tools/glimmer.py deploy`
 
 **Security (10 Nov 2026):** JC REVOKED the Spaceship AI token (the MCP server now gets "rejected the
 Authorization header"). Claude can no longer look inside the server; deploys still work by FTPS. Make a new
-token in Hosting Manager → Access only if server access is needed, then revoke again. The .htaccess now also
+token in Hosting Manager → Access only if server access is needed, then revoke again.
+LATER ON 10 Nov: JC made a NEW token. It is on the SPACESHIP_AI_TOKEN line in the secrets file and in
+~/.claude.json (MCP reconnected, works). Remind JC to revoke it again when server work is done. The .htaccess now also
 sends X-Frame-Options SAMEORIGIN and a Content-Security-Policy (scripts only from us, cdnjs and PayPal;
 'unsafe-inline' is still allowed because admin and pay-sign use inline scripts). Tested with every page: nothing
 blocked. PayPal buttons are not switched on yet, so they are untested under the CSP; check them when PayPal goes on.
