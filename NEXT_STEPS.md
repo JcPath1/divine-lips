@@ -1,6 +1,6 @@
 # Glimmer Bliss — Where We Left Off
 
-**Last worked on: 10 November 2026** (security headers live; new hosting token connected) (new site words: Charlie Mae age 11, sheer note, fuller gloss pages; Google indexing)
+**Last worked on: 10 November 2026** (security headers live; new hosting token connected; 7 Nov: new site words + Google indexing)
 This file is in the repo root, NOT in `docs/`, so it is not published on the website.
 
 ---
