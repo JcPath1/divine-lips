@@ -27,7 +27,16 @@ Deploy: JC types `!python C:/Projects/divine-lips/tools/glimmer.py deploy`
 4. Make social accounts in JC's name (Instagram, Facebook Page, Pinterest, TikTok), then build
    Part 2 auto-posting WITH an Approve button per post (see Post Maker section).
 5. Website card payments: PayPal (just keys) or Square (needs building, ask JC first).
-6. Texas sales tax permit. Revoke SPACESHIP_AI_TOKEN when setup is finished.
+6. Texas sales tax permit.
+7. **Hosting plan:** Spaceship Web Hosting Essential was bought as a TRIAL on 27 Oct 2026, set to renew 26 Nov 2026
+   (from the 27 Oct notes; not re-checked since). JC should confirm the renewal/payment in Spaceship before then.
+
+**Security (10 Nov 2026):** JC REVOKED the Spaceship AI token (the MCP server now gets "rejected the
+Authorization header"). Claude can no longer look inside the server; deploys still work by FTPS. Make a new
+token in Hosting Manager → Access only if server access is needed, then revoke again. The .htaccess now also
+sends X-Frame-Options SAMEORIGIN and a Content-Security-Policy (scripts only from us, cdnjs and PayPal;
+'unsafe-inline' is still allowed because admin and pay-sign use inline scripts). Tested with every page: nothing
+blocked. PayPal buttons are not switched on yet, so they are untested under the CSP; check them when PayPal goes on.
 
 ---
 
