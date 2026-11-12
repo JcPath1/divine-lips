@@ -45,6 +45,9 @@ type ReelProps = {
   name: string;
   // true = the longer website version (slower words, longer hold, words fade out, smooth repeat)
   site?: boolean;
+  // Website version only. true = the clip never plays backward: it holds on its last picture, then melts
+  // back to the first one as the words fade (see Loop.tsx).
+  dissolve?: boolean;
   // Space between the lead lines. Raise it when a "y" or "g" runs into the line below.
   leadLineHeight?: number;
   // true = "pink." pops in fast, like a burst, not a slow wipe
@@ -142,7 +145,8 @@ export const ReelCompositions = () => {
         defaultProps={{
           site: true,
           name: "macro",
-          leadLines: ["Wet.", "Clear.", "Then"],
+          // JC, 12 Nov: no "Wet." on the website cut.
+          leadLines: ["Clear.", "Then"],
           leadLeft: 70,
           leadTop: 262,
           leadSize: 124,
@@ -171,6 +175,8 @@ export const ReelCompositions = () => {
         height={1920}
         defaultProps={{
           site: true,
+          // JC, 12 Nov: the shadow sliding back across the gloss looked odd.
+          dissolve: true,
           name: "studio",
           leadLines: ["Everyone gets", "a different"],
           leadLeft: 70,
@@ -187,7 +193,9 @@ export const ReelCompositions = () => {
           freeze: "studio-freeze.png",
           // Phi layout (JC, 11 Nov): the picture is enlarged 1.18x so the bottle's center line sits on the
           // right phi line (x = 667 of 1080), not in the middle. Type sizes step by phi: 40, 104, 272.
-          stage: "translate(0px, -153px) scale(1.18)",
+          // Website cut (JC, 12 Nov): bottle and glass block sit further right, away from the words.
+          // Enlarged 1.31x (the social cut stays at 1.18x on the phi line).
+          stage: "translate(0px, -343px) scale(1.31)",
           leadLineHeight: 1.12,
           burst: true,
         }}
@@ -393,7 +401,13 @@ const Info = ({
 
 export const Reel: React.FC<ReelProps> = (props) => {
   return (
-    <Site.Provider value={{ pace: props.site ? 1.5 : 1, loop: !!props.site }}>
+    <Site.Provider
+      value={{
+        pace: props.site ? 1.5 : 1,
+        loop: !!props.site,
+        dissolve: props.dissolve,
+      }}
+    >
       <AbsoluteFill style={{ backgroundColor: "#f7c9d4" }}>
         <AbsoluteFill
           style={{ transformOrigin: "0 0", transform: props.stage ?? "none" }}

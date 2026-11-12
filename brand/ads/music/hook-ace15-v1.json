@@ -1,0 +1,23 @@
+{
+  "model": "fal-ai/ace-step-1.5",
+  "price_usd": 0.012,
+  "request_id": "01a1cde5-180a-73a1-a79c-e09204ef4e42",
+  "status_url": "https://queue.fal.run/fal-ai/ace-step-1.5/requests/01a1cde5-180a-73a1-a79c-e09204ef4e42/status",
+  "response_url": "https://queue.fal.run/fal-ai/ace-step-1.5/requests/01a1cde5-180a-73a1-a79c-e09204ef4e42",
+  "input": {
+    "prompt": "upbeat clean pop jingle, bright confident female lead vocal, handclaps, punchy bass, shiny synth plucks, catchy hook, polished modern production",
+    "lyrics": "[Verse]\nMade by hand, vanilla on my lips\nLittle bottle, big ideas\n\n[Chorus]\nGloss on, boss up\nI'm a lip gloss boss\nDream big, gloss often\nGlimmer Bliss, that's us",
+    "duration": 20,
+    "bpm": 115,
+    "vocal_language": "en",
+    "thinking": true,
+    "num_outputs": 1
+  },
+  "ai_generated": true,
+  "audio_url": "https://v3b.fal.media/files/b/0ab21f5e/uF_fZUI5Bg2sbTla24pzy.bin",
+  "result_bpm": 115,
+  "result_duration": 20.0,
+  "result_key_scale": "C major",
+  "result_enhanced_prompt": "",
+  "file": "hook-ace15-v1.flac"
+}

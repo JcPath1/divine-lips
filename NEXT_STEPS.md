@@ -12,12 +12,16 @@ Venmo payments, admin back end at /admin/). The old GitHub Pages site is turned 
 Everything is committed and pushed to `master` (last: Post Maker, 28 Oct).
 
 Deploy: JC types `!python C:/Projects/divine-lips/tools/glimmer.py deploy`
-(no space before the `!`; Claude is blocked from deploying itself).
+(no space before the `!`). On 12 Nov the same command also ran when Claude ran it, at JC's request, so the
+old "Claude is blocked from deploying" note no longer holds. Claude deploys only when JC asks.
 
 **To do next (pick up here):**
 **START HERE (state at end of 11 Nov):**
-- **Not deployed:** the Glimmer Kiss page (3 videos, 3 step pictures, size cards on all 5 gloss pages) is only on
-  this computer. JC deploys with the one line above, then hard-refreshes.
+- **Deployed 12 Nov (JC ran the deploy, Claude checked the live files match):** the Glimmer Kiss page (3 videos,
+  3 step pictures, size cards on all 5 gloss pages). Website cuts changed on 12 Nov: video 1 "pink." moved off
+  GLIMMER BLISS, video 2 has no "Wet.", video 3 does not rewind (it melts back to the start), and video 3 opens
+  and plays as the main picture. The Instagram cuts in `ads/organic-batch-1/` still have the old versions.
+  Not committed to git yet.
 - **Logo layout (locked, JC + Charlie):** GB stands upright on the cap; GLIMMER BLISS reads from the bottom of the
   bottle toward the cap. Rule in `brand/design-tokens.json` (`bottle-logo`), applied by `tools/bottle_logo.py`.
   All of `ads/organic-batch-1/` and the 3 site videos were re-made with it. `ads/campaign-test/` still has the old logo.
@@ -43,6 +47,11 @@ Deploy: JC types `!python C:/Projects/divine-lips/tools/glimmer.py deploy`
 1. **Ingredients:** JC to send the base-bottle labels + what Charlie adds to each shade. Then write a
    real ingredient list (friendly version + official list per gloss, no supplier names).
    NEVER guess ingredients. Vitamin E is NOT used (JC said so, 7 Nov).
+   **12 Nov update:** supplies come from TKB Trading; each supply's ingredient list is now in
+   `brand/ingredients-tkb.md` (from JC's two TKB orders). Still needed from JC: the recipe for each gloss.
+   Check with JC: three of the supplies ordered in June (High Shine Top Coat, Log Cabin and Yummy Pink Lip
+   Liquids) list vitamin E, so "not used" is only true if those are in none of the 5 glosses.
+   **TikTok Shop:** the ordered to-do list is in `TIKTOK_SHOP_PLAN.md`. It starts with these recipes.
 2. **Glimmer Kiss tint:** ask JC if it leaves a pink tint after the gloss wears off. Only add
    "May leave a soft pink tint" if he says yes.
 3. **Google:** site live since 27 Oct; JC requested indexing on 7 Nov for home, 5 gloss pages,

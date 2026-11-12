@@ -51,6 +51,10 @@ function setupThumbnails() {
           });
           frame.appendChild(video);
         }
+        // The thumbnail can say the video's shape up front, so the page does not jump while it loads
+        if (this.getAttribute('data-ratio')) {
+          frame.style.aspectRatio = this.getAttribute('data-ratio');
+        }
         video.poster = this.getAttribute('data-poster') || '';
         video.src = videoSrc;
         mainImg.hidden = true;
@@ -72,6 +76,12 @@ function setupThumbnails() {
       }
     });
   });
+
+  // A thumbnail marked data-start is what shows (and plays) when the page opens
+  const startThumb = document.querySelector('.thumbnail[data-start]');
+  if (startThumb) {
+    startThumb.click();
+  }
 }
 
 // Welcome screen photo ad: fade from one photo to the next, over and over

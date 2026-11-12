@@ -1,0 +1,14 @@
+{
+  "model": "fal-ai/minimax-music/v2",
+  "price_usd": 0.03,
+  "request_id": "01a1cdea-7208-7bf3-a338-eeac467b4e7f",
+  "status_url": "https://queue.fal.run/fal-ai/minimax-music/requests/01a1cdea-7208-7bf3-a338-eeac467b4e7f/status",
+  "response_url": "https://queue.fal.run/fal-ai/minimax-music/requests/01a1cdea-7208-7bf3-a338-eeac467b4e7f",
+  "input": {
+    "prompt": "Upbeat clean pop jingle, bright confident female lead vocal, handclaps, punchy bass, shiny synth plucks, catchy short hook, polished modern production, around 115 BPM",
+    "lyrics_prompt": "[Chorus]\nMade by hand, vanilla on my lips\nLittle bottle, big ideas\nGloss on, boss up\nI'm a lip gloss boss\nDream big, gloss often\nGlimmer Bliss, that's us"
+  },
+  "ai_generated": true,
+  "audio_url": "https://v3b.fal.media/files/b/0ab21f69/46wcwhXQxkxLibnbrZcd8_output.mp3",
+  "file": "hook-minimax2-v1.mp3"
+}

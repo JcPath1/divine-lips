@@ -15,7 +15,13 @@ import { Video } from "@remotion/media";
 //  - the words fade out before the video starts again,
 //  - the clip plays forward, then backward, so the last picture is the same as the first: no jump on repeat.
 // Social versions keep site = false: 6.5 seconds, words at normal speed.
-export const Site = createContext({ pace: 1, loop: false });
+// dissolve (JC, 12 Nov, video 3): the clip plays forward once and holds on its last picture, then melts back
+// to the first picture while the words fade out. Nothing plays backward, so the shadow never slides back.
+export const Site = createContext<{
+  pace: number;
+  loop: boolean;
+  dissolve?: boolean;
+}>({ pace: 1, loop: false });
 
 // The clock the words use. Slower when pace is above 1.
 export const useWordFrame = () => useCurrentFrame() / useContext(Site).pace;
@@ -48,8 +54,31 @@ const COVER = {
 // backward), <name>-first.png, <name>-last.png. Clips are 5 seconds at 24 fps: never slow them down, that
 // repeats frames and the shadows stutter.
 export const Backdrop: React.FC<{ name: string }> = ({ name }) => {
-  const { fps } = useVideoConfig();
-  const { loop } = useContext(Site);
+  const frame = useCurrentFrame();
+  const { fps, durationInFrames } = useVideoConfig();
+  const { loop, dissolve } = useContext(Site);
+  if (loop && dissolve) {
+    return (
+      <>
+        <CanvasImage src={staticFile(`${name}-last.png`)} style={COVER} />
+        <Sequence durationInFrames={5 * fps}>
+          <Video src={staticFile(`${name}-clip.mp4`)} muted style={COVER} />
+        </Sequence>
+        <CanvasImage
+          src={staticFile(`${name}-first.png`)}
+          style={{
+            ...COVER,
+            opacity: interpolate(
+              frame,
+              [durationInFrames - 1.4 * fps, durationInFrames - 0.2 * fps],
+              [0, 1],
+              { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+            ),
+          }}
+        />
+      </>
+    );
+  }
   return (
     <>
       <CanvasImage

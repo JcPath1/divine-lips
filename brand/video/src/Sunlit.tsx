@@ -33,6 +33,10 @@ const CLAMP = {
   extrapolateRight: "clamp",
 } as const;
 
+// Website cut only. Measured from the top left corner, like `stage` in Reels.tsx.
+const SITE_STAGE = "translate(0px, -70px) scale(1.06)";
+const SITE_PINK_LEFT = 44;
+
 export const SunlitComposition = () => {
   return (
     <>
@@ -131,7 +135,7 @@ const Lead = () => {
   );
 };
 
-const BigPink = () => {
+const BigPink: React.FC<{ left: number }> = ({ left }) => {
   const frame = useWordFrame();
   const fade = useWordsFade();
   const { fps } = useVideoConfig();
@@ -144,7 +148,7 @@ const BigPink = () => {
       name="pink."
       style={{
         position: "absolute",
-        left: 84,
+        left,
         top: 770,
         fontFamily: display,
         fontStyle: "italic",
@@ -221,20 +225,29 @@ export const GlimmerKissSunlit: React.FC<{ site?: boolean }> = ({ site }) => {
   return (
     <Site.Provider value={{ pace: site ? 1.5 : 1, loop: !!site }}>
       <AbsoluteFill style={{ backgroundColor: "#f7c9d4" }}>
-        <Backdrop name="sunlit" />
-        {/* Still bottle over the clip: no flowing glitter, logo in the locked position and right way up. */}
-        <CanvasImage
-          src={staticFile("sunlit-freeze.png")}
+        {/* Website cut (JC, 12 Nov): the picture is enlarged a touch and "pink." sits further left, so the
+            "k" stays off GLIMMER BLISS on the bottle. The social cut keeps the approved still's layout. */}
+        <AbsoluteFill
           style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
+            transformOrigin: "0 0",
+            transform: site ? SITE_STAGE : "none",
           }}
-        />
+        >
+          <Backdrop name="sunlit" />
+          {/* Still bottle over the clip: no flowing glitter, logo in the locked position and right way up. */}
+          <CanvasImage
+            src={staticFile("sunlit-freeze.png")}
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </AbsoluteFill>
         <Lead />
-        <BigPink />
+        <BigPink left={site ? SITE_PINK_LEFT : 84} />
         <Info />
       </AbsoluteFill>
     </Site.Provider>
