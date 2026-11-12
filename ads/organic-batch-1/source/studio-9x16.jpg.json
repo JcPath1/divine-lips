@@ -1,0 +1,10 @@
+{
+  "model": "fal-ai/flux-pro/kontext",
+  "price_usd": 0.04,
+  "request_id": "01a1c99e-318a-7c43-a3e3-2eea5cdc498e",
+  "source_image": "https://glimmerbliss.com/images/glimmer-kiss.jpg",
+  "aspect_ratio": "9:16",
+  "prompt": "Place this exact lip gloss bottle standing upright on a solid block of clear glass, against a seamless pale blush pink backdrop, in a tall vertical frame. Hard sculptural studio light from the upper left throws one long sharp shadow, and light refracts through the clear bottle onto the backdrop. Minimal luxury beauty campaign still life. The bottle and glass block sit in the lower half of the frame, slightly right of centre, and the whole upper half of the frame is empty blush backdrop. The bottle is long and slender, about three and a half times taller than it is wide, with the white cap taking up half of its height, exactly as in the reference photo. Keep the plain white rectangular cap, clear square body, sparkly gloss and white applicator inside exactly as in the reference. No label, no text, no logo, no extra objects.",
+  "seed": 2456949623,
+  "ai_generated": true
+}

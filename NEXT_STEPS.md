@@ -1,6 +1,6 @@
 # Glimmer Bliss — Where We Left Off
 
-**Last worked on: 10 November 2026** (security headers live; new hosting token connected; 7 Nov: new site words + Google indexing)
+**Last worked on: 11 November 2026 (evening)** (ad system + videos + logo layout + bottle sticker; all committed and pushed; website changes NOT deployed yet)
 This file is in the repo root, NOT in `docs/`, so it is not published on the website.
 
 ---
@@ -15,6 +15,31 @@ Deploy: JC types `!python C:/Projects/divine-lips/tools/glimmer.py deploy`
 (no space before the `!`; Claude is blocked from deploying itself).
 
 **To do next (pick up here):**
+**START HERE (state at end of 11 Nov):**
+- **Not deployed:** the Glimmer Kiss page (3 videos, 3 step pictures, size cards on all 5 gloss pages) is only on
+  this computer. JC deploys with the one line above, then hard-refreshes.
+- **Logo layout (locked, JC + Charlie):** GB stands upright on the cap; GLIMMER BLISS reads from the bottom of the
+  bottle toward the cap. Rule in `brand/design-tokens.json` (`bottle-logo`), applied by `tools/bottle_logo.py`.
+  All of `ads/organic-batch-1/` and the 3 site videos were re-made with it. `ads/campaign-test/` still has the old logo.
+- **Bottle sticker:** clear, black print, 11/16 x 3 in, one sticker cut by hand at the cap seam. Cap = 1.5 in
+  (JC measured). Files in `brand/sticker/` (print PDF, proof, test sheet; `make_sticker.py`, `make_test_sheet.py`).
+  JC emailed 4OVER4, StickerGiant and Avery on 11 Nov with questions (size, edge distance, oil resistance, sample).
+  Waiting on replies and on JC's paper test on a real bottle. The sticker is assumed centered on the bottle
+  (5/32 in bare at each end): not confirmed by JC.
+- **Suno MCP:** added to this project (`claude mcp add --transport http suno https://api.suno.com/mcp`), needs JC to
+  sign in via `/mcp` after a restart. Say the price before making any song.
+- **fal spend so far:** $2.28 total. Any new clip ($0.49) needs JC's OK. Video tweaks only if free.
+- **Known overlaps not fixed:** "pink." crosses GLIMMER BLISS on carousel 1, pin 1 and the social cut of video 2.
+- JC is still testing the ad system, not posting. Instagram first when he does. Nothing is posted or scheduled.
+- Remind JC to revoke the Spaceship AI token when server work is done.
+
+0. **NEXT UP (11 Nov): organic social.** Read `ORGANIC_SOCIAL_PLAN.md` (JC's saved notes + what Claude checked).
+   Ad system built 10-11 Nov: brand kit v3 (`brand/brand-guidelines.md`), ad agent
+   (`.claude/agents/glimmer-ads.md`), fal tools (`tools/fal_generate.py`, `tools/fal_video.py`, key in
+   `private/fal.env`), Remotion (`brand/video/`). First approved ad + video: `ads/campaign-test/01-sunlit-macro-*`.
+   Still waiting on Charlie: background pink (`brand/backgrounds.html`) and the website restyle preview
+   (`brand/preview-site/index.html`, rebuild with `python brand/build_preview.py`). Nothing from 10-11 Nov is
+   committed to git yet except what was deployed (Glimmer Kiss "seconds" fix + how-it-works picture are live).
 1. **Ingredients:** JC to send the base-bottle labels + what Charlie adds to each shade. Then write a
    real ingredient list (friendly version + official list per gloss, no supplier names).
    NEVER guess ingredients. Vitamin E is NOT used (JC said so, 7 Nov).
@@ -24,7 +49,9 @@ Deploy: JC types `!python C:/Projects/divine-lips/tools/glimmer.py deploy`
    reviews (and faq). Check `site:glimmerbliss.com` ~14 Nov. Next: Google Business Profile
    (business.google.com, online store / service area, no home address). Its review link goes on a
    "Also review us on Google" button on the review thank-you screen.
-4. Make social accounts in JC's name (Instagram, Facebook Page, Pinterest, TikTok), then build
+4. **Instagram exists (10 Nov):** username `glimmerblisscharlie` (JC may change it to `glimmerbliss` or
+   similar; ask which one before putting it on the site). Display Name → "Glimmer Bliss". Bio drafts given
+   (no age, "young entrepreneur" style). Still to make: Facebook Page, Pinterest, TikTok. Then build
    Part 2 auto-posting WITH an Approve button per post (see Post Maker section).
 5. Website card payments: PayPal (just keys) or Square (needs building, ask JC first).
 6. Texas sales tax permit.

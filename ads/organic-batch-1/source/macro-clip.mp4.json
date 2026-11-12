@@ -1,0 +1,10 @@
+{
+  "model": "fal-ai/kling-video/v2.1/pro/image-to-video",
+  "price_usd": 0.49,
+  "request_id": "01a1c9a0-5d15-7b40-83bd-96a0fef715ba",
+  "source_picture": "ads/organic-batch-1/source/macro-plate.jpg",
+  "duration_s": 5,
+  "prompt": "Static locked-off overhead shot. The camera does not move at all. The lip gloss bottle stays perfectly still and keeps its exact shape, and every drop of clear gloss stays in place and keeps its shape. Only the light moves: the soft leaf shadows in the upper right sway gently, sunlight shifts slowly across the pink surface, highlights glide over the wet drops, and tiny sparkles in the gloss glint and twinkle. The black logo on the white cap and the black lettering on the bottle stay sharp, unchanged and perfectly legible. Calm, slow, luxury beauty commercial.",
+  "negative_prompt": "blur, distort, and low quality, camera movement, zoom, morphing, warped text, changing logo, extra objects, hands, people",
+  "ai_generated": true
+}

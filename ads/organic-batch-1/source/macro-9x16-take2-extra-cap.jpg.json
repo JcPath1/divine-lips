@@ -1,0 +1,10 @@
+{
+  "model": "fal-ai/flux-pro/kontext",
+  "price_usd": 0.04,
+  "request_id": "01a1c99e-bd7a-72e1-8176-eb67690c2bed",
+  "source_image": "https://glimmerbliss.com/images/glimmer-kiss.jpg",
+  "aspect_ratio": "9:16",
+  "prompt": "Extreme macro close-up in a tall vertical frame, photographed from directly above in hard direct morning sunlight. This exact lip gloss bottle lies flat and closed on a pale blush pink surface, running diagonally across the lower half of the frame, so close that the clear square body with the sparkly gloss inside fills much of the lower frame and the white cap runs off the bottom right edge. In the upper half, thick wet drops and one short glassy smear of transparent, colourless lip gloss with fine iridescent sparkle sit on the surface, with bright specular highlights and sharp sun caustics. Shallow depth of field. The bottle stays closed and whole. Keep the plain white rectangular cap, clear square body, sparkly gloss and white applicator inside exactly as in the reference. No hands, no label, no text, no logo, no extra objects.",
+  "seed": 738050745,
+  "ai_generated": true
+}

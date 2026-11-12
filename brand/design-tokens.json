@@ -1,0 +1,660 @@
+{
+  "$description": "Glimmer Bliss design tokens. Look: Blush & Black, picked by Charlie Mae on 2026-11-10. Draft v3 (adds fal production pipeline), 2026-11-11 (adds Creative Director rules, 3-concept pitch, critique gate). Human-readable rules: brand/brand-guidelines.md. Contrast ratios are WCAG 2.x, measured.",
+  "color": {
+    "$type": "color",
+    "blush": {
+      "$value": "#f7e1e3",
+      "$description": "Background for ads, posts and website section bands."
+    },
+    "ink": {
+      "$value": "#1a1a1a",
+      "$description": "Logo, headlines, body text. 13.95:1 on blush, 17.40:1 on white."
+    },
+    "pop-pink": {
+      "$value": "#e6337f",
+      "$description": "Accent. One italic headline line per layout. Large text only: 3.27:1 on blush, 4.08:1 on white."
+    },
+    "deep-pink": {
+      "$value": "#c31861",
+      "$description": "Buttons, links, small pink text, prices. 4.65:1 on blush, 5.80:1 on white; white label on it 5.80:1."
+    },
+    "white": {
+      "$value": "#ffffff",
+      "$description": "Website page background, cards, button labels."
+    },
+    "petal": {
+      "$value": "#fff0f5",
+      "$description": "Soft website panels. Kept from the current site."
+    },
+    "mauve-grey": {
+      "$value": "#5c5356",
+      "$description": "Captions and fine print. 5.96:1 on blush, 7.43:1 on white."
+    },
+    "role": {
+      "background": {
+        "$value": "{color.blush}"
+      },
+      "background-web": {
+        "$value": "{color.white}"
+      },
+      "surface": {
+        "$value": "{color.white}"
+      },
+      "surface-soft": {
+        "$value": "{color.petal}"
+      },
+      "text": {
+        "$value": "{color.ink}"
+      },
+      "text-muted": {
+        "$value": "{color.mauve-grey}"
+      },
+      "accent": {
+        "$value": "{color.pop-pink}"
+      },
+      "action": {
+        "$value": "{color.deep-pink}"
+      },
+      "on-action": {
+        "$value": "{color.white}"
+      },
+      "link": {
+        "$value": "{color.deep-pink}"
+      },
+      "logo": {
+        "$value": "{color.ink}"
+      },
+      "sparkle": {
+        "$value": "{color.ink}"
+      }
+    },
+    "shade": {
+      "$description": "Colour in the bottle, sampled from product photos. Approximate. For swatch dots only; glosses are sheer and look lighter on lips.",
+      "pink-paradise": {
+        "$value": "#b34662"
+      },
+      "true-love": {
+        "$value": "#63070c"
+      },
+      "sugar-cookie": {
+        "$value": "#8f614c"
+      },
+      "gloss-angeles": {
+        "$value": "#c1c6cd",
+        "$description": "Clear gloss; this is the bottle."
+      },
+      "glimmer-kiss": {
+        "$value": "#b2a3b7",
+        "$description": "Clear with sparkle; this is the bottle."
+      }
+    },
+    "glimmer-kiss-change": {
+      "$type": "gradient",
+      "$description": "Only for explaining Glimmer Kiss changing colour. The one gradient allowed.",
+      "$value": [
+        {
+          "color": "#ffffff",
+          "position": 0
+        },
+        {
+          "color": "#fbd3e0",
+          "position": 0.35
+        },
+        {
+          "color": "#f48fb6",
+          "position": 0.7
+        },
+        {
+          "color": "#e6337f",
+          "position": 1
+        }
+      ]
+    },
+    "retired": {
+      "$description": "Old site colours. Remove when the site is restyled.",
+      "hot-pink": {
+        "$value": "#ff69b4",
+        "$description": "White on it is 2.65:1. Fails."
+      },
+      "light-pink": {
+        "$value": "#ffb6c1"
+      },
+      "dark-pink": {
+        "$value": "#db7093"
+      },
+      "cool-grey": {
+        "$value": "#6b7280",
+        "$description": "4.38:1 on petal. Just under 4.5:1."
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "display": {
+        "$value": [
+          "Cormorant Garamond",
+          "Georgia",
+          "serif"
+        ],
+        "$description": "Hooks and headlines. OFL. Never below 28px on a 1080 post or 20px on web."
+      },
+      "text": {
+        "$value": [
+          "Jost",
+          "Segoe UI",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "Body, labels, buttons, footer. OFL."
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "display": {
+        "$value": 600
+      },
+      "display-italic": {
+        "$value": 500
+      },
+      "text": {
+        "$value": 400
+      },
+      "label": {
+        "$value": 500
+      },
+      "strong": {
+        "$value": 600
+      }
+    },
+    "hosting": {
+      "$type": "string",
+      "$value": "self-host",
+      "$description": "The site's Content-Security-Policy only allows fonts from our own server. A Google Fonts link will be blocked."
+    }
+  },
+  "type": {
+    "social-1080": {
+      "$description": "Sizes in px on a 1080px-wide canvas. Keep the same sizes on 1080x1920 and 1000x1500; add space, not size.",
+      "hook-3-line": {
+        "family": "{font.family.display}",
+        "weight": 600,
+        "size": 135,
+        "min-size": 124,
+        "line-height": 0.95
+      },
+      "hook-2-line": {
+        "family": "{font.family.display}",
+        "weight": 600,
+        "size": 119,
+        "min-size": 113,
+        "line-height": 0.95
+      },
+      "hook-accent": {
+        "family": "{font.family.display}",
+        "weight": 500,
+        "style": "italic",
+        "color": "{color.pop-pink}",
+        "$description": "Same size as the hook. One line only."
+      },
+      "tagline": {
+        "family": "{font.family.display}",
+        "weight": 500,
+        "style": "italic",
+        "size": 54,
+        "line-height": 1.1
+      },
+      "tagline-caps": {
+        "family": "{font.family.text}",
+        "weight": 600,
+        "size": 39,
+        "letter-spacing": "0.10em",
+        "transform": "uppercase",
+        "color": "{color.pop-pink}"
+      },
+      "body": {
+        "family": "{font.family.text}",
+        "weight": 400,
+        "size": 37,
+        "line-height": 1.4
+      },
+      "step": {
+        "family": "{font.family.text}",
+        "weight": 400,
+        "size": 35,
+        "line-height": 1.3
+      },
+      "footer": {
+        "family": "{font.family.text}",
+        "weight": 500,
+        "size": 27,
+        "letter-spacing": "0.28em",
+        "transform": "uppercase"
+      }
+    },
+    "web": {
+      "h1": {
+        "family": "{font.family.display}",
+        "weight": 600,
+        "size": "clamp(34px, 5vw, 56px)",
+        "line-height": 1.05
+      },
+      "h2": {
+        "family": "{font.family.display}",
+        "weight": 600,
+        "size": "clamp(30px, 3.5vw, 36px)",
+        "line-height": 1.1
+      },
+      "body": {
+        "family": "{font.family.text}",
+        "weight": 400,
+        "size": "17px",
+        "line-height": 1.6
+      },
+      "small": {
+        "family": "{font.family.text}",
+        "weight": 400,
+        "size": "14px",
+        "color": "{color.mauve-grey}"
+      },
+      "button": {
+        "family": "{font.family.text}",
+        "weight": 600,
+        "size": "16px",
+        "letter-spacing": "0.04em"
+      }
+    },
+    "rules": {
+      "hook-words-min": 2,
+      "hook-words-max": 6,
+      "accent-lines-per-layout": 1,
+      "headline-case": "sentence",
+      "pop-pink-min-size-social-px": 60,
+      "pop-pink-min-size-web-px": 24,
+      "display-may-overlap-product": true,
+      "display-letter-spacing": "-0.02em"
+    }
+  },
+  "layout": {
+    "social-1080": {
+      "canvas": {
+        "square": [
+          1080,
+          1080
+        ],
+        "tall": [
+          1080,
+          1920
+        ],
+        "pin": [
+          1000,
+          1500
+        ]
+      },
+      "margin": "6%",
+      "logo-width": "22%",
+      "bottle-shadow": "real photo shadow or tight contact shadow only; no basic drop shadow",
+      "sparkles-max": 2,
+      "sparkle-sizes": [
+        "6%",
+        "3%"
+      ],
+      "empty-space-min": "33%",
+      "bottle-placement": "off-centre, never centred; may run off the edge; any angle"
+    },
+    "radius": {
+      "web-card": "12px",
+      "web-button": "999px",
+      "social": "0"
+    },
+    "banned": [
+      "flat CSS boxes, cards, panels, card grids",
+      "centred sticker cut-out of the product on a solid background",
+      "basic drop shadows",
+      "buttons drawn into the picture (e.g. 'Shop Now!'), Canva-style pills",
+      "badges, ribbons, starbursts, stickers, stock icons",
+      "photo frames, arches, ovals, windows",
+      "black backgrounds",
+      "fake texture overlays",
+      "emoji inside the picture",
+      "stock product pictures"
+    ]
+  },
+  "assets": {
+    "logo": {
+      "file": "docs/images/logo.png",
+      "format": "PNG 1256x848",
+      "vector": null,
+      "$description": "No SVG yet. Needed for labels, banner and small sizes."
+    },
+    "cutouts": {
+      "pink-paradise": "brand/cutouts/pink-paradise.png",
+      "true-love": "brand/cutouts/true-love.png",
+      "sugar-cookie": "brand/cutouts/sugar-cookie.png",
+      "gloss-angeles": "brand/cutouts/gloss-angeles.png",
+      "glimmer-kiss": "brand/cutouts/glimmer-kiss.png"
+    },
+    "sparkle-svg-path": "M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"
+  },
+  "product": {
+    "$description": "Facts from server/app/catalog.php and the product pages. Copy must match these.",
+    "count": 5,
+    "flavor": "vanilla",
+    "size-ml": 5,
+    "wear": "sheer",
+    "items": [
+      {
+        "id": "pink-paradise",
+        "name": "Pink Paradise",
+        "price-usd": 12,
+        "color": "Sheer pink",
+        "finish": "High shine",
+        "sparkle": false
+      },
+      {
+        "id": "true-love",
+        "name": "True Love",
+        "price-usd": 12,
+        "color": "Sheer dark red",
+        "finish": "High shine",
+        "sparkle": false
+      },
+      {
+        "id": "gloss-angeles",
+        "name": "Gloss Angeles",
+        "price-usd": 12,
+        "color": "Clear",
+        "finish": "High shine",
+        "sparkle": false
+      },
+      {
+        "id": "sugar-cookie",
+        "name": "Sugar Cookie",
+        "price-usd": 12,
+        "color": "Sheer warm brown",
+        "finish": "High shine",
+        "sparkle": false
+      },
+      {
+        "id": "glimmer-kiss",
+        "name": "Glimmer Kiss",
+        "price-usd": 15,
+        "color": "Clear in the bottle, turns pink on lips",
+        "finish": "High shine",
+        "sparkle": true,
+        "change-time": "a few seconds",
+        "limited-edition": true
+      }
+    ]
+  },
+  "voice": {
+    "tagline": "From a young entrepreneur who's a LIP GLOSS BOSS",
+    "traits": [
+      "confident",
+      "warm",
+      "punchy",
+      "a little cheeky",
+      "insider beauty talk",
+      "honest"
+    ],
+    "signature-lines": [
+      "Be a Lip Gloss Boss.",
+      "Gloss on. Boss up.",
+      "Dream big. Gloss often.",
+      "Big dreams look good in gloss.",
+      "Boss moves. Glossy lips."
+    ],
+    "must-be-true": [
+      "Glosses are sheer; never promise full coverage.",
+      "Only Glimmer Kiss has sparkle; no glimmer/shimmer/sparkle/glitter words for other glosses.",
+      "Glimmer Kiss turns pink in a few seconds.",
+      "Glimmer Kiss turns pink on skin (lips, back of hand); on glass, acrylic or paper it stays clear.",
+      "Every gloss is vanilla flavored; never 'flavors'.",
+      "There are 5 glosses; Love is discontinued.",
+      "Glimmer Kiss is not the only or first pH gloss.",
+      "Never guess ingredients; vitamin E is not used.",
+      "No plumping, healing, hydrating, long-lasting or 24-hour claims.",
+      "Charlie Mae: first name only; no age, school, town or photo in ads.",
+      "JC approves every post before it goes anywhere."
+    ],
+    "banned-phrases": [
+      "elevate",
+      "unleash",
+      "unlock",
+      "radiant",
+      "game-changer",
+      "must-have",
+      "obsessed",
+      "indulge",
+      "luxurious",
+      "revolutionary",
+      "effortless",
+      "stunning",
+      "next level",
+      "look no further",
+      "say goodbye to",
+      "introducing",
+      "meet your new favorite",
+      "transform your",
+      "the perfect blend of",
+      "whether you're",
+      "more than just a",
+      "in a world where",
+      "get ready to",
+      "your lips will thank you",
+      "trust us",
+      "run, don't walk",
+      "POV:"
+    ],
+    "banned-claims": [
+      "the only",
+      "the first",
+      "new invention",
+      "natural",
+      "organic",
+      "vegan",
+      "clean",
+      "hypoallergenic",
+      "vitamin E",
+      "plumping",
+      "long-lasting",
+      "flavors"
+    ],
+    "instagram": {
+      "first-line-max-chars": 125,
+      "hashtags-min": 3,
+      "hashtags-max": 5,
+      "emoji-in-a-row-max": 2,
+      "swipe-post-max-pictures": 4
+    },
+    "x": {
+      "max-chars": 200,
+      "hashtags-max": 1,
+      "link": "at the end"
+    }
+  },
+  "creative-direction": {
+    "bar": "Treat every ad like a $50,000 luxury beauty campaign.",
+    "mood-references": [
+      "Rhode",
+      "Glossier",
+      "Dior Lip Glow",
+      "Summer Fridays"
+    ],
+    "mood-references-note": "Quality references only. Never copy their layouts, photos, words or logos.",
+    "sensory-focus": [
+      "wet gloss smear",
+      "glassy highlight",
+      "sun or flash reflections in the acrylic bottle",
+      "drip on the applicator",
+      "sparkle inside Glimmer Kiss"
+    ],
+    "type-and-layout": [
+      "asymmetric magazine layout",
+      "dramatic scale contrast",
+      "tight display tracking (-0.02em)",
+      "display type layered with the product"
+    ],
+    "pitch": {
+      "when": "before any final asset is rendered or generated",
+      "concepts": {
+        "A": "High-Fashion Editorial: minimal, sculptural, studio light",
+        "B": "Raw Flash / Paparazzi Candid: direct flash, 35mm grain, effortless",
+        "C": "Sensory Macro / ASMR Texture: extreme close-up of gloss, sparkle, applicator"
+      },
+      "each-needs": [
+        "hook",
+        "what we see",
+        "light",
+        "copy",
+        "photos needed",
+        "do those photos exist"
+      ]
+    },
+    "photos-available-today": "straight-on studio shots on a grey-blue backdrop only (docs/images, brand/cutouts)",
+    "ai-generated-imagery": "Approved by JC 2026-11-11 for ad scenes built from our real product photo. Product pages keep real photos."
+  },
+  "critique-gate": {
+    "scale": "1-10 Vogue/Sephora editorial",
+    "pass-score": 8,
+    "question": "Does this look like a web banner?",
+    "on-fail": "rewrite the concept and re-render; do not just nudge sizes",
+    "report": [
+      "final score",
+      "reasons",
+      "redo rounds"
+    ],
+    "note": "Agent judgement, not a measurement; does not predict sales."
+  },
+  "production-pipeline": {
+    "steps": [
+      "reference-based hero photography (fal image-edit model + our real photo)",
+      "motion: fal image-to-video (5 s) then type, pacing and sound in Remotion",
+      "art director quality gate: reject plasticky, product-distorting or template-looking output"
+    ],
+    "source-photo-url-pattern": "https://glimmerbliss.com/images/<gloss-id>.jpg",
+    "tool": "tools/fal_generate.py",
+    "review-folder": "ads/",
+    "key-file": "private/fal.env (never print)",
+    "models": {
+      "hero-draft": {
+        "id": "fal-ai/flux-pro/kontext",
+        "price": "$0.04 per image",
+        "tried": true
+      },
+      "hero-better": {
+        "id": "fal-ai/flux-pro/kontext/max",
+        "price": "$0.08 per image",
+        "tried": false
+      },
+      "hero-final": {
+        "id": "fal-ai/nano-banana-pro/edit",
+        "price": "$0.15 per image, 4K double",
+        "tried": false
+      },
+      "plate": {
+        "id": "fal-ai/flux-2-pro",
+        "price": "from $0.03 per megapixel",
+        "tried": false
+      },
+      "plate-draft": {
+        "id": "fal-ai/flux/schnell",
+        "price": "$0.003 per megapixel",
+        "tried": false
+      },
+      "video": {
+        "id": "fal-ai/kling-video/v2.1/pro/image-to-video",
+        "price": "$0.49 per 5 s",
+        "tried": false
+      },
+      "video-cheap": {
+        "id": "fal-ai/wan-i2v",
+        "price": "$0.20 at 480p, $0.40 at 720p",
+        "tried": false
+      }
+    },
+    "prices-checked": "2026-11-11",
+    "truth-rules": [
+      "Glimmer Kiss is clear with sparkle on any surface; pink only on skin (lips, back of hand)",
+      "the bottle has no label; any label, logo or text in a result is a reject",
+      "only Glimmer Kiss has sparkle",
+      "no AI faces; never send Charlie's photo to fal",
+      "every AI picture gets a .json sidecar marking it AI-made"
+    ],
+    "cost-rules": [
+      "draft on kontext first",
+      "one image per call",
+      "never re-run an unclear failure",
+      "animate only an approved hero image",
+      "report total spent"
+    ],
+    "winning-prompts-file": "brand/winning-prompts.md"
+  },
+  "bottle-logo": {
+    "$description": "LOCKED 2026-11-11. JC set the rule and Charlie confirmed the centered position the same day. Where the logo sits on the bottle in every picture and video. Always applied with tools/bottle_logo.py, never by eye. All measures are along the bottle's length, on the center line of the FRONT face.",
+    "wordmark-length-of-body": 0.64,
+    "wordmark-gap-each-end-of-body": 0.18,
+    "wordmark-position": "centered on the clear bottle, both ways. Same clear gap under the cap as at the bottom.",
+    "monogram-width-of-cap-length": 0.38,
+    "monogram-direction": "LOCKED (JC and Charlie, 2026-11-11): GB stands UPRIGHT on the cap. It sits across the cap, a quarter turn from GLIMMER BLISS, with the top of the letters toward the end of the cap. Its width is 38% of the cap's length (about three quarters of the cap's front face).",
+    "monogram-position": "centered on the white cap, both ways.",
+    "direction": "LOCKED (JC, 2026-11-11): GLIMMER BLISS always reads from the bottom of the bottle toward the cap, in every ad, picture and video, whatever way the bottle is lying. GB stands upright on the cap (see monogram-direction). The bottle is never turned to fix the logo.",
+    "opacity": 0.9,
+    "tolerance": "within 1% of the bottle length (about 4 px on a 1080 px wide picture)",
+    "files": [
+      "brand/logo/logo-gb.png",
+      "brand/logo/logo-wordmark.png"
+    ],
+    "status": "Until the printed labels arrive. Then measure a real bottle and change these numbers to match it."
+  },
+  "layout-phi": {
+    "$description": "JC, 2026-11-11: nothing centered. Place things on the phi grid (golden ratio, 1.618). The phi grid is like the rule of thirds but its lines sit at 38.2% and 61.8%, a little closer to the middle.",
+    "phi": 1.618,
+    "grid-lines": [
+      0.382,
+      0.618
+    ],
+    "1080x1920": {
+      "vertical-lines-x": [
+        413,
+        667
+      ],
+      "horizontal-lines-y": [
+        733,
+        1187
+      ]
+    },
+    "1080x1350": {
+      "vertical-lines-x": [
+        413,
+        667
+      ],
+      "horizontal-lines-y": [
+        516,
+        834
+      ]
+    },
+    "1600x900": {
+      "vertical-lines-x": [
+        611,
+        989
+      ],
+      "horizontal-lines-y": [
+        344,
+        556
+      ]
+    },
+    "rules": [
+      "The bottle's center line (or its logo) sits on a phi line, never on the middle of the frame.",
+      "Words sit on the other side of the frame from the bottle. Line up a text edge or a baseline with a phi line.",
+      "Type sizes step by 1.618: small words x 2.618 = headline, headline x 2.618 = the big word.",
+      "When two blocks share a space, split it 61.8 / 38.2, not half and half."
+    ],
+    "type-steps-example": {
+      "small": 40,
+      "headline": 104,
+      "big-word": 272
+    },
+    "honesty": "A phi grid is a placing guide, not proof that a layout is beautiful. Still judge the result by eye."
+  }
+}

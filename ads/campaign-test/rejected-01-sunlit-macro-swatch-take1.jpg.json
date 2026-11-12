@@ -1,0 +1,10 @@
+{
+  "model": "fal-ai/flux-pro/kontext",
+  "price_usd": 0.04,
+  "request_id": "01a1c971-7ecd-73f2-acd1-afb0476bffb6",
+  "source_image": "https://glimmerbliss.com/images/glimmer-kiss.jpg",
+  "aspect_ratio": "3:4",
+  "prompt": "Place this exact lip gloss bottle lying on its side on a wet sheet of clear acrylic over a pale blush pink surface, in hard direct morning sunlight. Beside it, one thick glossy smear of completely clear lip gloss with fine iridescent sparkle. Extreme close-up macro beauty photography, shallow depth of field, sharp sun caustics and light refracting through the clear bottle, long real shadows. Keep the bottle's shape, proportions, plain white rectangular cap, clear square body and the white applicator inside exactly as in the reference photo. No label, no text, no logo, no extra objects. Off-centre composition with empty blush space on the left.",
+  "seed": 2082221894,
+  "ai_generated": true
+}

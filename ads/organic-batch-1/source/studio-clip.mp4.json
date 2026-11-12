@@ -1,0 +1,10 @@
+{
+  "model": "fal-ai/kling-video/v2.1/pro/image-to-video",
+  "price_usd": 0.49,
+  "request_id": "01a1cc64-51c9-79f0-aae3-6a6c55c9f32a",
+  "source_picture": "ads/organic-batch-1/source/studio-plate.jpg",
+  "duration_s": 5,
+  "prompt": "Static locked-off shot. The camera does not move at all. The lip gloss bottle and the clear glass block stay perfectly still and keep their exact shape. Only the light moves: the hard studio light sweeps slowly so the long shadow on the floor shifts a little, bright refractions slide through the glass block and the clear bottle, and tiny sparkles inside the gloss glint and twinkle. The black logo on the white cap and the black lettering on the bottle stay sharp, unchanged and perfectly legible. Calm, slow, luxury beauty commercial.",
+  "negative_prompt": "blur, distort, and low quality, camera movement, zoom, morphing, warped text, changing logo, extra objects, hands, people",
+  "ai_generated": true
+}

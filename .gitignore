@@ -18,3 +18,12 @@ node_modules/
 server/app/config.php
 server/app/config.local.php
 server/app/.schema-v*
+
+# Python cache
+__pycache__/
+
+# Remotion render scratch
+brand/video/out/
+
+# Installed third-party skills (listed in skills-lock.json)
+.claude/skills/

@@ -29,9 +29,45 @@ function setupThumbnails() {
       // Add active to clicked
       this.classList.add('active');
 
-      // Swap the big picture
+      if (!mainImg) return;
+      const frame = mainImg.parentElement;
+      let video = frame.querySelector('video');
+      const videoSrc = this.getAttribute('data-video');
+
+      if (videoSrc) {
+        // A video thumbnail: play the clip in the big frame (no sound, loops)
+        if (!video) {
+          video = document.createElement('video');
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+          video.controls = true;
+          video.setAttribute('aria-label', this.querySelector('img') ? this.querySelector('img').alt : 'Product video');
+          // The big frame takes the shape of the video (square, 4:5 or tall), so no words get cut off
+          video.addEventListener('loadedmetadata', function() {
+            if (!video.hidden && video.videoWidth) {
+              frame.style.aspectRatio = video.videoWidth + ' / ' + video.videoHeight;
+            }
+          });
+          frame.appendChild(video);
+        }
+        video.poster = this.getAttribute('data-poster') || '';
+        video.src = videoSrc;
+        mainImg.hidden = true;
+        video.hidden = false;
+        video.play().catch(function() {});
+        return;
+      }
+
+      // A photo thumbnail: stop any video and swap the big picture
+      if (video) {
+        video.pause();
+        video.hidden = true;
+      }
+      frame.style.aspectRatio = '';
+      mainImg.hidden = false;
       const full = this.getAttribute('data-full');
-      if (full && mainImg) {
+      if (full) {
         mainImg.src = full;
       }
     });

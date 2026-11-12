@@ -1,0 +1,143 @@
+/* Glimmer Bliss "Blush & Black" restyle. PREVIEW ONLY.
+   Loaded after styles.css in brand/preview-site/. Values come from brand/design-tokens.json. */
+
+:root {
+  --blush: #f7e1e3;
+  --ink: #1a1a1a;
+  --pop: #e6337f;
+  --deep: #c31861;
+  --petal: #fff0f5;
+  --mauve: #5c5356;
+
+  /* re-point the old site variables */
+  --primary-pink: var(--deep);
+  --dark-pink: var(--deep);
+  --light-pink: var(--blush);
+  --soft-pink: var(--petal);
+  --black: var(--ink);
+  --gray: var(--mauve);
+  --font-main: 'Jost', 'Segoe UI', system-ui, sans-serif;
+  --font-accent: 'Cormorant Garamond', Georgia, serif;
+}
+
+body { font-family: var(--font-main); color: var(--ink); font-size: 17px; line-height: 1.6; }
+h1, h2, h3 { font-family: var(--font-accent); font-weight: 600; letter-spacing: 0; font-variant-numeric: lining-nums; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--deep); outline-offset: 3px; }
+
+/* top bar + header */
+.announcement-bar { background: var(--deep); color: #fff; font-weight: 500; letter-spacing: .02em; }
+.header { box-shadow: none; border-bottom: 1px solid rgba(26,26,26,.12); }
+.nav-links a { color: var(--ink); font-weight: 500; }
+.nav-links a:hover { color: var(--deep); }
+
+/* ---------- hero ---------- */
+.gb-hero { background: var(--blush); overflow: hidden; }
+.gb-hero-inner {
+  max-width: 1160px; margin: 0 auto; padding: 72px 28px 0;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: end;
+}
+.gb-hero-words { padding-bottom: 72px; position: relative; }
+.gb-hero h1 { font-size: clamp(40px, 4.5vw, 64px); line-height: .98; margin: 0 0 22px; color: var(--ink); }
+.gb-hero h1 i, .gb-kiss h2 i { font-weight: 500; color: var(--pop); }
+.gb-hero p { font-size: 19px; max-width: 34ch; margin: 0 0 30px; color: var(--ink); }
+.gb-actions { display: flex; flex-wrap: wrap; gap: 14px 26px; align-items: center; }
+.gb-btn {
+  display: inline-block; background: var(--deep); color: #fff; text-decoration: none;
+  font-weight: 600; font-size: 16px; letter-spacing: .04em; padding: 15px 30px; border-radius: 999px;
+  transition: background .15s;
+}
+.gb-btn:hover { background: var(--ink); }
+.gb-link { color: var(--ink); font-weight: 500; text-underline-offset: 5px; }
+.gb-link:hover { color: var(--deep); }
+.gb-spark { position: absolute; color: var(--ink); }
+.gb-spark svg { display: block; width: 100%; height: 100%; }
+.gb-lineup { position: relative; }
+.gb-hero .gb-spark.one { width: 34px; height: 34px; left: 4%; top: -70px; }
+.gb-hero .gb-spark.two { width: 17px; height: 17px; left: 13%; top: -30px; }
+
+.gb-lineup { display: flex; justify-content: center; align-items: flex-end; gap: clamp(8px, 1.6vw, 22px); }
+.gb-lineup img {
+  height: clamp(210px, 30vw, 400px); width: auto; display: block;
+  filter: drop-shadow(0 14px 16px rgba(0,0,0,.2));
+}
+
+/* ---------- Glimmer Kiss feature ---------- */
+.gb-kiss { background: #fff; }
+.gb-kiss-inner {
+  max-width: 1040px; margin: 0 auto; padding: 96px 28px;
+  display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 48px; align-items: center;
+}
+.gb-kiss-bottle { position: relative; display: flex; justify-content: center; }
+.gb-kiss-bottle img { height: clamp(300px, 36vw, 440px); width: auto; transform: rotate(-8deg);
+  filter: drop-shadow(0 22px 26px rgba(0,0,0,.2)); }
+.gb-kiss-bottle .gb-spark.one { width: 40px; height: 40px; right: 12%; top: 4%; }
+.gb-kiss-bottle .gb-spark.two { width: 20px; height: 20px; right: 4%; top: 20%; }
+.gb-kiss h2 { font-size: clamp(38px, 4.6vw, 60px); line-height: 1; margin: 0 0 26px; }
+.gb-steps { list-style: none; margin: 0 0 30px; padding: 0; counter-reset: step; max-width: 46ch; }
+.gb-steps li { counter-increment: step; display: grid; grid-template-columns: 44px 1fr; align-items: baseline; margin-bottom: 14px; }
+.gb-steps li::before { content: counter(step); font-family: var(--font-accent); font-style: italic; font-weight: 500;
+  font-size: 34px; line-height: 1; color: var(--pop); }
+.gb-steps b { font-weight: 600; }
+.gb-kiss-buy { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+.gb-kiss-price { font-size: 17px; color: var(--mauve); }
+.gb-kiss-price strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- the shelf ---------- */
+.gb-shelf-wrap { max-width: 1160px; margin: 0 auto; padding: 24px 28px 40px; }
+.gb-shelf-wrap > h2 { font-size: clamp(34px, 4vw, 48px); margin: 0 0 6px; }
+.gb-shelf-wrap > p.gb-shelf-lead { color: var(--mauve); margin: 0 0 34px; }
+.gb-shelf { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.gb-item { text-decoration: none; color: var(--ink); display: block; }
+.gb-item-bottle { display: flex; justify-content: center; align-items: flex-end; height: 300px;
+  border-bottom: 1px solid var(--ink); }
+.gb-item-bottle img { height: 264px; width: auto; display: block; transform-origin: 50% 100%;
+  filter: drop-shadow(0 8px 8px rgba(0,0,0,.16)); transition: transform .2s ease; }
+.gb-item:hover .gb-item-bottle img, .gb-item:focus-visible .gb-item-bottle img { transform: rotate(-5deg) translateY(-6px); }
+.gb-item-info { padding: 16px 12px 0 0; }
+.gb-item-info h3 { font-size: 26px; line-height: 1.1; margin: 0 0 2px; }
+.gb-item-info span { display: block; color: var(--mauve); font-size: 15px; }
+.gb-item-info strong { display: block; margin-top: 6px; font-weight: 600; font-size: 16px; }
+.gb-shelf-wrap .wear-note { margin: 44px 0 0; max-width: 68ch; border-left: 0; padding: 0; background: none;
+  color: var(--mauve); font-size: 15px; text-align: left; }
+.gb-shelf-wrap .wear-note strong { color: var(--ink); }
+
+/* ---------- about ---------- */
+.about-section { background: var(--blush); }
+.about-section .about-content { max-width: 1040px; text-align: left; }
+.about-section h2 { font-size: clamp(34px, 4vw, 48px); line-height: 1.05; text-align: left; margin-bottom: 20px; color: var(--ink); }
+.about-section p, .about-section .about-list { font-size: 17px; line-height: 1.6; max-width: 62ch; margin-left: 0; margin-right: 0; text-align: left; color: var(--ink); }
+.about-section .founders { justify-content: flex-start; }
+.founder-avatar { border-color: #fff; }
+
+/* ---------- footer ---------- */
+.footer { background: #fff; color: var(--ink); border-top: 1px solid var(--ink); }
+.footer h4 { color: var(--ink); font-family: var(--font-accent); font-size: 22px; font-weight: 600; }
+.footer p, .footer a, .footer .footer-section p, .footer .footer-section a { color: var(--mauve); }
+.footer a:hover { color: var(--deep); }
+.footer-bottom { border-top-color: rgba(26,26,26,.12); }
+.footer-bottom p { color: var(--mauve); }
+
+/* ---------- product pages ---------- */
+.product-details h1 { font-size: clamp(40px, 4.6vw, 58px); line-height: 1; }
+.product-details .product-tagline { font-family: var(--font-accent); font-style: italic; font-weight: 500; font-size: 24px; color: var(--pop); }
+.product-details .price { color: var(--ink); font-weight: 600; }
+.product-details .description, .product-points li { color: var(--ink); }
+.limited-badge { background: var(--ink); }
+.add-to-cart { background: var(--deep); border-radius: 999px; font-family: var(--font-main); letter-spacing: .04em; }
+.add-to-cart:hover { background: var(--ink); }
+.option-btn.selected { border-color: var(--deep); background: var(--petal); }
+.thumbnail.active, .thumbnail:hover { border-color: var(--ink); }
+
+@media (max-width: 820px) {
+  .gb-hero-inner { grid-template-columns: 1fr; padding-top: 48px; gap: 8px; }
+  .gb-hero-words { padding-bottom: 36px; }
+  .gb-hero .gb-spark { display: none; }
+  .gb-kiss-inner { grid-template-columns: 1fr; padding: 64px 24px; gap: 28px; }
+  .gb-kiss-bottle img { height: 300px; }
+  .gb-shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 18px; }
+  .gb-item-bottle { height: 240px; }
+  .gb-item-bottle img { height: 212px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gb-item-bottle img, .gb-btn { transition: none; }
+}

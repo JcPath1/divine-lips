@@ -1,0 +1,10 @@
+{
+  "model": "fal-ai/flux-pro/kontext",
+  "price_usd": 0.04,
+  "request_id": "01a1c99f-96a2-7e91-b898-c07051007de9",
+  "source_image": "https://v3b.fal.media/files/b/0ab20344/spKgz6Bj99b2dpWo55oUe_macro-9x16-take2-extra-cap.jpg",
+  "aspect_ratio": "9:16",
+  "prompt": "Remove the second white rectangular object in the bottom right corner of the picture completely, and fill that area with the same plain blush pink surface and soft sunlight. Keep everything else exactly the same: the one lip gloss bottle in the middle, its white cap, its clear body, every drop of clear gloss, the shadows and the lighting. Do not add anything.",
+  "seed": 3269071811,
+  "ai_generated": true
+}

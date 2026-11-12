@@ -1,0 +1,558 @@
+{
+  "schema": "brand-identity/extract@1",
+  "url": "https://glimmerbliss.com/",
+  "requestedUrl": "https://glimmerbliss.com/",
+  "extractedAt": "2026-11-11T06:27:10.206Z",
+  "rolesAreProposal": true,
+  "note": "Roles are a proposal measured from the rendered page. Confirm them with the user (fix by editing \"roles\"), then set \"rolesConfirmed\": true.",
+  "strategy": "tokens",
+  "roles": {
+    "background": "#ffffff",
+    "surface": "#fff0f5",
+    "border": "#ffffff",
+    "text": "#6b7280",
+    "primary": "#ff69b4",
+    "onPrimary": "#ffffff",
+    "link": "#6b7280"
+  },
+  "roleDetails": {
+    "background": {
+      "hex": "#ffffff",
+      "confidence": 0.78,
+      "level": "high",
+      "method": "largest painted background area",
+      "elements": 23,
+      "share": 0.57,
+      "alternatives": [
+        {
+          "hex": "#fff0f5",
+          "share": 0.24,
+          "elements": 1
+        },
+        {
+          "hex": "#1a1a1a",
+          "share": 0.13,
+          "elements": 9
+        },
+        {
+          "hex": "#ff69b4",
+          "share": 0.04,
+          "elements": 10
+        }
+      ]
+    },
+    "surface": {
+      "hex": "#fff0f5",
+      "confidence": 0.71,
+      "level": "medium",
+      "method": "second neutral background close to the page background",
+      "elements": 1,
+      "share": 0.24,
+      "alternatives": []
+    },
+    "border": {
+      "hex": "#ffffff",
+      "confidence": 0.53,
+      "level": "medium",
+      "method": "border length (width x length)",
+      "elements": 4,
+      "share": 0.48,
+      "alternatives": [
+        {
+          "hex": "#eeeeee",
+          "share": 0.29,
+          "elements": 1
+        },
+        {
+          "hex": "#333333",
+          "share": 0.24,
+          "elements": 1
+        }
+      ]
+    },
+    "text": {
+      "hex": "#6b7280",
+      "confidence": 0.97,
+      "level": "high",
+      "method": "body copy on the page ground (chars x size x contrast)",
+      "elements": 16,
+      "share": 1,
+      "alternatives": []
+    },
+    "primary": {
+      "hex": "#ff69b4",
+      "confidence": 0.83,
+      "level": "high",
+      "method": "button-like elements (area, above-the-fold x3)",
+      "elements": 1,
+      "share": 1,
+      "corroboration": [
+        "token --primary-pink"
+      ],
+      "alternatives": []
+    },
+    "onPrimary": {
+      "hex": "#ffffff",
+      "confidence": 0.97,
+      "level": "high",
+      "method": "text painted on #ff69b4",
+      "elements": 8,
+      "share": 1,
+      "alternatives": []
+    },
+    "link": {
+      "hex": "#6b7280",
+      "confidence": 0.97,
+      "level": "high",
+      "method": "links inside body copy",
+      "elements": 6,
+      "share": 1,
+      "alternatives": []
+    }
+  },
+  "extraRoles": {
+    "heading": "#1a1a1a"
+  },
+  "missingRoles": [
+    "surfaceAlt",
+    "textMuted",
+    "accent",
+    "onAccent",
+    "focus",
+    "success",
+    "warning",
+    "danger",
+    "info"
+  ],
+  "confirm": [
+    "border #ffffff (medium, border length (width x length))"
+  ],
+  "notes": [
+    "site has no dark scheme; dark previews recolour the light page with the palette's dark roles"
+  ],
+  "contrast": {
+    "text/background": 4.83,
+    "link/background": 4.83,
+    "onPrimary/primary": 2.65,
+    "primary/background": 2.65
+  },
+  "palette": [
+    {
+      "hex": "#ffffff",
+      "oklch": "oklch(100.0% 0.000 90)",
+      "score": 236.43,
+      "areaShare": 0.712,
+      "uses": {
+        "bg": 2637110,
+        "text": 563,
+        "border": 2400,
+        "svg": 0,
+        "gradient": 0
+      },
+      "elements": 23,
+      "roles": [
+        "background",
+        "border",
+        "onPrimary"
+      ]
+    },
+    {
+      "hex": "#fff0f5",
+      "oklch": "oklch(96.8% 0.017 355)",
+      "score": 87.34,
+      "areaShare": 0.3056,
+      "uses": {
+        "bg": 1131885,
+        "text": 0,
+        "border": 0,
+        "svg": 0,
+        "gradient": 0
+      },
+      "elements": 1,
+      "roles": [
+        "surface"
+      ]
+    },
+    {
+      "hex": "#6b7280",
+      "oklch": "oklch(55.1% 0.023 264)",
+      "score": 68.51,
+      "areaShare": 0,
+      "uses": {
+        "bg": 0,
+        "text": 1370,
+        "border": 0,
+        "svg": 0,
+        "gradient": 0
+      },
+      "elements": 23,
+      "roles": [
+        "text",
+        "link"
+      ]
+    },
+    {
+      "hex": "#1a1a1a",
+      "oklch": "oklch(21.8% 0.000 90)",
+      "score": 59.43,
+      "areaShare": 0.1633,
+      "uses": {
+        "bg": 604903,
+        "text": 150,
+        "border": 0,
+        "svg": 0,
+        "gradient": 135820
+      },
+      "elements": 9,
+      "roles": []
+    },
+    {
+      "hex": "#ff69b4",
+      "oklch": "oklch(72.8% 0.197 352)",
+      "score": 16.62,
+      "areaShare": 0.051,
+      "uses": {
+        "bg": 188718,
+        "text": 32,
+        "border": 0,
+        "svg": 0,
+        "gradient": 11250
+      },
+      "elements": 10,
+      "roles": [
+        "primary"
+      ]
+    },
+    {
+      "hex": "#aaaaaa",
+      "oklch": "oklch(73.8% 0.000 90)",
+      "score": 6.6,
+      "areaShare": 0,
+      "uses": {
+        "bg": 0,
+        "text": 132,
+        "border": 0,
+        "svg": 0,
+        "gradient": 0
+      },
+      "elements": 9,
+      "roles": []
+    },
+    {
+      "hex": "#000000",
+      "oklch": "oklch(0.0% 0.000 0)",
+      "score": 5.76,
+      "areaShare": 0.0202,
+      "uses": {
+        "bg": 74710,
+        "text": 0,
+        "border": 0,
+        "svg": 0,
+        "gradient": 0
+      },
+      "elements": 1,
+      "roles": []
+    },
+    {
+      "hex": "#2d3436",
+      "oklch": "oklch(31.9% 0.010 217)",
+      "score": 5.24,
+      "areaShare": 0,
+      "uses": {
+        "bg": 0,
+        "text": 0,
+        "border": 0,
+        "svg": 0,
+        "gradient": 135820
+      },
+      "elements": 0,
+      "roles": []
+    },
+    {
+      "hex": "#636e72",
+      "oklch": "oklch(53.0% 0.015 222)",
+      "score": 5.24,
+      "areaShare": 0,
+      "uses": {
+        "bg": 0,
+        "text": 0,
+        "border": 0,
+        "svg": 0,
+        "gradient": 135820
+      },
+      "elements": 0,
+      "roles": []
+    },
+    {
+      "hex": "#eeeeee",
+      "oklch": "oklch(94.9% 0.000 90)",
+      "score": 2.88,
+      "areaShare": 0,
+      "uses": {
+        "bg": 0,
+        "text": 0,
+        "border": 1440,
+        "svg": 0,
+        "gradient": 0
+      },
+      "elements": 0,
+      "roles": []
+    },
+    {
+      "hex": "#666666",
+      "oklch": "oklch(51.0% 0.000 90)",
+      "score": 2.45,
+      "areaShare": 0,
+      "uses": {
+        "bg": 0,
+        "text": 49,
+        "border": 0,
+        "svg": 0,
+        "gradient": 0
+      },
+      "elements": 1,
+      "roles": []
+    },
+    {
+      "hex": "#333333",
+      "oklch": "oklch(32.1% 0.000 90)",
+      "score": 2.4,
+      "areaShare": 0,
+      "uses": {
+        "bg": 0,
+        "text": 0,
+        "border": 1200,
+        "svg": 0,
+        "gradient": 0
+      },
+      "elements": 0,
+      "roles": []
+    },
+    {
+      "hex": "#ffb6c1",
+      "oklch": "oklch(84.7% 0.086 9)",
+      "score": 2.23,
+      "areaShare": 0,
+      "uses": {
+        "bg": 0,
+        "text": 21,
+        "border": 373,
+        "svg": 0,
+        "gradient": 11250
+      },
+      "elements": 3,
+      "roles": []
+    }
+  ],
+  "tokens": {
+    "count": 8,
+    "used": 8,
+    "items": {
+      "--primary-pink": {
+        "value": "#ff69b4",
+        "hex": "#ff69b4",
+        "alpha": 1,
+        "usedAs": {
+          "text": 8,
+          "background": 14,
+          "border": 8,
+          "shadow": 1
+        },
+        "roles": [
+          "primary"
+        ]
+      },
+      "--white": {
+        "value": "#ffffff",
+        "hex": "#ffffff",
+        "alpha": 1,
+        "usedAs": {
+          "background": 13,
+          "border": 1,
+          "text": 2
+        },
+        "roles": [
+          "background",
+          "border",
+          "onPrimary"
+        ]
+      },
+      "--soft-pink": {
+        "value": "#fff0f5",
+        "hex": "#fff0f5",
+        "alpha": 1,
+        "usedAs": {
+          "background": 12
+        },
+        "roles": [
+          "surface"
+        ]
+      },
+      "--dark-pink": {
+        "value": "#db7093",
+        "hex": "#db7093",
+        "alpha": 1,
+        "usedAs": {
+          "background": 2,
+          "text": 10
+        },
+        "roles": []
+      },
+      "--gray": {
+        "value": "#6b7280",
+        "hex": "#6b7280",
+        "alpha": 1,
+        "usedAs": {
+          "text": 25
+        },
+        "roles": [
+          "text",
+          "link"
+        ]
+      },
+      "--light-pink": {
+        "value": "#ffb6c1",
+        "hex": "#ffb6c1",
+        "alpha": 1,
+        "usedAs": {
+          "background": 3,
+          "border": 8,
+          "text": 1
+        },
+        "roles": []
+      },
+      "--light-gray": {
+        "value": "#f5f5f5",
+        "hex": "#f5f5f5",
+        "alpha": 1,
+        "usedAs": {
+          "background": 2
+        },
+        "roles": [
+          "surface"
+        ]
+      },
+      "--black": {
+        "value": "#1a1a1a",
+        "hex": "#1a1a1a",
+        "alpha": 1,
+        "usedAs": {
+          "text": 4,
+          "background": 3
+        },
+        "roles": []
+      }
+    }
+  },
+  "rolesDark": null,
+  "roleDetailsDark": null,
+  "fonts": {
+    "body": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, sans-serif",
+    "paragraph": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, sans-serif",
+    "heading": "Georgia, serif",
+    "button": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, sans-serif",
+    "code": null,
+    "loaded": [],
+    "roles": {
+      "display": {
+        "family": "Georgia",
+        "stack": "Georgia, serif",
+        "weight": 600,
+        "selectors": [
+          "h3.promo-title",
+          "h1",
+          "h2"
+        ]
+      },
+      "text": {
+        "family": "Segoe UI",
+        "stack": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, sans-serif",
+        "weight": 400,
+        "selectors": [
+          "a",
+          "p",
+          "h3",
+          "p.price",
+          "p.flavor",
+          "li",
+          "h4",
+          "strong"
+        ]
+      }
+    }
+  },
+  "logo": {
+    "kind": "img",
+    "tag": "img",
+    "src": "https://glimmerbliss.com/images/logo.png",
+    "alt": "Glimmer Bliss",
+    "score": 13,
+    "box": {
+      "x": 140,
+      "y": 50.046875,
+      "w": 82.9375,
+      "h": 56
+    },
+    "file": "logo.png",
+    "source": "logo.png"
+  },
+  "favicon": null,
+  "signals": {
+    "title": "Glimmer Bliss - Handmade Lip Gloss by Charlie Mae",
+    "description": "Handmade lip gloss by Charlie Mae, age 11, in small batches. Five sheer, vanilla-flavored shades with lip-safe ingredients, from $12. Free shipping on $35+ or free local pickup.",
+    "siteName": "Glimmer Bliss",
+    "lang": "en",
+    "themeColor": null,
+    "colorScheme": null,
+    "generator": null,
+    "h1": [
+      "Handmade Lip Gloss by Charlie Mae, Age 11"
+    ],
+    "headings": [
+      "Meet Charlie Mae: Founder, Gloss Maker, Age 11"
+    ],
+    "nav": [
+      "Home",
+      "Shop",
+      "Reviews",
+      "About Us",
+      "FAQ",
+      "My Orders",
+      "🛒\n0"
+    ],
+    "darkModeSupport": false
+  },
+  "shots": {
+    "desktop": "current/desktop.png",
+    "mobile": "current/mobile.png",
+    "full": "current/full.png",
+    "header": "current/header.png"
+  },
+  "imagePalette": [
+    {
+      "hex": "#fffefe",
+      "share": 0.442
+    },
+    {
+      "hex": "#ff70b7",
+      "share": 0.138
+    },
+    {
+      "hex": "#babfce",
+      "share": 0.136
+    },
+    {
+      "hex": "#414c51",
+      "share": 0.114
+    },
+    {
+      "hex": "#2a3032",
+      "share": 0.107
+    },
+    {
+      "hex": "#4e6e83",
+      "share": 0.063
+    }
+  ],
+  "status": "ok"
+}

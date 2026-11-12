@@ -1,0 +1,10 @@
+{
+  "model": "fal-ai/flux-pro/kontext",
+  "price_usd": 0.04,
+  "request_id": "01a1c99e-5ee9-7502-9edc-d4c541a52c0b",
+  "source_image": "https://glimmerbliss.com/images/glimmer-kiss.jpg",
+  "aspect_ratio": "9:16",
+  "prompt": "Extreme macro close-up in a tall vertical frame. The white cap of this exact lip gloss bottle has been lifted partly out of the clear square bottle, pulling up the white doe-foot applicator wand, which is coated in thick, transparent, colourless lip gloss with fine iridescent sparkle. A glassy string of gloss stretches from the applicator tip down into the open bottle. Hard direct sunlight, pale blush pink background, shallow depth of field, bright specular highlights on the wet gloss, crisp real shadows. The bottle and applicator sit in the lower two thirds of the frame and the top third is empty blush background. Keep the plain white rectangular cap and clear square bottle exactly as in the reference. No hands, no label, no text, no logo, no extra objects.",
+  "seed": 267556308,
+  "ai_generated": true
+}

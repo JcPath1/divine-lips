@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glimmer Bliss Look Samples</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1a1a1a; --blush:#f7e1e3; --pop:#e6337f; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Jost',sans-serif; background:#efeae6; color:var(--ink); padding:32px 16px 60px; }
+  h1 { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:40px; text-align:center; }
+  .lead { text-align:center; font-size:18px; margin:8px auto 32px; max-width:560px; color:#555; }
+  .grid { display:flex; flex-wrap:wrap; gap:36px; justify-content:center; }
+  .opt { width:min(540px,100%); }
+  .opt h2 { font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:600; margin-bottom:2px; }
+  .opt p { font-size:16px; color:#555; margin-bottom:12px; }
+
+  .ad { position:relative; width:100%; aspect-ratio:1; overflow:hidden; container-type:inline-size;
+        background:var(--blush); box-shadow:0 10px 30px rgba(0,0,0,.15); }
+  .ad .logo { position:absolute; left:6cqw; top:5cqw; width:22cqw; }
+  .ad .bottle { position:absolute; right:11cqw; top:9cqw; width:24cqw; height:auto; transform:rotate(8deg);
+        filter:drop-shadow(0 2.5cqw 3cqw rgba(0,0,0,.22)); }
+  .serif { font-family:'Cormorant Garamond',serif; font-weight:600; line-height:.95; }
+  .head { position:absolute; left:6cqw; top:26cqw; font-size:11.5cqw; }
+  .head i { color:var(--pop); font-weight:500; }
+  .head.two { top:31cqw; font-size:10.5cqw; }
+  .sub { position:absolute; left:6cqw; top:61cqw; width:44cqw; font-size:3.4cqw; line-height:1.4; }
+  .sub.two { top:56cqw; }
+  .boss { position:absolute; left:6cqw; top:72cqw; width:54cqw; font-family:'Cormorant Garamond',serif;
+        font-style:italic; font-weight:500; font-size:5cqw; line-height:1.1; }
+  .boss b { font-family:'Jost',sans-serif; font-style:normal; font-weight:600; letter-spacing:.1em; white-space:nowrap;
+        font-size:3.6cqw; color:var(--pop); }
+  .foot { position:absolute; left:6cqw; bottom:6cqw; font-family:'Jost',sans-serif; text-transform:uppercase;
+        letter-spacing:.28em; font-weight:500; font-size:2.5cqw; }
+  .head.say3 { top:27cqw; font-size:12.5cqw; }
+  .head.say2 { top:33cqw; font-size:11cqw; }
+  .sub.say { top:70cqw; width:46cqw; }
+  .star { position:absolute; }
+  .star svg { width:100%; height:100%; display:block; }
+</style>
+</head>
+<body>
+<h1>Glimmer Bliss: Blush &amp; Black</h1>
+<p class="lead">Charlie's pick. Soft pink, black letters, one pop of hot pink. Here it is on two glosses.</p>
+
+<div class="grid">
+
+  <div class="opt">
+    <h2>Pink Paradise</h2>
+    <p>With the Lip Gloss BOSS line.</p>
+    <div class="ad">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/pink-paradise.png" alt="">
+      <div class="serif head">Pretty<br>in <i>Pink<br>Paradise</i></div>
+      <div class="sub">Sheer, shiny lip gloss. Handmade by Charlie Mae.</div>
+      <div class="boss">From a young entrepreneur<br>who's a <b>LIP GLOSS BOSS</b></div>
+      <div class="foot">glimmerbliss.com</div>
+      <div class="star" style="left:45cqw;top:12cqw;width:6cqw;height:6cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+      <div class="star" style="left:40cqw;top:21cqw;width:3cqw;height:3cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+    </div>
+  </div>
+
+  <div class="opt">
+    <h2>Glimmer Kiss</h2>
+    <p>Same look, different gloss.</p>
+    <div class="ad">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/glimmer-kiss.png" alt="">
+      <div class="serif head two">It turns pink.<br><i>Just for you.</i></div>
+      <div class="sub two">Glimmer Kiss color-changing gloss with sparkle. Handmade by Charlie Mae.</div>
+      <div class="boss">From a young entrepreneur<br>who's a <b>LIP GLOSS BOSS</b></div>
+      <div class="foot">glimmerbliss.com</div>
+      <div class="star" style="left:45cqw;top:12cqw;width:6cqw;height:6cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+      <div class="star" style="left:40cqw;top:21cqw;width:3cqw;height:3cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+    </div>
+  </div>
+
+</div>
+<h1 style="margin-top:56px">Lip Gloss BOSS sayings</h1>
+<p class="lead">Same look, new words. Pick your favorites.</p>
+<div class="grid">
+
+  <div class="opt">
+    <h2>1. Be a Lip Gloss Boss</h2>
+    <div class="ad" style="margin-top:10px">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/sugar-cookie.png" alt="">
+      <div class="serif head say3">Be a<br><i>Lip Gloss</i><br>Boss</div>
+      <div class="sub say">Sugar Cookie. Sheer, shiny lip gloss, handmade by Charlie Mae.</div>
+      <div class="foot">glimmerbliss.com</div>
+      <div class="star" style="left:45cqw;top:12cqw;width:6cqw;height:6cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+      <div class="star" style="left:40cqw;top:21cqw;width:3cqw;height:3cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+    </div>
+  </div>
+
+  <div class="opt">
+    <h2>2. Gloss on. Boss up.</h2>
+    <div class="ad" style="margin-top:10px">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/true-love.png" alt="">
+      <div class="serif head say2">Gloss on.<br><i>Boss up.</i></div>
+      <div class="sub say">True Love. Sheer, shiny lip gloss, handmade by Charlie Mae.</div>
+      <div class="foot">glimmerbliss.com</div>
+      <div class="star" style="left:45cqw;top:12cqw;width:6cqw;height:6cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+      <div class="star" style="left:40cqw;top:21cqw;width:3cqw;height:3cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+    </div>
+  </div>
+
+  <div class="opt">
+    <h2>3. Dream big. Gloss often.</h2>
+    <div class="ad" style="margin-top:10px">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/gloss-angeles.png" alt="">
+      <div class="serif head say2">Dream big.<br><i>Gloss often.</i></div>
+      <div class="sub say">Gloss Angeles. Clear, shiny lip gloss, handmade by Charlie Mae.</div>
+      <div class="foot">glimmerbliss.com</div>
+      <div class="star" style="left:45cqw;top:12cqw;width:6cqw;height:6cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+      <div class="star" style="left:40cqw;top:21cqw;width:3cqw;height:3cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+    </div>
+  </div>
+
+  <div class="opt">
+    <h2>4. Big dreams look good in gloss</h2>
+    <div class="ad" style="margin-top:10px">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/pink-paradise.png" alt="">
+      <div class="serif head say3" style="font-size:10.5cqw;top:30cqw">Big dreams<br>look good<br><i>in gloss</i></div>
+      <div class="sub say">Pink Paradise. Sheer, shiny lip gloss, handmade by Charlie Mae.</div>
+      <div class="foot">glimmerbliss.com</div>
+      <div class="star" style="left:45cqw;top:12cqw;width:6cqw;height:6cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+      <div class="star" style="left:40cqw;top:21cqw;width:3cqw;height:3cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+    </div>
+  </div>
+
+  <div class="opt">
+    <h2>5. Boss moves. Glossy lips.</h2>
+    <div class="ad" style="margin-top:10px">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/glimmer-kiss.png" alt="">
+      <div class="serif head say2">Boss moves.<br><i>Glossy lips.</i></div>
+      <div class="sub say">Glimmer Kiss. Color-changing gloss with sparkle, handmade by Charlie Mae.</div>
+      <div class="foot">glimmerbliss.com</div>
+      <div class="star" style="left:45cqw;top:12cqw;width:6cqw;height:6cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+      <div class="star" style="left:40cqw;top:21cqw;width:3cqw;height:3cqw"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.9 7.2 4.8 11.1 12 12-7.2.9-11.1 4.8-12 12-.9-7.2-4.8-11.1-12-12C7.2 11.1 11.1 7.2 12 0z"/></svg></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

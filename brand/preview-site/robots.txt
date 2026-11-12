@@ -1,0 +1,8 @@
+# Glimmer Bliss - instructions for search engines
+
+# Everyone is welcome to look at every page.
+User-agent: *
+Allow: /
+
+# Where the full list of pages lives.
+Sitemap: https://glimmerbliss.com/sitemap.xml

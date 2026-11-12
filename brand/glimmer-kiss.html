@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glimmer Kiss: How It Works</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1a1a1a; --blush:#f7e1e3; --pop:#e6337f; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Jost',sans-serif; background:#efeae6; color:var(--ink); padding:32px 16px 60px; }
+  h1 { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:40px; text-align:center; }
+  h1.gap { margin-top:56px; }
+  .lead { text-align:center; font-size:18px; margin:8px auto 28px; max-width:620px; color:#555; }
+  .grid { display:flex; flex-wrap:wrap; gap:28px; justify-content:center; }
+  .opt { width:min(420px,100%); }
+  .opt.big { width:min(600px,100%); }
+  .opt h2 { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:600; margin-bottom:8px; }
+
+  .ad { position:relative; width:100%; aspect-ratio:1; overflow:hidden; container-type:inline-size;
+        background:var(--blush); box-shadow:0 10px 30px rgba(0,0,0,.15); }
+  .ad > * { position:absolute; }
+  .logo { left:6cqw; top:5cqw; width:20cqw; }
+  .bottle { height:auto; filter:drop-shadow(0 2.5cqw 3cqw rgba(0,0,0,.22)); }
+  .serif { font-family:'Cormorant Garamond',serif; font-weight:600; line-height:.98; }
+  .serif i { color:var(--pop); font-weight:500; }
+  .num { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500; color:var(--pop); line-height:1; }
+  .body { font-size:4cqw; line-height:1.4; }
+  .foot { left:6cqw; bottom:6cqw; text-transform:uppercase; letter-spacing:.28em; font-weight:500; font-size:2.5cqw; }
+  .swipe { right:6cqw; bottom:6cqw; text-transform:uppercase; letter-spacing:.28em; font-weight:500; font-size:2.5cqw; color:var(--pop); }
+  .star { color:var(--ink); }
+  .star svg { width:100%; height:100%; display:block; }
+
+  /* one-picture ad */
+  .one .head { left:6cqw; top:22cqw; font-size:7.8cqw; }
+  .one .bottle { right:8cqw; top:8cqw; width:19cqw; transform:rotate(7deg); }
+  .steps { left:6cqw; top:47cqw; width:60cqw; display:grid; gap:3.2cqw; }
+  .step { display:grid; grid-template-columns:9cqw 1fr; align-items:center; }
+  .step .num { font-size:7cqw; }
+  .step p { font-size:3.2cqw; line-height:1.3; }
+  .step b { font-weight:600; }
+
+  /* swipe slides */
+  .s .num { left:6cqw; top:27cqw; font-size:13cqw; }
+  .s .head { left:6cqw; top:42cqw; font-size:11cqw; }
+  .s .body { left:6cqw; top:68cqw; width:52cqw; }
+  .s .bottle { right:9cqw; top:10cqw; width:21cqw; transform:rotate(8deg); }
+  .cover .head { top:30cqw; font-size:12cqw; }
+  .cover .body { top:66cqw; width:46cqw; }
+  .bar { left:6cqw; right:6cqw; top:27cqw; height:9cqw; border-radius:5cqw;
+         background:linear-gradient(90deg,#ffffff 0%,#fbd3e0 35%,#f48fb6 70%,#e6337f 100%);
+         box-shadow:inset 0 0 0 .4cqw rgba(0,0,0,.08); }
+  .barlab { top:38cqw; font-size:2.5cqw; text-transform:uppercase; letter-spacing:.2em; font-weight:500; }
+  .wide .head { top:47cqw; font-size:10cqw; }
+  .wide .body { top:71cqw; width:80cqw; font-size:3.8cqw; }
+  .dots { left:6cqw; top:25cqw; display:flex; gap:5cqw; }
+  .dots div { width:15cqw; text-align:center; font-size:2.4cqw; text-transform:uppercase; letter-spacing:.16em; font-weight:500; }
+  .dots span { display:block; width:15cqw; height:15cqw; border-radius:50%; margin-bottom:2cqw;
+         box-shadow:inset 0 0 0 .4cqw rgba(0,0,0,.06), 0 1.5cqw 3cqw rgba(0,0,0,.12); }
+  .last .head { top:47cqw; font-size:10cqw; }
+  .last .body { top:71cqw; width:80cqw; font-size:3.8cqw; }
+  .last .bottle { right:8cqw; top:6cqw; width:12cqw; transform:rotate(8deg); }
+</style>
+</head>
+<body>
+
+<h1>Glimmer Kiss: how it works</h1>
+<p class="lead">Two ways to teach people, in Charlie's look. Every word comes from the Glimmer Kiss page on the website.</p>
+
+<div class="grid">
+  <div class="opt big">
+    <h2>A. One picture that explains it</h2>
+    <div class="ad one">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/glimmer-kiss.png" alt="">
+      <div class="serif head">Clear in the bottle.<br><i>Pink on you.</i></div>
+      <div class="steps">
+        <div class="step"><span class="num">1</span><p><b>Swipe it on.</b> It goes on clear, with fine sparkle.</p></div>
+        <div class="step"><span class="num">2</span><p><b>Your lips do the rest.</b> The gloss reacts with your lips' natural chemistry, called pH.</p></div>
+        <div class="step"><span class="num">3</span><p><b>Meet your pink.</b> In a few seconds it turns a pink that's all yours.</p></div>
+      </div>
+      <div class="foot">Glimmer Kiss &nbsp;•&nbsp; glimmerbliss.com</div>
+    </div>
+  </div>
+</div>
+
+<h1 class="gap">B. A swipe post (4 pictures)</h1>
+<p class="lead">People swipe through these on Instagram, one idea at a time.</p>
+
+<div class="grid">
+
+  <div class="opt">
+    <h2>Picture 1</h2>
+    <div class="ad s cover">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/glimmer-kiss.png" alt="">
+      <div class="serif head">This gloss<br>turns pink.<br><i>Here's how.</i></div>
+      <div class="foot">Glimmer Kiss</div>
+      <div class="swipe">Swipe &rarr;</div>
+    </div>
+  </div>
+
+  <div class="opt">
+    <h2>Picture 2</h2>
+    <div class="ad s">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/glimmer-kiss.png" alt="">
+      <div class="num">1</div>
+      <div class="serif head">It starts<br><i>clear.</i></div>
+      <div class="body">Glimmer Kiss looks clear in the bottle, with fine sparkle. Swipe it on bare lips.</div>
+      <div class="swipe">Swipe &rarr;</div>
+    </div>
+  </div>
+
+  <div class="opt">
+    <h2>Picture 3</h2>
+    <div class="ad s wide">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <div class="bar"></div>
+      <div class="barlab" style="left:6cqw">Clear</div>
+      <div class="barlab" style="right:6cqw">Your pink</div>
+      <div class="serif head"><span class="num" style="font-size:10cqw">2</span>&nbsp; Your lips<br><i>do the rest.</i></div>
+      <div class="body">Everyone's lips have their own natural chemistry, called pH. The gloss reacts with yours. Wait a few seconds and watch it change.</div>
+      <div class="swipe">Swipe &rarr;</div>
+    </div>
+  </div>
+
+  <div class="opt">
+    <h2>Picture 4</h2>
+    <div class="ad s last">
+      <img class="logo" src="../docs/images/logo.png" alt="">
+      <img class="bottle" src="cutouts/glimmer-kiss.png" alt="">
+      <div class="dots">
+        <div><span style="background:#fbd3e0"></span>Soft</div>
+        <div><span style="background:#f48fb6"></span>Pink</div>
+        <div><span style="background:#e6337f"></span>Bright</div>
+      </div>
+      <div class="serif head"><span class="num" style="font-size:10cqw">3</span>&nbsp; A pink that's<br><i>all yours.</i></div>
+      <div class="body">Some people get a soft pink. Others get a brighter pink. Try it next to a friend and compare!</div>
+      <div class="foot">$15 &nbsp;•&nbsp; glimmerbliss.com</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
