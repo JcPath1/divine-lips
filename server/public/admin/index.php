@@ -536,7 +536,7 @@ $view = $_GET['view'] ?? 'orders';
     <?php foreach ($periods as $title => $m): ?>
     <div class="card">
       <h2 style="margin-top:0"><?= e($title) ?></h2>
-      <div class="money-row"><span>💰 Money in<small><?= $m['online_n'] ?> website order<?= $m['online_n'] === 1 ? '' : 's' ?> + <?= $m['show_n'] ?> booth sale<?= $m['show_n'] === 1 ? '' : 's' ?></small></span><span><?= money($m['in']) ?></span></div>
+      <div class="money-row"><span>💰 Money in<small><?= $m['online_n'] ?> website order<?= $m['online_n'] === 1 ? '' : 's' ?> + <?= $m['show_n'] ?> booth sale<?= $m['show_n'] === 1 ? '' : 's' ?><?= $m['text_n'] ? ' + ' . $m['text_n'] . ' sent by text' : '' ?></small></span><span><?= money($m['in']) ?></span></div>
       <div class="money-row"><span>🏛️ Tax to save<small>This belongs to Texas</small></span><span>−<?= money($m['tax']) ?></span></div>
       <div class="money-row"><span>🧾 Spent<small>Supplies and costs</small></span><span>−<?= money($m['spent']) ?></span></div>
       <div class="money-row kept"><span><?= $m['kept'] >= 0 ? '😊 You kept' : '😬 Still to earn back' ?></span><span><?= money(abs($m['kept'])) ?></span></div>

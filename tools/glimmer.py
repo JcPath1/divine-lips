@@ -124,6 +124,8 @@ def server_config(env):
                  'smtp_port': int(env.get('SMTP_PORT') or 465), 'smtp_pass': env['SMTP_PASSWORD'],
                  'owner_alert': env['OWNER_ALERT_EMAIL']},
         'admin_password_hash': admin_hash(env['ADMIN_PASSWORD']),
+        # Secret for the text ledger door (api/ledger.php). Empty = the door stays shut.
+        'ledger_token': env.get('LEDGER_TOKEN', ''),
         'pay': {'venmo_username': env.get('VENMO_USERNAME', '').lstrip('@'),
                 'zelle_contact': env.get('ZELLE_EMAIL_OR_PHONE', ''), 'zelle_name': env.get('ZELLE_NAME', '')},
         'paypal': {'mode': 'live' if env.get('PAYPAL_MODE') == 'live' else 'sandbox',
@@ -191,6 +193,7 @@ def cmd_local():
         'mail': {'mode': 'log', 'log_file': os.path.join(data, 'emails.txt').replace('\\', '/'), 'owner_alert': 'owner@example.test',
                  'from': 'hello@example.test'},
         'admin_password_hash': admin_hash('test-admin'),
+        'ledger_token': 'test-ledger-token-local-only-0000',
         'pay': {'venmo_username': 'GlimmerBliss-Test', 'zelle_contact': 'pay@example.test', 'zelle_name': 'Glimmer Bliss'},
         'paypal': {'mode': 'sandbox', 'client_id': '', 'secret': ''},
     }

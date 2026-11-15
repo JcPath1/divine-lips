@@ -22,6 +22,7 @@ require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/pricing.php';
 require_once __DIR__ . '/orders.php';
 require_once __DIR__ . '/stock.php';
+require_once __DIR__ . '/ledger.php';
 require_once __DIR__ . '/mailer.php';
 require_once __DIR__ . '/emails.php';
 require_once __DIR__ . '/paypal.php';

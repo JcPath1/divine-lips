@@ -179,11 +179,16 @@ function money_summary(?string $since): array
     $st->execute($since ? [local_date($since)] : []);
     $spent = (int)$st->fetchColumn();
 
-    $in = (int)$online['total'] + (int)$show['total'];
-    $tax = (int)$online['tax'] + (int)$show['tax'];
+    // Entries sent as a text message through Phronesis (server/app/ledger.php)
+    $text = ledger_money($since ? local_date($since) : null);
+    $spent += $text['spent'];
+
+    $in = (int)$online['total'] + (int)$show['total'] + $text['sale'];
+    $tax = (int)$online['tax'] + (int)$show['tax'] + $text['tax'];
     return [
         'online_n' => (int)$online['n'], 'online' => (int)$online['total'],
         'show_n' => (int)$show['n'], 'show' => (int)$show['total'],
+        'text_n' => $text['sale_n'], 'text' => $text['sale'],
         'in' => $in, 'tax' => $tax, 'spent' => $spent, 'kept' => $in - $tax - $spent,
     ];
 }
