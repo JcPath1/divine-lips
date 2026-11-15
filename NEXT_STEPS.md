@@ -1,6 +1,6 @@
 # Glimmer Bliss — Where We Left Off
 
-**Last worked on: 11 November 2026 (evening)** (ad system + videos + logo layout + bottle sticker; all committed and pushed; website changes NOT deployed yet)
+**Last worked on: 13 November 2026 (midday)** (Avery sticker order + gloss recipes from JC's photos; work from 12-13 Nov is NOT committed to git yet)
 This file is in the repo root, NOT in `docs/`, so it is not published on the website.
 
 ---
@@ -28,7 +28,23 @@ old "Claude is blocked from deploying" note no longer holds. Claude deploys only
 - **Bottle sticker:** clear, black print, 11/16 x 3 in, one sticker cut by hand at the cap seam. Cap = 1.5 in
   (JC measured). Files in `brand/sticker/` (print PDF, proof, test sheet; `make_sticker.py`, `make_test_sheet.py`).
   JC emailed 4OVER4, StickerGiant and Avery on 11 Nov with questions (size, edge distance, oil resistance, sample).
-  Waiting on replies and on JC's paper test on a real bottle. The sticker is assumed centered on the bottle
+  12 Nov: 4OVER4 quote too high (JC). StickerGiant replied: can print 11/16 x 3 in clear, needs 1/8 in margin,
+  roll labels, min 125 = $67, 250 = $84, 500 = $112; wants vector + rich black. JC: keep 11/16 wide, so GB shrunk
+  to 7/16 in wide. Vector files made by tracing the PNG logos (`make_vector.py`: sticker PDF/SVG, logo SVGs in
+  `brand/logo/`). New test sheet emailed to Lisa. Follow-up to StickerGiant (ship time before Thanksgiving,
+  file check, sample pack) is a Gmail DRAFT, not sent. Sticker Mule prices checked too (min side 0.75 in).
+  **ORDERED 13 Nov 2026 from Avery WePrint (JC):** order #104688010, 648 labels (24 sheets, 27 per sheet),
+  Glossy Clear Film, custom rectangle 3 x 0.688 in, rounded corners, $97.20 + $6.08 tax = $103.28, free shipping.
+  File used: `brand/sticker/glimmer-bliss-bottle-sticker-avery.pdf` (GB 0.53 in wide, 1/16 in bleed built in).
+  Receipt is in `stickers_lables/` (git-ignored: it has the home address). Not confirmed: whether white ink was
+  off on the final order. The StickerGiant follow-up draft was never sent and is no longer needed.
+  **To reorder or do a new sticker at Avery:** JC signs in at avery.com in Chrome (Claude cannot sign in), then
+  either My Account > order history > reorder, or Claude repeats the steps: avery.com/custom-printing/labels/
+  calculator/sheets > Sheet Labels > Rectangle > Size "Enter Any Size" (height 3, width 0.6875) > Glossy Clear
+  Film PET > Start Designing > Upload > upright > upload the PDF > Customize > Next > untick white ink > JC
+  approves and pays. Avery stretches an upload to its bleed line, so every file needs 1/16 in of extra clear page
+  on each side (`make_vector.py` does this). Avery safe margin 1/16 in, smallest text 6 pt.
+  Waiting on delivery and a test on a real bottle. The sticker is assumed centered on the bottle
   (5/32 in bare at each end): not confirmed by JC.
 - **Suno MCP:** added to this project (`claude mcp add --transport http suno https://api.suno.com/mcp`), needs JC to
   sign in via `/mcp` after a restart. Say the price before making any song.
@@ -51,6 +67,73 @@ old "Claude is blocked from deploying" note no longer holds. Claude deploys only
    `brand/ingredients-tkb.md` (from JC's two TKB orders). Still needed from JC: the recipe for each gloss.
    Check with JC: three of the supplies ordered in June (High Shine Top Coat, Log Cabin and Yummy Pink Lip
    Liquids) list vitamin E, so "not used" is only true if those are in none of the 5 glosses.
+   **13 Nov update:** JC put recipe photos in `ingredients/`. Recipes, what they settle (vitamin E IS in Pink
+   Paradise, Sugar Cookie and Gloss Angeles; glitter is in Glimmer Kiss) and DRAFT ingredient lists are in
+   `brand/ingredients-tkb.md`. JC, 13 Nov: "Red Power" is True Love, and Charlie no longer adds separate
+   vitamin E oil (the three glosses above still carry it through their TKB supplies). Still open: the
+   handwritten polybutene / coconut oil / squalane additions (which glosses, how much, what "0.1" means), the
+   polybutene brand and source, and whether the sheets match what is actually made.
+   **14 Nov update:** JC gave the real amounts for all 5 glosses (table "What is actually made" in
+   `brand/ingredients-tkb.md`). Still open: how much of each addition; squalane or squalene; batch size;
+   polybutene brand; glitter amount; Gloss Angeles (JC is confirming); weights for the label order.
+   **JC's rule: no emojis in the ingredients on the website.**
+   **14 Nov, later:** an "Ingredients" section is now on all 5 product pages in `docs/products/` (styles at the
+   end of `docs/css/styles.css`). The feature row on the 5 product pages was also redesigned (text only, no
+   emojis). **LIVE since 14 Nov 2026 (evening):** JC said publish; deployed with `tools/glimmer.py deploy`
+   (7 files: styles.css, the 5 product pages, and config.php, which the tool re-sends on every deploy because
+   it re-scrambles the admin password). Checked live: all 5 pages at desktop and phone width, add to cart,
+   cart, checkout, home, admin login page, reviews loading. Product pages link `styles.css?v=20261114b`.
+   NOT committed to git yet. **The ingredient wording is still a DRAFT:** the order is supply by supply
+   (additions not weighed), Gloss Angeles is still being confirmed by JC, and "Fractionated Coconut Oil" is
+   the bottle's wording, not a checked label name.
+   **Label rules found 12-13 Nov:** bottle needs "Lip Gloss", net contents, business name + address (21 CFR
+   701.11-701.13); ingredients can go on a card for mailed orders (701.3(r), not confirmed for web orders).
+   JC's plan: info sticker on the bottle bottom (replacing the QR sticker) + thank-you card with ingredients
+   and review QR. **Address for labels: answered by JC 14 Nov 2026.** It is saved in
+   `private/label-address.txt` (git-ignored) and NOT written in this file, because the GitHub repo is public.
+   JC's spelling was checked with him. It is not on the website.
+   **14 Nov, bottom info sticker:** JC asked if ingredients + company info fit on the 0.75 in sticker used for
+   the website QR. Measured (`brand/sticker/make_info_sticker.py`, output in `brand/sticker/info-sticker/`,
+   start with `info-sticker-options.pdf`): NO. Everything needs 2.1-4.0 pt type; Avery's smallest is 6 pt.
+   Mock-ups made: company info only, name + QR to the gloss page, body label, 3.5 x 2 in ingredients card.
+   Not on file: the old QR sticker's shape / material / vendor. Nothing ordered.
+   Address added 14 Nov (read from `private/label-address.txt`): on the SQUARE company-info sticker it fits at
+   6 pt on two lines (city line 44.6 pt wide in a 45 pt safe width, so no slack). Round has no room for it.
+   Card footer now carries name + address + website. `brand/sticker/info-sticker/` is git-ignored.
+   **JC answered 14 Nov (evening):** keep BOTH the round and the square 0.75 in info stickers saved (print files
+   `print-2-company-info-round-<gloss>.pdf` and `-square-` in `brand/sticker/info-sticker/`, 1/16 in bleed);
+   he will likely print the ROUND one. The old QR sticker is ROUND, 0.75 in. He MAY keep the QR sticker on the
+   bottom and add a new ingredient sticker on the back (not final).
+   **Back ingredient sticker measured** (`brand/sticker/make_back_sticker.py`, output in
+   `brand/sticker/back-sticker/`, git-ignored, start with `back-sticker-options.pdf`). Text = gloss name, Lip
+   Gloss, net contents, ingredients (colour numbers cut), business name + address. Longest list (Pink Paradise /
+   Sugar Cookie): one side 11/16 x 1.75 in = 4.0 pt; 11/16 x 3 in (the Avery logo size) = 5.1 pt; smallest that
+   reaches 6 pt = 1.59 x 1.75 in folded over ONE corner (back + one side), 6.01 pt, no slack; 2.43 x 1.75 in over
+   3 sides = 7.4 pt. Gloss Angeles alone fits one side (11/16 x 1.75 in) at 6.1 pt. Not measured: how round the
+   bottle's corners are; whether black text on clear film reads over dark gloss. Nothing ordered.
+   **Accounting + inventory (14 Nov 2026):** JC wants to know what was made, sold and spent. PLAN ONLY, nothing
+   built: `ACCOUNTING_INVENTORY_PLAN.md`. Figures found are in `private/records-audit-2026-11-14.md` (admin pages
+   saved in `private/records-snapshot/`). Finding: the admin's Sell / My Gloss / Spent / Money screens exist but
+   hold no booth sales, no spending and no paid orders. Recommended: use those screens now, then build text
+   intake through Phronesis + channel + one summary page. Waiting on JC: go-ahead and the items in section 3.
+   **SEO + site-basics audit done 15 Nov 2026 (read-only, nothing changed):** full results and an ordered fix list
+   are in `private/seo-audit-2026-11-15.md` (private on purpose). Waiting on JC to say which fixes to do.
+   **Text ledger LIVE since 15 Nov 2026 (about 4:50 AM):** JC said "Yes, put it on the live shop" (14 Nov, 11:43 PM).
+   Deployed the 6 files; LEDGER_TOKEN added to the secrets file; `private/ledger-target.txt` = live; full backup in
+   `private/backups/shop-live-20261115-044942.json`; proved with a test count + undo (entries 1 and 2). Checked
+   after: home, product page, add to cart, checkout page, admin login, Money, stock unchanged. How to word an
+   entry: `LEDGER_HOWTO.md`. **Live orders tidied 14-15 Nov:** GB-R5Z28 (JC's test) cancelled; GB-3EC9W marked paid
+   + picked up, $2.59 extra noted as a tip (JC's guess); stock put back to the 14 Nov count (34/26/15/19/18/5).
+   Show sheet (29 Oct-1 Nov) and Venmo list are in `private/past-records-2026-11-14.md`, NOT entered: JC must
+   confirm. Open: Glimmer Kiss no-glitter figure; whether the 14 Nov count was counted or worked out from the sheet.
+   (Older note follows.) **Text ledger BUILT, local only (14 Nov 2026, late):** JC said yes. `tools/ledger.py` + `server/app/ledger.php`
+   + `server/public/api/ledger.php`; how to use it and how to go live: `LEDGER_HOWTO.md`. Tests:
+   `python tools/ledgertest.py` (69 pass), `stocktest.py` 33 and `taxtest.py` 24 still pass. NOT deployed; no
+   LEDGER_TOKEN in the secrets file yet, so the live door would stay shut. A deploy would send: admin/index.php,
+   api/ledger.php (new), bootstrap.php, stock.php, ledger.php (new), config.php. Waiting on JC's OK to go live.
+   **Past records pulled (not entered):** `private/past-records-2026-11-14.md`. Venmo 29 Oct-2 Nov and the TKB,
+   Avery and fal receipts. Waiting on JC: confirm the list, the 28 Oct order (looks like his own test), what
+   was donated, cash sales, Amazon / hosting / booth costs, the Glimmer Kiss stock error, who enters booth sales.
    **TikTok Shop:** the ordered to-do list is in `TIKTOK_SHOP_PLAN.md`. It starts with these recipes.
 2. **Glimmer Kiss tint:** ask JC if it leaves a pink tint after the gloss wears off. Only add
    "May leave a soft pink tint" if he says yes.
@@ -360,7 +443,7 @@ test — there are 22 test questions and they all pass right now.
 | Founder | Charlie Mae (sole founder) |
 
 ## Google Search Console
-- glimmerbliss.com is verified in Google Search Console (2026-10-28, account fractalsolution369@gmail.com).
+- glimmerbliss.com is verified in Google Search Console (2026-10-28, JC's Google account).
 - KEEP `docs/google38530a0b0093f57e.html` and the `google-site-verification` meta tag in `docs/index.html`. Deleting them un-verifies the site.
 - Sitemap: https://glimmerbliss.com/sitemap.xml (update the <lastmod> dates when pages change).
 

@@ -215,7 +215,8 @@ cheeky. She talks to you like a friend who knows her stuff.
 - Every gloss is **vanilla**. Say "vanilla flavored", never "flavors".
 - There are **5** glosses. Love is discontinued.
 - Glimmer Kiss is **not the only** pH gloss on the market. Never write "the only", "the first" or "new invention".
-- **Never guess ingredients.** No "vitamin E" (not used), no "natural", "organic", "vegan", "clean" or
+- **Never guess ingredients.** No "vitamin E" claim (13 Nov 2026: three glosses do contain
+  tocopheryl acetate from their supplies, see `brand/ingredients-tkb.md`; list it, never advertise it), no "natural", "organic", "vegan", "clean" or
   "hypoallergenic" until the ingredient list is in the repo.
 - No medical or body claims: plumping, healing, hydrating, long-lasting, 24-hour.
 - Charlie's privacy: **first name only.** No age, school, town, or photo in ads. Use "young entrepreneur".

@@ -1,5 +1,7 @@
 # Private/sensitive files
 /private/
+# Order receipts (home address, phone, card digits) - never commit
+/stickers_lables/
 
 # OS files
 .DS_Store
@@ -27,3 +29,16 @@ brand/video/out/
 
 # Installed third-party skills (listed in skills-lock.json)
 .claude/skills/
+
+# Info-sticker mock-ups carry the business address (the address itself is in private/label-address.txt)
+/brand/sticker/info-sticker/
+/brand/sticker/back-sticker/
+
+# Phronesis work log: summaries of work, may mention private details
+/PHRONESIS_LOG.md
+
+# Pictures Jc sends through Phronesis (private)
+/phronesis-inbox/
+
+# Photos of recipe sheets and supplier pages (the recipes are private)
+/ingredients/

@@ -79,3 +79,22 @@ The fal key is in `private/fal.env`. Never print it. Review pictures go in `ads/
 
 Save drafts in `brand/ads/`. **JC approves every post before it goes anywhere.** Never post, schedule or send
 an ad yourself.
+
+
+## Phronesis work log
+
+Jc also runs agents in this folder through his Phronesis app. They record what they did in `PHRONESIS_LOG.md`
+in this folder. Before starting work, read the last few entries of that file (if it exists) so you know what has
+already changed. Phronesis writes to that file automatically after each of its tasks. Do not change or remove existing entries; only add your own entry at the end, as described below.
+
+**Logging VS Code work for Phronesis.** If Jc opened this session himself (VS Code or a terminal, not through the Phronesis app), then each time you finish a piece of work, add an entry to the end of `PHRONESIS_LOG.md` in this folder (create the file if it is missing). Use exactly this form, with the current date and time, and keep the heading ending `- VS Code session`:
+
+```
+## 2026-11-14 21:05 - VS Code session
+
+**Asked:** what Jc asked for, in a sentence or two.
+
+**Done:** what you changed and anything left unfinished, in a few sentences.
+```
+
+Never put passwords, keys or tokens in it. If Phronesis started you (your message begins "Message from Jc" or "Message from Phronesis"), do not write an entry; Phronesis writes its own.

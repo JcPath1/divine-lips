@@ -36,17 +36,63 @@ recipes are still needed before any label or ingredient claim is written.
 - **TKB order emails:** "Batch-specific COAs are not issued. Documentation is provided in standard form
   only."
 
+## Recipes and amounts (kept private)
+
+JC's per-gloss recipes, with how much of each supply goes in, are NOT in this public repo: the exact amounts are the
+business's formulas. The full version of this note is `private/ingredients-tkb-FULL-with-recipes.md` on JC's
+computer. Which supplies go into which gloss is public anyway: it is on the website's ingredient lists.
+JC's rule (14 Nov 2026): no emojis in the ingredients on the website.
+
+## What the recipes settle
+
+- **Vitamin E:** Pink Paradise and Sugar Cookie (through the Yummy Pink and Log Cabin Lip Liquids) and Gloss
+  Angeles (through the Top Coat) contain Tocopheryl Acetate. True Love and Glimmer Kiss do not get it from a
+  TKB supply. JC, 13 Nov: Charlie no longer adds a separate vitamin E oil. That does not remove the
+  Tocopheryl Acetate already inside those three TKB supplies.
+- **Glitter:** White Diamond Glitter is the sparkle in Glimmer Kiss. TKB's suggested limit is 1 g per 10 g. TKB's warning about polyester glitter and the FDA applies to this gloss.
+- **Soy:** all 5 glosses contain soybean oil through the vanilla oil.
+- **Preservatives:** Pink Paradise, Sugar Cookie and Glimmer Kiss contain Caprylyl Glycol, Phenoxyethanol and
+  Hexylene Glycol from their supplies.
+
+## DRAFT ingredient lists (not final, do not print)
+
+Built from the recipes and TKB's lists: the base first in TKB's order, then the small additions. Not final
+because (a) the lists below do NOT yet include the 14 Nov additions, (b) TKB does not give percentages inside
+each supply, and (c) names follow TKB's pages, not checked against the official INCI names.
+
+**To add once weights are known (JC, 14 Nov):** Polybutene, Fractionated Coconut Oil (label name not checked;
+the bottle only says "100% Pure and Natural Fractionated Coconut Oil") and Squalane go into Pink Paradise,
+True Love, Sugar Cookie and both Glimmer Kiss versions. Polybutene goes into Gloss Angeles. Glimmer Kiss
+"no sparkle" is the Glimmer Kiss list without Polyethylene Terephthalate, Aluminum and Polyurethane 33.
+Where each one sits in the order depends on its weight, which is not measured yet.
+
+- **Pink Paradise:** Hydrogenated Polyisobutene, Ethylene/Propylene/Styrene Copolymer, Butylene/Ethylene/Styrene
+  Copolymer, Ricinus Communis (Castor) Seed Oil, Soybean Oil, Artificial Flavorings, Pentaerythrityl
+  Tetra-di-t-butyl Hydroxyhydrocinnamate, Tocopheryl Acetate, Caprylyl Glycol, Phenoxyethanol, Hexylene Glycol,
+  Titanium Dioxide (CI 77891). May contain: the colour pool TKB lists for Yummy Pink.
+- **True Love ("Red Power" on the sheet):** Hydrogenated Polyisobutene, Ethylene/Propylene/Styrene Copolymer, Butylene/Ethylene/Styrene
+  Copolymer, Ricinus Communis (Castor) Seed Oil, Soybean Oil, Artificial Flavorings, Pentaerythrityl
+  Tetra-di-t-butyl Hydroxyhydrocinnamate, Red 30 (CI 73360).
+- **Sugar Cookie:** same as Pink Paradise, with the colour pool TKB lists for Log Cabin.
+- **Gloss Angeles:** Polyisobutene, Hydrogenated Polyisobutene, Caprylic/Capric Triglyceride, Soybean Oil,
+  Artificial Flavorings, Tocopheryl Acetate.
+- **Glimmer Kiss:** Mineral Oil, Ethylene/Propylene/Styrene Copolymer, Butylene/Ethylene/Styrene Copolymer,
+  Polybutene, Caprylic/Capric Triglyceride, Polyethylene Terephthalate, Aluminum, Polyurethane 33, Soybean Oil,
+  Artificial Flavorings, Caprylyl Glycol, Phenoxyethanol, Hexylene Glycol, Red 27.
+
 ## Open questions before any label or claim
 
-1. **Recipes.** Which supplies, and how many grams or drops of each, go into each of the 5 glosses?
-2. **Vitamin E.** The brand kit says vitamin E is "not used". The High Shine Top Coat and the Log Cabin
-   and Yummy Pink Lip Liquids contain Tocopheryl Acetate (Vitamin E). Any gloss made with them has it
-   and must list it.
-3. **Glitter.** Is White Diamond Glitter the sparkle in Glimmer Kiss? If so, read TKB's warning above
-   before listing it on TikTok Shop, which bars FDA-prohibited or restricted ingredients.
-4. **Soy.** The vanilla oil is soybean oil based and every gloss is vanilla flavored.
-5. **Other suppliers.** Only these two TKB orders were found in this Gmail account. Anything bought
-   elsewhere is not on this list.
-6. **Shelf life of the finished gloss.** Not established. The vanilla oil alone is 6 to 9 months.
-7. **"May contain" colours.** TKB lists a pool of possible colours for Log Cabin and Yummy Pink. The
-   SDS and COA linked on each TKB page were not read.
+1. ~~Red Power~~ Answered 13 Nov: it is True Love.
+2. **Handwritten additions.** Answered in part 14 Nov (which glosses). Still open: how much of each
+   addition, squalane or squalene, the batch size, and the brand and source of the polybutene.
+3. ~~Are the sheets what is actually made?~~ Answered 14 Nov: JC gave the real amounts (section above).
+   Still open: Gloss Angeles, which JC is confirming.
+4. **Coconut oil label.** The bottle says "for external use only" and "the safety of this product has not been
+   determined". Decide whether it belongs in a lip product.
+5. **Glitter.** TKB's FDA warning (above), and TikTok Shop bars FDA-prohibited or restricted ingredients.
+6. ~~Glimmer Kiss "no glitter" option.~~ Answered 14 Nov: same recipe without the glitter.
+7. **Shelf life of the finished gloss.** Not established. The vanilla oil alone is 6 to 9 months.
+8. **"May contain" colours.** TKB lists a pool of possible colours for Log Cabin and Yummy Pink. The SDS and
+   COA linked on each TKB page were not read.
+9. **Net contents.** The recipe gives 5 g per tube; the tube is sold as 5 ml. Not checked: whether a thick
+   gloss must be labelled by weight or by volume.
