@@ -116,6 +116,13 @@ old "Claude is blocked from deploying" note no longer holds. Claude deploys only
    saved in `private/records-snapshot/`). Finding: the admin's Sell / My Gloss / Spent / Money screens exist but
    hold no booth sales, no spending and no paid orders. Recommended: use those screens now, then build text
    intake through Phronesis + channel + one summary page. Waiting on JC: go-ahead and the items in section 3.
+   **Privacy policy LIVE since 15 Nov 2026 (about 11 AM):** https://glimmerbliss.com/privacy.html, with a Privacy link in
+   15 page footers and a sitemap entry. JC approved publishing (10:54 AM). Deployed 18 files with the normal tool;
+   live backup `private/backups/shop-live-20261115-105615.json` first; checked after: footer links, home, product,
+   add to cart, checkout page, admin login page, stock unchanged. **The wording still needs a check by a grown-up or
+   a lawyer** (JC was told; list in `private/privacy-and-wordpress-and-google-notes-2026-11-15.md`). Open: how long
+   to keep order records; PayPal sentence if PayPal is switched on. The wp-login/wp-admin addresses are a host bot
+   filter (read-only check, same note).
    **SEO + site-basics audit done 15 Nov 2026 (read-only, nothing changed):** full results and an ordered fix list
    are in `private/seo-audit-2026-11-15.md` (private on purpose). Waiting on JC to say which fixes to do.
    **Text ledger LIVE since 15 Nov 2026 (about 4:50 AM):** JC said "Yes, put it on the live shop" (14 Nov, 11:43 PM).
