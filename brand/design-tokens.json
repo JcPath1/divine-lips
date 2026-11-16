@@ -537,19 +537,10 @@
     "review-folder": "ads/",
     "key-file": "private/fal.env (never print)",
     "models": {
-      "hero-draft": {
-        "id": "fal-ai/flux-pro/kontext",
-        "price": "$0.04 per image",
-        "tried": true
-      },
-      "hero-better": {
-        "id": "fal-ai/flux-pro/kontext/max",
-        "price": "$0.08 per image",
-        "tried": false
-      },
-      "hero-final": {
+      "hero": {
         "id": "fal-ai/nano-banana-pro/edit",
-        "price": "$0.15 per image, 4K double",
+        "price": "$0.15 per image at 1K, 4K double",
+        "note": "drafts and finals. FLUX Kontext is banned (JC, 2026-11-15)",
         "tried": false
       },
       "plate": {
@@ -582,7 +573,8 @@
       "every AI picture gets a .json sidecar marking it AI-made"
     ],
     "cost-rules": [
-      "draft on kontext first",
+      "JC rule 2026-11-15: always Fal, never FLUX Kontext",
+      "drafts and finals on nano-banana-pro/edit, about $0.15 per image",
       "one image per call",
       "never re-run an unclear failure",
       "animate only an approved hero image",

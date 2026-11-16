@@ -3,7 +3,10 @@
 Prompts that passed the art director gate. Start every new ad and every new shade from these, so the campaign
 looks like one shoot. Add a prompt here only after its picture passed the gate.
 
-## The structure that works (fal-ai/flux-pro/kontext, reference photo = our real bottle)
+> **Written for FLUX Kontext, which JC has banned (15 Nov 2026). Re-test every prompt below on Nano Banana Pro
+> (`fal-ai/nano-banana-pro/edit`) before relying on it.** Keep the structure, but expect different results.
+
+## The structure that worked on Kontext (reference photo = our real bottle)
 
 1. **"Place this exact lip gloss bottle ..."** then where it sits and how (lying flat, standing on a glass block).
 2. **The surface and backdrop:** pale blush pink.
@@ -27,7 +30,7 @@ looks like one shoot. Add a prompt here only after its picture passed the gate.
 ## 1. Sunlit macro swatch (Glimmer Kiss)
 
 - File: `ads/campaign-test/01-sunlit-macro-swatch-take2-kontext.jpg`
-- Model: `fal-ai/flux-pro/kontext`, aspect 3:4, seed 730121162, $0.04
+- Model: `fal-ai/flux-pro/kontext` (written for Kontext, re-test on Nano Banana Pro), aspect 3:4, seed 730121162, $0.04
 - Source photo: https://glimmerbliss.com/images/glimmer-kiss.jpg
 
 > Place this exact lip gloss bottle lying flat on its side on a pale blush pink surface in hard direct morning sunlight, photographed from directly above. The bottle is long and slender, about three and a half times longer than it is wide, with the white cap taking up half of its length, exactly as in the reference photo. In front of it, one long wet streak of transparent, colourless lip gloss dragged across the surface, glassy and thick, with fine iridescent sparkle suspended in it and bright specular highlights. Macro beauty photography, sharp sun caustics and light refracting through the clear bottle, crisp real shadows from a window frame. Keep the plain white rectangular cap, clear square body, sparkly gloss and white applicator inside exactly as in the reference. No label, no text, no logo, no extra objects. The bottle sits in the upper right, with empty blush space in the lower left.
@@ -35,7 +38,7 @@ looks like one shoot. Add a prompt here only after its picture passed the gate.
 ## 2. High-fashion studio (Glimmer Kiss)
 
 - File: `ads/campaign-test/02-high-fashion-studio-draft-kontext.jpg`
-- Model: `fal-ai/flux-pro/kontext`, aspect 3:4, seed 3434079328, $0.04
+- Model: `fal-ai/flux-pro/kontext` (written for Kontext, re-test on Nano Banana Pro), aspect 3:4, seed 3434079328, $0.04
 - Source photo: https://glimmerbliss.com/images/glimmer-kiss.jpg
 
 > Place this exact lip gloss bottle standing upright on a solid block of clear glass, against a seamless pale blush pink backdrop. Hard sculptural studio light from the upper left throws one long sharp shadow, and light refracts through the clear bottle onto the backdrop. Minimal luxury beauty campaign still life. The bottle sits off-centre in the right third of the frame with a large empty area on the left. Keep the bottle's shape, tall proportions, plain white rectangular cap, clear square body and the sparkly gloss and white applicator inside exactly as in the reference photo. No label, no text, no logo, no extra objects.

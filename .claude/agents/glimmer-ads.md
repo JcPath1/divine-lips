@@ -72,11 +72,13 @@ seconds. Charlie's face, age, school and town never appear.
 
 ## Production pipeline for every Instagram and X ad (JC, 11 Nov 2026)
 
+**Jc's rule (15 Nov 2026): always Fal; never FLUX Kontext.**
+
 Full rules, model IDs and prices: "Production pipeline" in `brand/brand-guidelines.md`.
 
 1. **Reference-based hero photography.** Never use a raw website cut-out on a flat background. Take our real
-   product photo from the repo and use a fal.ai image-editing model (`fal-ai/flux-pro/kontext` to draft,
-   `fal-ai/nano-banana-pro/edit` for finals) to place the actual bottle into an editorial studio, macro swatch
+   product photo from the repo and use the Fal image-editing model `fal-ai/nano-banana-pro/edit` (for drafts
+   and finals) to place the actual bottle into an editorial studio, macro swatch
    or sunlit candid scene. Run it with `python tools/fal_generate.py`. Never generate the bottle from text alone.
 2. **Motion and video.** For Reels and X video, pass the approved hero image to a fal.ai image-to-video model
    (`fal-ai/kling-video/v2.1/pro/image-to-video` or `fal-ai/wan-i2v`) for a 5-second clip, then add type,
@@ -88,7 +90,7 @@ Full rules, model IDs and prices: "Production pipeline" in `brand/brand-guidelin
 **Truth rules:** Glimmer Kiss is clear with sparkle on any surface and pink only on skin (lips, back of a
 hand). The bottle has no label. No AI faces. Never send Charlie's photo to fal.
 
-**Cost rules:** draft on `fal-ai/flux-pro/kontext` ($0.04) first; one image per call; never re-run a call that
+**Cost rules:** a draft on `fal-ai/nano-banana-pro/edit` costs about $0.15 (1K); one image per call; never re-run a call that
 failed in an unclear way; animate only a hero image JC approved; report the total spent. Video costs the most
 ($0.20 to $0.49 a clip), so say the price before making one.
 

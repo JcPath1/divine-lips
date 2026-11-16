@@ -363,6 +363,8 @@ The score is the agent's own judgement. It is not a measurement and it does not 
 
 ### Production pipeline (JC, 11 Nov 2026). Three steps for every Instagram and X ad.
 
+**Jc's rule (15 Nov 2026): always Fal; never FLUX Kontext.**
+
 JC approved AI-made scenes on 11 Nov 2026. This replaces the old "real product photos only" rule **for ads**.
 The product pages on the website keep the real, untouched photos, so shoppers see the actual item.
 
@@ -407,9 +409,7 @@ Then run the self-critique gate (rule 6 above). Keep rejected takes out of the r
 
 | Job | Model ID | Price | Notes |
 |---|---|---|---|
-| Hero scene from our photo, draft | `fal-ai/flux-pro/kontext` | $0.04 per image | Draft here first. Aspect 3:4, 9:16, 16:9, 1:1 (no 4:5) |
-| Hero scene, higher quality | `fal-ai/flux-pro/kontext/max` | $0.08 per image | Not tried yet |
-| Hero scene, final | `fal-ai/nano-banana-pro/edit` | $0.15 per image (4K is double) | Has 4:5. Not tried yet |
+| Hero scene from our photo, drafts and finals | `fal-ai/nano-banana-pro/edit` | $0.15 per image at 1K (4K is double) | The only picture-edit model in use. Has 4:5. FLUX Kontext is banned (JC, 15 Nov 2026). |
 | Background plates with no product | `fal-ai/flux-2-pro` | from $0.03 per megapixel | Text-to-image. The ID is `flux-2-pro`, not `flux-2/pro` |
 | Cheap plate drafts | `fal-ai/flux/schnell`, `fal-ai/flux/dev` | $0.003 and $0.025 per megapixel | Text-only. They cannot use our photo, so they cannot draft a hero shot |
 | Video, 5 seconds | `fal-ai/kling-video/v2.1/pro/image-to-video` | $0.49 for 5 s, then $0.098 per extra second | Not tried yet |
@@ -420,8 +420,8 @@ Before using a model that is not yet in `tools/fal_generate.py`, read its schema
 
 #### Keeping the cost down
 
-- **Draft cheap, finish high.** Test angles and prompts on `fal-ai/flux-pro/kontext` ($0.04). Run the winning
-  prompt on a dearer model only if the draft is not good enough.
+- **Drafts and finals use the same model,** `fal-ai/nano-banana-pro/edit`, about $0.15 per image at 1K. Do not
+  go to 4K (double the price) until the 1K picture has passed the gate.
 - **One image per call.** Look at it before making another.
 - **Never re-run a call that failed in an unclear way.** A second call is a second charge.
 - **Video is the expensive step.** Only animate a hero image that JC has already approved.
