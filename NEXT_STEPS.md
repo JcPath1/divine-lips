@@ -48,6 +48,10 @@ old "Claude is blocked from deploying" note no longer holds. Claude deploys only
   (5/32 in bare at each end): not confirmed by JC.
 - **Suno MCP:** added to this project (`claude mcp add --transport http suno https://api.suno.com/mcp`), needs JC to
   sign in via `/mcp` after a restart. Say the price before making any song.
+- **JC's rule (15 Nov 2026): always Fal for pictures, video and music; NEVER FLUX Kontext.** Pictures: `fal-ai/nano-banana-pro/edit`
+  (about $0.15 at 1K) for drafts and finals; `tools/fal_generate.py` now refuses any Kontext model and defaults to it.
+  The two winning prompts in `brand/winning-prompts.md` were written for Kontext: re-test them before relying on them.
+  Suno stays connected (JC is waiting for its MCP approval).
 - **fal spend so far:** $2.28 total. Any new clip ($0.49) needs JC's OK. Video tweaks only if free.
 - **Known overlaps not fixed:** "pink." crosses GLIMMER BLISS on carousel 1, pin 1 and the social cut of video 2.
 - JC is still testing the ad system, not posting. Instagram first when he does. Nothing is posted or scheduled.
@@ -116,6 +120,9 @@ old "Claude is blocked from deploying" note no longer holds. Claude deploys only
    saved in `private/records-snapshot/`). Finding: the admin's Sell / My Gloss / Spent / Money screens exist but
    hold no booth sales, no spending and no paid orders. Recommended: use those screens now, then build text
    intake through Phronesis + channel + one summary page. Waiting on JC: go-ahead and the items in section 3.
+   **Phone size fix BUILT, local only (15 Nov 2026):** the Glimmer Kiss page video filled ~90% of a phone screen; now 280 px wide,
+   centered; big headings smaller on phones; stylesheet version bumped on 16 pages. NOT deployed, NOT committed: waiting on JC's go.
+   Measurements, what was not tested, and a smaller-home-video idea: `private/privacy-and-wordpress-and-google-notes-2026-11-15.md`.
    **Privacy policy LIVE since 15 Nov 2026 (about 11 AM):** https://glimmerbliss.com/privacy.html, with a Privacy link in
    15 page footers and a sitemap entry. JC approved publishing (10:54 AM). Deployed 18 files with the normal tool;
    live backup `private/backups/shop-live-20261115-105615.json` first; checked after: footer links, home, product,
