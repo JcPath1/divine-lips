@@ -120,6 +120,12 @@ old "Claude is blocked from deploying" note no longer holds. Claude deploys only
    saved in `private/records-snapshot/`). Finding: the admin's Sell / My Gloss / Spent / Money screens exist but
    hold no booth sales, no spending and no paid orders. Recommended: use those screens now, then build text
    intake through Phronesis + channel + one summary page. Waiting on JC: go-ahead and the items in section 3.
+   **Smaller home video LIVE since 16 Nov 2026 (about 8:15 AM):** JC approved ("clean that video up"). New file
+   `docs/videos/glimmer-kiss-rainbow-small.mp4` (1.35 MB, was 3.13 MB; same 432x768, 30.6 s, no sound); home page weight 4.02 MB -> 2.25 MB
+   (live, measured). Made with local ffmpeg (H.264, light noise reduction, CRF 34). The ORIGINAL `glimmer-kiss-rainbow.mp4` is untouched in
+   the repo and on the server. A 1 MB version was tried and softened the sparkles, so 1.35 MB was chosen.
+   ROLL BACK: in `docs/index.html` change `glimmer-kiss-rainbow-small.mp4` back to `glimmer-kiss-rainbow.mp4`, then
+   `python tools/glimmer.py deploy` (saved copy of the old page: `private/backups/live-files-before-video/index.html`).
    **Phone size fix LIVE since 16 Nov 2026 (about 7:25 AM):** JC approved publishing (7:22 AM). The Glimmer Kiss page video is
    280 px wide on phones (was ~90% of the screen); big headings 32 px on small screens; stylesheet `?v=20261115` on 16 pages.
    Deployed the 18 files with the normal tool; live backup `private/backups/shop-live-20261116-072346.json`; copy of the
