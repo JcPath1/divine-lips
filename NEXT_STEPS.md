@@ -120,9 +120,11 @@ old "Claude is blocked from deploying" note no longer holds. Claude deploys only
    saved in `private/records-snapshot/`). Finding: the admin's Sell / My Gloss / Spent / Money screens exist but
    hold no booth sales, no spending and no paid orders. Recommended: use those screens now, then build text
    intake through Phronesis + channel + one summary page. Waiting on JC: go-ahead and the items in section 3.
-   **Phone size fix BUILT, local only (15 Nov 2026):** the Glimmer Kiss page video filled ~90% of a phone screen; now 280 px wide,
-   centered; big headings smaller on phones; stylesheet version bumped on 16 pages. NOT deployed, NOT committed: waiting on JC's go.
-   Measurements, what was not tested, and a smaller-home-video idea: `private/privacy-and-wordpress-and-google-notes-2026-11-15.md`.
+   **Phone size fix LIVE since 16 Nov 2026 (about 7:25 AM):** JC approved publishing (7:22 AM). The Glimmer Kiss page video is
+   280 px wide on phones (was ~90% of the screen); big headings 32 px on small screens; stylesheet `?v=20261115` on 16 pages.
+   Deployed the 18 files with the normal tool; live backup `private/backups/shop-live-20261116-072346.json`; copy of the
+   previous live files in `private/backups/live-files-before-phone-fix/`. Checked live at 360/393/412 px and 1280 px.
+   ROLL BACK: `git revert abe157c` then `python tools/glimmer.py deploy` (same 18 files), or re-upload the saved copies.
    **Privacy policy LIVE since 15 Nov 2026 (about 11 AM):** https://glimmerbliss.com/privacy.html, with a Privacy link in
    15 page footers and a sitemap entry. JC approved publishing (10:54 AM). Deployed 18 files with the normal tool;
    live backup `private/backups/shop-live-20261115-105615.json` first; checked after: footer links, home, product,
