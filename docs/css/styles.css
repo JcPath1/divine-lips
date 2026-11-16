@@ -1707,3 +1707,19 @@ body.shop-open .footer {
   background: var(--soft-pink);
 }
 .ingredients-note a { color: var(--dark-pink); }
+
+/* Phones: the product video was filling almost the whole screen (measured 15 Nov 2026: 90% of the width and up to
+   83% of the height). Keep it a sensible size, centered, with the same rounded corners. Desktop is unchanged. */
+@media (max-width: 768px) {
+  .main-image:has(video:not([hidden])) {
+    width: min(100%, 280px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Phones: the biggest headings come down a notch so they do not crowd a small screen */
+@media (max-width: 480px) {
+  .product-details h1 { font-size: 2rem; }
+  .policy-page h1 { font-size: 2rem; }
+}
